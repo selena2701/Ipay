@@ -1,0 +1,20 @@
+.table-column {
+    -fx-alignment: center;
+}
+
+.icon-image{
+    -fx-image: url(banner.jpg);
+}
+
+.background-pane{
+    -fx-background-color: linear-gradient(to bottom left , #f5ff5d , #e59c09);
+}
+
+.color-button{
+    -fx-background-color : linear-gradient(to right , #f5ff5d , #e59c09);
+    -fx-background-radius: 10px;
+}
+
+.background-color-text-field{
+    -fx-background-color: -fx-control-inner-background;
+}
