@@ -1,0 +1,86 @@
+.login-bg{
+    -fx-background-color: linear-gradient(to top,#FFB300 , #e59c09 );
+}
+.btn-login{
+    -fx-background-color: #FFB300;
+    -fx-text-fill: #FFF;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-background-radius: 8px;
+}
+.lbl-user{
+    -fx-text-fill: black;
+    -fx-alignment: CENTER;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+}
+.tab-pane{
+    -fx-tab-max-height: 0px;
+}
+.tab-pane .tab-header-area{
+    visibility: hidden;
+}
+.lbl-status{
+    -fx-background-color: #FFB300;
+    -fx-text-fill: #FFF;
+    -fx-alignment: CENTER;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8px;
+}
+.btn:hover{
+    -fx-cursor:hand ;
+}
+#PaneNT
+{
+-fx-background-color : linear-gradient(to bottom  , #f5ff5d , #e59c09);
+}
+#pane2
+{
+	-fx-background-color : linear-gradient(to bottom left , #f5ff5d , #e59c09);
+
+}
+
+#cancelButton
+{
+	-fx-background-color : linear-gradient(to top right , #f5ff5d , #e59c09);
+
+}
+
+#loginButton
+{
+	-fx-background-color : linear-gradient(to top right , #f5ff5d , #e59c09);
+
+}
+#VBox1
+{
+	-fx-background-color : linear-gradient(to bottom left , #f5ff5d , #e59c09);
+
+}
+
+#notiTable
+{
+	-fx-background-color:#FF9800;
+	-fx-background-radius:14 14 0 0;
+}
+.table-view .column-header-background{
+        -fx-background-color: #FFC107;
+        -fx-background-radius:14 ;	
+        -fx-background-insets: 0 0 10 0;
+       
+        
+        
+    }
+.table-view .column-header, .table-view .filler{
+        -fx-size:50px;
+        -fx-border-width: 0 10 0 0;
+        -fx-background-color:transparent;
+        
+    }
+    
+.table-view .column-header .label {
+        -fx-text-fill: black ;
+    }
+
+.account-bg{
+    -fx-background-color: linear-gradient(to top,#f5ff5d , #e59c09 );
+}
