@@ -1,12 +1,10 @@
 package database.repos;
 
-import database.DBConnection;
-import de.jensd.fx.glyphs.materialicons.MaterialIcon;
+import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import models.Invoice;
 
-import javax.swing.*;
 import java.sql.*;
 
 public class InvoicesRepo {

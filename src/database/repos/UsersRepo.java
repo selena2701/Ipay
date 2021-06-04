@@ -1,9 +1,9 @@
 package database.repos;
 
-import database.DBConnection;
+import models.Customer;
+import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import models.User;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,7 +12,7 @@ import java.sql.Statement;
 
 public class UsersRepo {
 
-    private ObservableList<User> users = FXCollections.observableArrayList();
+    private ObservableList<Customer> customers = FXCollections.observableArrayList();
 
     private Connection connection = null;
 
@@ -26,13 +26,13 @@ public class UsersRepo {
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(query);
         while (result.next()) {
-            users.add(User.fromResultSet(result));
+            customers.add(Customer.fromResultSet(result));
         }
         connection.close();
     }
 
-    public ObservableList<User> getUsers() {
-        return users;
+    public ObservableList<Customer> getUsers() {
+        return customers;
     }
 
     public void addNewUser() {

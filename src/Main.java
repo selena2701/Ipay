@@ -10,7 +10,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("./views/admin-home-screen.fxml"))));
+//        Parent root = FXMLLoader.load((Objects.requireNonNull(getClass().getResource("views/admin/admin-home-screen.fxml"))));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./views/auth/auth-view.fxml")));
         primaryStage.setTitle("Electricity Payment Admin");
         primaryStage.setScene(new Scene(root, 1080, 720));
         primaryStage.show();

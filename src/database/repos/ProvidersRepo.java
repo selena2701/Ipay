@@ -1,10 +1,9 @@
 package database.repos;
 
-import database.DBConnection;
+import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import models.Provider;
-import org.w3c.dom.css.CSSStyleDeclaration;
 
 import java.sql.*;
 import java.util.Date;

@@ -253,10 +253,10 @@ property of their respective owners.
  #  the program and the nonexistence of any infringement or violation of
  #  any right of any third party.
  #
- #  Each user of the program will agree and understand, and be deemed to
+ #  Each customer of the program will agree and understand, and be deemed to
  #  have agreed and understood, that there is no warranty whatsoever for
  #  the program and, accordingly, the entire risk arising from or
- #  otherwise connected with the program is assumed by the user.
+ #  otherwise connected with the program is assumed by the customer.
  #
  #  Therefore, neither ICOT, the copyright holder, or any other
  #  organization that participated in or was otherwise related to the
@@ -268,18 +268,18 @@ property of their respective owners.
  #  or result produced or otherwise obtained by using the program,
  #  regardless of whether they have been advised of, or otherwise had
  #  knowledge of, the possibility of such damages at any time during the
- #  project or thereafter.  Each user will be deemed to have agreed to the
+ #  project or thereafter.  Each customer will be deemed to have agreed to the
  #  foregoing by his or her commencement of use of the program.  The term
  #  "use" as used herein includes, but is not limited to, the use,
  #  modification, copying and distribution of the program and the
  #  production of secondary products from the program.
  #
  #  In the case where the program, whether in its original form or
- #  modified, was distributed or delivered to or received by a user from
+ #  modified, was distributed or delivered to or received by a customer from
  #  any person, organization or entity other than ICOT, unless it makes or
- #  grants independently of ICOT any specific warranty to the user in
+ #  grants independently of ICOT any specific warranty to the customer in
  #  writing, such person, organization or entity, will also be exempted
- #  from and not be held liable to the user for any such damages as noted
+ #  from and not be held liable to the customer for any such damages as noted
  #  above as far as the program is concerned.
  #
  #  ---------------COPYING.ipadic-----END----------------------------------

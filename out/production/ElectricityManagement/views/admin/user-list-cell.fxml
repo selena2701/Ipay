@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.materialicons.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="gridPane" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+          xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="60.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="10.0" prefWidth="100.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
+    </rowConstraints>
+    <MaterialIconView glyphName="PERSON_OUTLINE" size="25" GridPane.columnIndex="0" GridPane.halignment="CENTER"
+                      GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        <GridPane.margin>
+            <Insets/>
+        </GridPane.margin>
+    </MaterialIconView>
+    <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0"
+          GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER"
+          GridPane.vgrow="ALWAYS">
+        <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+        </GridPane.margin>
+        <Label fx:id="idLabel" alignment="CENTER" maxHeight="1.7976931348623157E308"
+               maxWidth="1.7976931348623157E308" textAlignment="CENTER">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+
+        <Label fx:id="nameLabel" alignment="CENTER" maxHeight="1.7976931348623157E308"
+               maxWidth="1.7976931348623157E308" textAlignment="CENTER">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+    </HBox>
+
+
+    <JFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2"
+               GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER"
+               GridPane.vgrow="ALWAYS">
+        <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+        </GridPane.margin>
+        <graphic>
+            <MaterialIconView fill="deepskyblue" glyphName="EDIT" size="25"/>
+        </graphic>
+    </JFXButton>
+
+    <JFXButton GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS"
+               GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        <GridPane.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+        </GridPane.margin>
+        <graphic>
+            <MaterialIconView fill="orangered" glyphName="DELETE" size="25"/>
+        </graphic>
+    </JFXButton>
+
+</GridPane>

@@ -1,6 +1,6 @@
 package database.repos;
 
-import database.DBConnection;
+import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import models.Notification;
@@ -51,6 +51,18 @@ public class NotificationsRepo {
         loadNotificationsFromDB();
     }
 
+    public void updateNotification(Notification notification) throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+        PreparedStatement statement = connection.prepareStatement("UPDATE E_NOTIFICATION SET DateSent=?,EditedBy=?,Detail=? WHERE NO_ID=?");
+        statement.setObject(1, notification.getDatePublished());
+        statement.setString(2, notification.getEditedBy());
+        statement.setString(3, notification.getDescription());
+        statement.setString(4, notification.getDescription());
+        statement.execute();
+        connection.close();
+        loadNotificationsFromDB();
+    }
+
     public void deleteNotification(String notificationId) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("DELETE FROM E_NOTIFICATION WHERE NO_ID=?");
@@ -58,6 +70,15 @@ public class NotificationsRepo {
         statement.execute();
         connection.close();
         loadNotificationsFromDB();
+    }
+
+    public Notification getNotificationById(String id) {
+        for (Notification notification : notifications) {
+            if (notification.getId().equals(id)) {
+                return notification;
+            }
+        }
+        return null;
     }
 
 

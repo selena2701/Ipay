@@ -1,13 +1,11 @@
 package database.repos;
 
-import database.DBConnection;
+import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import models.Admin;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AdminRepo {
 

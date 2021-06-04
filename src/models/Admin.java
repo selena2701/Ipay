@@ -28,7 +28,7 @@ public class Admin {
         Admin admin=new Admin();
         admin.id=resultSet.getString("AD_ID");
         admin.name=resultSet.getString("NameAD");
-        admin.username=resultSet.getString("UsernameAD");
+        admin.username=resultSet.getString("Username");
         admin.promotedBy=resultSet.getString("PromotedBy");
         admin.datePromoted=resultSet.getDate("DatePromote");
         return admin;
