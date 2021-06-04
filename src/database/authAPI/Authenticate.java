@@ -9,8 +9,6 @@ import utils.exceptions.UserExistsException;
 import java.sql.*;
 
 public class Authenticate {
-
-
     /*
      * This function is used for logging user in with appropriate role
      * This will return [null] if (fail), [true] if (admin) and [false] if (customer)

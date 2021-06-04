@@ -3,8 +3,6 @@ package controllers.auth;
 import com.jfoenix.controls.*;
 import database.authAPI.Authenticate;
 import javafx.animation.TranslateTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -59,6 +57,8 @@ public class AuthController implements Initializable {
     @FXML
     private JFXTextField fldUsername;
     @FXML
+    private JFXTextField fldCusID;
+    @FXML
     private JFXTextField fldPhone;
     @FXML
     private JFXTextField fldAddress;
@@ -77,10 +77,8 @@ public class AuthController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO
-
         initComponents();
         setUpValidators();
-
     }
 
     private void setUpValidators() {
@@ -157,10 +155,10 @@ public class AuthController implements Initializable {
     }
 
 
-    @FXML
     /*
      * Login for user
      * */
+    @FXML
     public void loginButtonOnClick() throws SQLException, ClassNotFoundException {
         if (!loginValidate()) {
             return;
@@ -176,7 +174,6 @@ public class AuthController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login Error!");
