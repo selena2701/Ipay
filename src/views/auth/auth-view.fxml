@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="720.0" prefWidth="1080.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.auth.AuthController">
+    <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login-bg">
+        <ImageView fitHeight="485.0" fitWidth="452.0" layoutX="83.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+            <effect>
+                <DropShadow spread="0.3">
+                    <color>
+                        <Color red="0.621052622795105" green="0.39839375019073486" blue="0.013801169581711292" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <Image url="@PicsArt_05-09-12.29.09.jpg" />
+        </ImageView>
+        <AnchorPane layoutX="509.0" layoutY="50.0" prefHeight="622.0" prefWidth="495.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+            <effect>
+                <DropShadow>
+                    <color>
+                        <Color red="0.4421052634716034" green="0.29964911937713623" blue="0.0147368423640728" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <TabPane fx:id="tabPane" layoutX="29.0" layoutY="83.0" prefHeight="500.0" prefWidth="435.0" tabClosingPolicy="UNAVAILABLE">
+                <Tab fx:id="tabLogin" text="Login">
+                    <AnchorPane prefHeight="350.0" prefWidth="342.0">
+                        <JFXTextField fx:id="loginUsername" layoutX="67.0" layoutY="83.0" prefHeight="30.0" prefWidth="300.0" promptText="Enter Username">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="loginPassword" layoutX="67.0" layoutY="143.0" prefHeight="30.0" prefWidth="300.0" promptText="Enter Password">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </JFXPasswordField>
+                        <Label fx:id="LoginMessText" alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="199.0" prefHeight="26.0" prefWidth="304.0" textAlignment="CENTER" textFill="#ff9800">
+                            <font>
+                                <Font name="System Bold Italic" size="16.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="60.0" layoutY="253.0" prefHeight="97.0" prefWidth="313.0" spacing="30.0">
+                            <JFXButton fx:id="btnLogin" mnemonicParsing="false" onAction="#loginButtonOnClick" prefHeight="40.0" prefWidth="137.0" styleClass="btn-login" text="LOGIN" />
+                        </HBox>
+                    </AnchorPane>
+                </Tab>
+                <Tab fx:id="tabRegister" text="Register">
+                    <GridPane prefHeight="505.0" prefWidth="371.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.4000244140625" minWidth="10.0" prefWidth="124.2666015625" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="346.80003662109374" minWidth="10.0" prefWidth="311.7333984375" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="72.33328857421873" minHeight="10.0" prefHeight="44.59995117187498" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="72.33328857421873" minHeight="10.0" prefHeight="44.59995117187498" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <JFXTextField fx:id="fldFullname" prefHeight="29.0" GridPane.columnIndex="1" />
+                        <JFXTextField fx:id="fldUsername" prefHeight="29.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXPasswordField fx:id="fldPassword" prefHeight="29.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="fldPhone" prefHeight="29.0" prefWidth="283.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="fldAddress" prefHeight="29.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="fldNationId" prefHeight="29.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <HBox alignment="CENTER" prefHeight="78.0" prefWidth="371.0" spacing="40.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                            <Button mnemonicParsing="false" onAction="#signUpButtonOnClick" prefHeight="42.0" prefWidth="158.0" styleClass="btn-login" text="REGISTER">
+                                <font>
+                                    <Font name="System Bold" size="15.0" />
+                                </font>
+                            </Button>
+                        </HBox>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="100.0" text="Fullname">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="100.0" text="Username" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="100.0" text="Password" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="100.0" text="Phone" GridPane.rowIndex="3">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="100.0" text="Address" GridPane.rowIndex="4">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="100.0" text="Nation ID" GridPane.rowIndex="5">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="100.0" text="Gender" GridPane.rowIndex="6">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="123.0" text="Date of Birth" GridPane.rowIndex="7">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="100.0" text="Region" GridPane.rowIndex="8">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <DatePicker fx:id="dpBirthday" editable="false" prefHeight="30.0" prefWidth="322.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <JFXComboBox fx:id="cbGender" prefHeight="30.0" prefWidth="322.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <JFXComboBox fx:id="cbRegion" prefHeight="30.0" prefWidth="352.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label fx:id="RegisterMessText" alignment="CENTER" prefHeight="33.0" prefWidth="311.0" textFill="#ff9800" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                            <font>
+                                <Font name="System Bold" size="17.0" />
+                            </font>
+                        </Label>
+                    </GridPane>
+                </Tab>
+            </TabPane>
+            <Group layoutX="31.0" layoutY="26.0">
+                <Pane fx:id="slidingPane" layoutX="1.0" layoutY="1.0" prefHeight="32.0" prefWidth="349.0">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <Label fx:id="lblRegister" layoutX="171.0" layoutY="1.0" onMouseClicked="#openRegisterTab" prefHeight="35.0" prefWidth="176.0" styleClass="lbl-customer" text="REGISTER">
+                        <font>
+                            <Font name="System Bold" size="16.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Label>
+                    <Label fx:id="lblAdmin" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="-1.0" onMouseClicked="#openLoginTab" prefHeight="35.0" prefWidth="176.0" text="LOGIN">
+                        <font>
+                            <Font name="System Bold" size="16.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Label>
+                </Pane>
+                <Label fx:id="lblStatus" prefHeight="35.0" prefWidth="165.0" styleClass="lbl-status" text="LOGIN">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+            </Group>
+        </AnchorPane>
+    </AnchorPane>
+</StackPane>
