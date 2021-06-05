@@ -3,67 +3,82 @@
 <?import com.jfoenix.controls.*?>
 <?import de.jensd.fx.glyphs.materialicons.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-          prefWidth="600.0" stylesheets="@../css/admin.css" xmlns="http://javafx.com/javafx/11.0.2"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.AdminHomeScreenController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.AdminHomeScreenController">
     <columnConstraints>
-        <ColumnConstraints hgrow="ALWAYS" maxWidth="294.4000244140625" minWidth="10.0" prefWidth="102.0"/>
-        <ColumnConstraints hgrow="ALWAYS" maxWidth="522.0" minWidth="10.0" percentWidth="88.0" prefWidth="498.0"/>
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="294.4000244140625" minWidth="10.0" prefWidth="102.0" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="522.0" minWidth="10.0" percentWidth="88.0" prefWidth="498.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
     </rowConstraints>
 
     <GridPane prefHeight="400.0" prefWidth="610.0" styleClass="background-pane">
         <columnConstraints>
-            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
         </rowConstraints>
-        <JFXButton fx:id="usersButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Users"
-                   textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"
-                   GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        <JFXButton fx:id="usersButton" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Users" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
             <font>
-                <Font name="System Bold" size="14.0"/>
+                <Font name="Segoe UI Bold" size="20.0" />
             </font>
             <padding>
-                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
             </padding>
             <graphic>
-                <MaterialIconView glyphName="SUPERVISOR_ACCOUNT" size="16" GridPane.rowIndex="1"/>
+                <MaterialIconView glyphName="SUPERVISOR_ACCOUNT" size="25" GridPane.rowIndex="1" />
             </graphic>
         </JFXButton>
-        <JFXButton fx:id="providersButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                   prefHeight="133.0" prefWidth="98.0" text="Providers" GridPane.halignment="CENTER"
-                   GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        <JFXButton fx:id="providersButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="133.0" prefWidth="98.0" text="Providers" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
             <font>
-                <Font name="System Bold" size="14.0"/>
+                <Font name="Segoe UI Bold" size="20.0" />
             </font>
             <graphic>
-                <MaterialIconView glyphName="SETTINGS_INPUT_ANTENNA" size="16"/>
+                <MaterialIconView glyphName="SETTINGS_INPUT_ANTENNA" size="25" />
             </graphic>
             <padding>
-                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
             </padding>
         </JFXButton>
-        <JFXButton fx:id="notificationsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                   text="Notifications" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+        <JFXButton fx:id="notificationsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Notifications" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
             <graphic>
-                <MaterialIconView glyphName="NOTIFICATIONS"/>
+                <MaterialIconView glyphName="NOTIFICATIONS" size="25" />
             </graphic>
             <font>
-                <Font name="System Bold" size="14.0"/>
+                <Font name="Segoe UI Bold" size="20.0" />
             </font>
         </JFXButton>
+      <JFXButton fx:id="statisticButton" layoutX="10.0" layoutY="308.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Statistics" GridPane.rowIndex="4">
+         <graphic>
+            <MaterialIconView glyphName="ASSESSMENT" size="25" />
+         </graphic>
+         <font>
+            <Font name="Segoe UI Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnLogOut" layoutX="10.0" layoutY="276.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#btnLogOut" text="Log Out" GridPane.rowIndex="5">
+         <graphic>
+            <MaterialIconView glyphName="EXIT_TO_APP" size="25" />
+         </graphic>
+         <font>
+            <Font name="Segoe UI Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="160.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../auth/PicsArt_05-09-12.29.09.jpg" />
+         </image>
+      </ImageView>
     </GridPane>
-    <BorderPane fx:id="content" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS"
-                GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
+    <BorderPane fx:id="content" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
 </GridPane>

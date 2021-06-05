@@ -1,118 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.materialicons.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0"
-      prefWidth="497.0" styleClass="btn" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controllers.admin.AddNotificationController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="btn" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.AddNotificationController">
     <children>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Notification Detail" wrappingWidth="360.85313415527344">
+        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="1085.0" styleClass="btn">
+            <VBox.margin>
+                <Insets top="25.0" />
+            </VBox.margin>
+         <JFXButton fx:id="btnBack" onMouseClicked="#back" prefHeight="68.0" prefWidth="135.0" text="  ">
+            <graphic>
+               <MaterialIconView fill="#ff9800" glyphName="ARROW_BACK" size="50">
+                  <effect>
+                     <DropShadow>
+                        <color>
+                           <Color red="1.0" green="0.7568627595901489" blue="0.027450980618596077" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+               </MaterialIconView>
+            </graphic>
+         </JFXButton>
+           <Text fill="#ff9800" strokeType="OUTSIDE" strokeWidth="0.0" text=" Notification Detail" textAlignment="CENTER" wrappingWidth="885.6528472900391">
+               <font>
+                   <Font name="Segoe UI Bold" size="36.0" />
+               </font>
+            <effect>
+               <DropShadow>
+                  <color>
+                     <Color red="1.0" green="0.5960784554481506" />
+                  </color>
+               </DropShadow>
+            </effect>
+           </Text>
+         <JFXButton fx:id="btnSave" onMouseClicked="#save" prefHeight="66.0" prefWidth="90.0" text="  ">
+            <graphic>
+               <MaterialIconView fill="#ff9800" glyphName="CHECK" size="50">
+                  <effect>
+                     <DropShadow>
+                        <color>
+                           <Color red="1.0" green="0.7568627595901489" blue="0.027450980618596077" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+               </MaterialIconView>
+            </graphic>
+         </JFXButton>
+        </HBox>
+        <Label fx:id="titleLabel" alignment="CENTER" prefHeight="26.0" prefWidth="1090.0" textFill="#ff9800">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
             <font>
-                <Font name="Bauhaus 93" size="40.0"/>
+                <Font name="Segoe UI Bold" size="24.0" />
             </font>
-        </Text>
+        </Label>
         <HBox alignment="CENTER" layoutX="18.0" layoutY="120.0">
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NO_ID" textOrigin="BOTTOM" wrappingWidth="135.0">
+            <Text fill="#ff9800" strokeType="OUTSIDE" strokeWidth="0.0" text="NO_ID" textOrigin="BOTTOM" wrappingWidth="135.0">
                 <font>
-                    <Font name="Century Gothic" size="20.0"/>
+                    <Font name="Segoe UI Bold" size="20.0" />
                 </font>
             </Text>
-            <Label fx:id="idLabel" prefHeight="20.0" prefWidth="338.0"/>
+            <Label fx:id="idLabel" prefHeight="41.0" prefWidth="350.0" />
         </HBox>
         <HBox alignment="CENTER" layoutX="10.0" layoutY="68.0">
             <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Create" textOrigin="BOTTOM"
-                      wrappingWidth="135.0">
+                <Text fill="#ff9800" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Create" textOrigin="BOTTOM" wrappingWidth="135.0">
                     <font>
-                        <Font name="Century Gothic" size="20.0"/>
+                        <Font name="Segoe UI Bold" size="20.0" />
                     </font>
                 </Text>
-                <DatePicker fx:id="dcreateFld" editable="false" prefHeight="26.0" prefWidth="342.0"/>
+                <DatePicker fx:id="dcreateFld" editable="false" prefHeight="41.0" prefWidth="350.0" />
             </children>
             <VBox.margin>
-                <Insets top="30.0"/>
+                <Insets top="30.0" />
             </VBox.margin>
         </HBox>
         <HBox alignment="CENTER" layoutX="10.0" layoutY="95.0">
             <VBox.margin>
-                <Insets top="30.0"/>
+                <Insets top="30.0" />
             </VBox.margin>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Sent" textOrigin="BOTTOM" wrappingWidth="135.0">
+            <Text fill="#ff9800" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Sent" textOrigin="BOTTOM" wrappingWidth="135.0">
                 <font>
-                    <Font name="Century Gothic" size="20.0"/>
+                    <Font name="Segoe UI Bold" size="20.0" />
                 </font>
             </Text>
-            <DatePicker fx:id="dsentFld" editable="false" prefHeight="26.0" prefWidth="350.0"/>
+            <DatePicker fx:id="dsentFld" editable="false" prefHeight="41.0" prefWidth="350.0" />
         </HBox>
         <HBox alignment="CENTER" layoutX="10.0" layoutY="68.0">
             <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Edirtted By" textOrigin="BOTTOM"
-                      wrappingWidth="135.0">
+                <Text fill="#ff9800" strokeType="OUTSIDE" strokeWidth="0.0" text="Edirtted By" textOrigin="BOTTOM" wrappingWidth="135.0">
                     <font>
-                        <Font name="Century Gothic" size="20.0"/>
+                        <Font name="Segoe UI Bold" size="20.0" />
                     </font>
                 </Text>
-                <TextField fx:id="editFld" prefHeight="26.0" prefWidth="342.0">
+                <TextField fx:id="editFld" prefHeight="41.0" prefWidth="350.0">
                     <font>
-                        <Font name="Century Gothic" size="24.0"/>
+                        <Font name="Century Gothic" size="24.0" />
                     </font>
                 </TextField>
             </children>
             <VBox.margin>
-                <Insets top="30.0"/>
+                <Insets top="30.0" />
             </VBox.margin>
         </HBox>
         <HBox alignment="CENTER" layoutX="10.0" layoutY="121.0">
             <VBox.margin>
-                <Insets top="30.0"/>
+                <Insets top="30.0" />
             </VBox.margin>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Notification Content" textOrigin="BOTTOM"
-                  wrappingWidth="135.0">
+            <Text fill="#ff9800" strokeType="OUTSIDE" strokeWidth="0.0" text="Notification Content" textOrigin="BOTTOM" wrappingWidth="135.0">
                 <font>
-                    <Font name="Century Gothic" size="20.0"/>
+                    <Font name="Segoe UI Bold" size="20.0" />
                 </font>
             </Text>
-            <TextField fx:id="ncontentFld" prefHeight="26.0" prefWidth="342.0">
+            <TextField fx:id="ncontentFld" prefHeight="41.0" prefWidth="350.0">
                 <font>
-                    <Font name="Century Gothic" size="24.0"/>
+                    <Font name="Century Gothic" size="24.0" />
                 </font>
             </TextField>
         </HBox>
-        <Label fx:id="titleLabel" alignment="CENTER" prefHeight="20.0" prefWidth="590.0">
-            <VBox.margin>
-                <Insets top="20.0"/>
-            </VBox.margin>
-            <font>
-                <Font name="System Bold" size="16.0"/>
-            </font>
-        </Label>
-        <HBox alignment="CENTER" prefHeight="94.0" prefWidth="482.0" styleClass="btn">
-            <VBox.margin>
-                <Insets top="25.0"/>
-            </VBox.margin>
-            <Button fx:id="btnSave" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
-                    onMouseClicked="#save" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #FF9800;"
-                    styleClass="btn" text="Save">
-                <HBox.margin>
-                    <Insets right="8.0"/>
-                </HBox.margin>
-                <font>
-                    <Font name="Century Gothic Bold" size="36.0"/>
-                </font>
-            </Button>
-            <Button fx:id="btnBack" alignment="CENTER" contentDisplay="CENTER" layoutX="167.0" layoutY="22.0"
-                    mnemonicParsing="false" onMouseClicked="#back" prefHeight="45.0" prefWidth="160.0"
-                    style="-fx-background-color: #FF9800;" styleClass="btn" text="Back">
-                <font>
-                    <Font name="Century Gothic Bold" size="36.0"/>
-                </font>
-            </Button>
-        </HBox>
     </children>
     <padding>
-        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
     </padding>
 </VBox>

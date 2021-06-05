@@ -8,8 +8,8 @@ public class NavigatorDetail {
      */
     private String destination = "";
     private String title = "";
-    private double width = 1080;
-    private double height = 720;
+    private double width = 1280;
+    private double height = 800;
 
 
     public NavigatorDetail(String destination) {

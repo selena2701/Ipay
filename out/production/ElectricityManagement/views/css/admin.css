@@ -7,7 +7,7 @@
 }
 
 .background-pane {
-    -fx-background-color: linear-gradient(to bottom left, #f5ff5d, #e59c09);
+    -fx-background-color: linear-gradient(to bottom, #FFC107, #e59c09);
 }
 
 .color-button {

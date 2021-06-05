@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import de.jensd.fx.glyphs.materialicons.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="462.0" prefWidth="758.0" stylesheets="@./../css/admin.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.UsersManagerController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="462.0" prefWidth="758.0" stylesheets="@./../css/admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.UsersManagerController">
     <center>
-        <TableView fx:id="userTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="831.0" BorderPane.alignment="CENTER">
+        <TableView fx:id="userTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="396.0" prefWidth="758.0" BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="143.0" text="ID" />
                 <TableColumn fx:id="nameColumn" prefWidth="143.0" text="Full name" />
@@ -26,37 +26,26 @@
             </columnResizePolicy>
         </TableView>
     </center>
-    <top>
-        <GridPane BorderPane.alignment="CENTER">
-            <columnConstraints>
-                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="80.0" />
-                <ColumnConstraints hgrow="ALWAYS" percentWidth="20.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
+   <top>
 
-            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="437.0" text="User Management" textAlignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
-                <font>
-                    <Font name="System Bold" size="25.0" />
-                </font>
-            </Label>
-            <JFXButton alignment="CENTER" contentDisplay="CENTER" defaultButton="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                <graphic>
-                    <MaterialIconView glyphName="PERSON_ADD">
-                        <font>
-                            <Font size="38.0" />
-                        </font>
-                    </MaterialIconView>
-                </graphic>
-                <font>
-                    <Font size="28.0" />
-                </font>
-            </JFXButton>
-            <padding>
-                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
-            </padding>
-        </GridPane>
-    </top>
+         <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="758.0" text="User Management" textAlignment="CENTER" textFill="#ff9800" BorderPane.alignment="CENTER">
+             <font>
+                 <Font name="Segoe UI Bold" size="36.0" />
+             </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="0.5960784554481506" />
+               </color>
+            </DropShadow>
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+         </Label>
+   </top>
 
 </BorderPane>

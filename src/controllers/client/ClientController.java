@@ -188,7 +188,7 @@ public class ClientController implements Initializable {
     private void btnLogout() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("");
-        alert.setHeaderText("Bạn có chắc muốn thoát");
+        alert.setHeaderText("Are you sure to log out?");
 
         ButtonType btnTypeYes = new ButtonType("Yes", ButtonBar.ButtonData.YES);
         ButtonType btnTypeNo = new ButtonType("No", ButtonBar.ButtonData.NO);
