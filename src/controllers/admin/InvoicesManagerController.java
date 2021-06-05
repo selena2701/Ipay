@@ -1,13 +1,12 @@
 package controllers.admin;
 
-import database.repos.InvoicesRepo;
+import database.repos.admin.InvoicesRepo;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.Invoice;
-import models.Provider;
 
 import java.net.URL;
 import java.sql.SQLException;

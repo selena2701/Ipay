@@ -1,4 +1,4 @@
-package database.repos;
+package database.repos.admin;
 
 import models.Customer;
 import utils.DBConnection;
@@ -10,18 +10,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class UsersRepo {
+public class CustomersRepo {
 
     private ObservableList<Customer> customers = FXCollections.observableArrayList();
 
     private Connection connection = null;
 
-    public UsersRepo() throws SQLException, ClassNotFoundException {
+    public CustomersRepo() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        loadUserFromDB();
+        loadCustomersFromDB();
     }
 
-    private void loadUserFromDB() throws SQLException {
+    private void loadCustomersFromDB() throws SQLException {
         String query = "SELECT * FROM E_CUSTOMER";
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(query);
@@ -31,7 +31,7 @@ public class UsersRepo {
         connection.close();
     }
 
-    public ObservableList<Customer> getUsers() {
+    public ObservableList<Customer> getCustomers() {
         return customers;
     }
 

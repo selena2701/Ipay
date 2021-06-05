@@ -1,10 +1,8 @@
 package controllers.admin;
 
 import com.jfoenix.controls.*;
-import com.jfoenix.validation.NumberValidator;
-import com.jfoenix.validation.RequiredFieldValidator;
-import database.repos.AdminRepo;
-import database.repos.ProvidersRepo;
+import database.repos.admin.AdminRepo;
+import database.repos.admin.ProvidersRepo;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,11 +16,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 import models.Admin;
 import models.Provider;
+import utils.validators.NonEmptyValidator;
+import utils.validators.PhoneValidator;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
@@ -135,11 +134,10 @@ public class AddProviderController implements Initializable {
     }
 
     private void setValidation() {
-        nameTextField.setValidators(new RequiredFieldValidator("Name cannot be empty"));
-        phoneTextField.setValidators(new RequiredFieldValidator("Phone number cannot be empty"));
-        phoneTextField.setValidators(new NumberValidator("Phone number is invalid"));
-        addressTextField.setValidators(new RequiredFieldValidator("Address cannot be empty"));
-        adminNameComboBox.setValidators(new RequiredFieldValidator("You must specify the admin promoted"));
+        nameTextField.setValidators(new NonEmptyValidator("Name cannot be empty"));
+        phoneTextField.setValidators(new PhoneValidator());
+        addressTextField.setValidators(new NonEmptyValidator("Address cannot be empty"));
+        adminNameComboBox.setValidators(new NonEmptyValidator("You must specify the admin promoted"));
     }
 
     private int getAdminIndexInComboBox(String id) {

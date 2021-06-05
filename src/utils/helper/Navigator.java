@@ -22,7 +22,6 @@ public class Navigator {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(Navigator.class.getResource("./../../views/" + destination.getDestination())));
         stage.setScene(new Scene(root));
-
         currentStage.close();
         stage.show();
     }

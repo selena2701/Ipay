@@ -1,4 +1,4 @@
-package database.repos;
+package database.repos.admin;
 
 import utils.DBConnection;
 import javafx.collections.FXCollections;

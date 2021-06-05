@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<AnchorPane maxHeight="800.0" maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
+            prefWidth="1280.0" stylesheets="@../css/client.css" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientController">
+    <VBox prefHeight="800.0" prefWidth="1280.0">
+        <HBox fx:id="layout0" prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: WHITE;"
+              styleClass="shadow">
+            <Pane prefHeight="44.0" prefWidth="221.0" style="-fx-background-color: #FFB300;">
+                <ImageView fitHeight="59.0" fitWidth="74.0" layoutX="-4.0" layoutY="-5.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <Image url="@images/Picsart.jpg"/>
+                </ImageView>
+                <Text layoutX="46.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EPay">
+                    <font>
+                        <Font name="Cooper Black" size="25.0"/>
+                    </font>
+                </Text>
+            </Pane>
+            <Label fx:id="labelGreeting" prefHeight="56.0" prefWidth="357.0" style="-fx-background-color: WHITE;"
+                   text="Hi, ">
+                <font>
+                    <Font name="Agency FB Bold" size="36.0"/>
+                </font>
+            </Label>
+        </HBox>
+        <HBox prefHeight="959.0" prefWidth="1280.0">
+            <VBox fx:id="layout1" prefHeight="756.0" prefWidth="262.0">
+                <JFXButton fx:id="btnHome" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#btnHome"
+                           prefHeight="64.0" prefWidth="267.0" style="-fx-background-color: #FFB300;"
+                           styleClass="sidebarItem" text="Home">
+                    <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@images/home.ico"/>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="Agency FB" size="30.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="btnAccount" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="100.0"
+                           mnemonicParsing="false" onAction="#btnAccount" prefHeight="64.0" prefWidth="266.0"
+                           style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="Profile">
+                    <font>
+                        <Font name="Agency FB" size="30.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@images/user.ico"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="btnBill" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="164.0"
+                           mnemonicParsing="false"
+                           onAction="#btnBill" prefHeight="64.0" prefWidth="291.0"
+                           style="-fx-background-color: #FFB300;"
+                           styleClass="sidebarItem" text="Invoice">
+                    <font>
+                        <Font name="Agency FB" size="30.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@images/draft.ico"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="btnReport" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="228.0"
+                           mnemonicParsing="false" onAction="#btnReport" prefHeight="64.0" prefWidth="274.0"
+                           style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="Statistic">
+                    <font>
+                        <Font name="Agency FB" size="30.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@images/report.ico"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="btnNotification" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="292.0"
+                           mnemonicParsing="false" onAction="#btnNotification" prefHeight="64.0" prefWidth="286.0"
+                           style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="Notification">
+                    <font>
+                        <Font name="Agency FB" size="30.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@images/bell.ico"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="btnLogout" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="266.0"
+                           mnemonicParsing="false" onAction="#btnLogout" prefHeight="64.0" prefWidth="286.0"
+                           style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="LogOut">
+                    <font>
+                        <Font name="Agency FB" size="30.0"/>
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@images/logout.jpg"/>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+            </VBox>
+            <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0">
+                <StackPane fx:id="main" prefHeight="756.0" prefWidth="1060.0">
+                    <VBox fx:id="home" prefHeight="655.0" prefWidth="1074.0">
+                        <StackPane prefHeight="347.0" prefWidth="1074.0">
+                            <Pane fx:id="paneHome" prefHeight="378.0" prefWidth="1060.0"
+                                  style="-fx-background-color: #939597;">
+                                <VBox alignment="CENTER" layoutX="720.0" layoutY="10.0" prefHeight="329.0"
+                                      prefWidth="317.0" spacing="10.0" style="-fx-background-color: white;">
+                                    <children>
+                                        <JFXButton fx:id="btnCalendar" alignment="CENTER" contentDisplay="TOP"
+                                                   mnemonicParsing="false" onAction="#btnCalendar" prefHeight="150.0"
+                                                   prefWidth="289.0"
+                                                   style="-fx-background-color: #78909C; -fx-background-radius: 15;"
+                                                   text="Scheduling">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                            <styleClass>
+                                                <String fx:value="container"/>
+                                                <String fx:value="btnService"/>
+                                            </styleClass>
+                                            <graphic>
+                                                <ImageView fitHeight="70.0" fitWidth="76.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <Image url="@images/calendarrr.jpg"/>
+                                                </ImageView>
+                                            </graphic>
+                                            <font>
+                                                <Font name="Agency FB Bold" size="40.0"/>
+                                            </font>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnCalculator" alignment="CENTER" contentDisplay="TOP"
+                                                   mnemonicParsing="false" onAction="#btnCalculator" prefHeight="118.0"
+                                                   prefWidth="291.0"
+                                                   style="-fx-background-color: #78909C; -fx-background-radius: 15;"
+                                                   text="Calculate">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                            <styleClass>
+                                                <String fx:value="btnService"/>
+                                                <String fx:value="container"/>
+                                            </styleClass>
+                                            <font>
+                                                <Font name="Agency FB Bold" size="40.0"/>
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="55.0" fitWidth="70.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <Image url="@images/calculatorr.jpg"/>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                    <padding>
+                                        <Insets top="5.0"/>
+                                    </padding>
+                                </VBox>
+                                <Pane layoutX="28.0" layoutY="10.0" prefHeight="329.0" prefWidth="651.0"
+                                      style="-fx-background-color: white;">
+                                    <Pane layoutX="92.0" layoutY="173.0" prefHeight="140.0" prefWidth="472.0"
+                                          style="-fx-background-color: #78909C;">
+                                        <styleClass>
+                                            <String fx:value="shadow"/>
+                                            <String fx:value="container"/>
+                                        </styleClass>
+                                        <Label layoutX="9.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0"
+                                               text="New Invoice" textFill="#030303">
+                                            <font>
+                                                <Font name="Agency FB Bold" size="50.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="15.0" layoutY="72.0" prefHeight="56.0" prefWidth="170.0"
+                                               text="04/2021">
+                                            <font>
+                                                <Font name="Agency FB" size="42.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label alignment="CENTER_RIGHT" layoutX="258.0" layoutY="74.0" prefHeight="35.0"
+                                               prefWidth="186.0" text="406,502 vnd">
+                                            <font>
+                                                <Font name="Agency FB" size="42.0"/>
+                                            </font>
+                                        </Label>
+                                    </Pane>
+                                    <Pane layoutX="92.0" layoutY="14.0" prefHeight="140.0" prefWidth="472.0"
+                                          style="-fx-border-radius: 100; -fx-background-color: #78909C;">
+                                        <styleClass>
+                                            <String fx:value="shadow"/>
+                                            <String fx:value="container"/>
+                                        </styleClass>
+                                        <Label layoutX="20.0" layoutY="2.0" prefHeight="60.0" prefWidth="240.0"
+                                               text="Total Invoices" textFill="#0d0d0d">
+                                            <font>
+                                                <Font name="Agency FB Bold" size="50.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="270.0"
+                                               layoutY="-2.0" prefHeight="37.0" prefWidth="179.0"
+                                               style="-fx-text-alignment: right;" text="18" textFill="#0d0d0d">
+                                            <font>
+                                                <Font name="Agency FB" size="50.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="22.0" layoutY="72.0" prefHeight="60.0" prefWidth="156.0"
+                                               text="Total" textFill="#0d0d0d">
+                                            <font>
+                                                <Font name="Agency FB Bold" size="50.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label alignment="CENTER_RIGHT" layoutX="195.0" layoutY="69.0" prefHeight="60.0"
+                                               prefWidth="258.0" text="16.000.000vnd" textFill="#0d0d0d">
+                                            <font>
+                                                <Font name="Agency FB" size="50.0"/>
+                                            </font>
+                                        </Label>
+                                    </Pane>
+                                </Pane>
+                            </Pane>
+                        </StackPane>
+                        <StackPane fx:id="tabClone" alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="1074.0">
+                            <Label fx:id="tabCloneHome" prefHeight="46.0" prefWidth="221.0" text="   Announcement">
+                                <font>
+                                    <Font name="Agency FB Bold" size="37.0"/>
+                                </font>
+                            </Label>
+                        </StackPane>
+                        <StackPane fx:id="service" prefHeight="359.0" prefWidth="1060.0">
+                            <TableView fx:id="homescheduling" prefHeight="287.0" prefWidth="1017.0" visible="false">
+                                <columns>
+                                    <TableColumn prefWidth="50.0" text="C1"/>
+                                    <TableColumn prefWidth="119.0" text="C2"/>
+                                    <TableColumn prefWidth="333.0" text="Column X"/>
+                                </columns>
+                            </TableView>
+                            <JFXListView fx:id="homeInform" prefHeight="200.0" prefWidth="200.0"
+                                         style="-fx-background-color: #939597;"/>
+                            <Pane fx:id="homecalculate" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                <Label layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="249.0"
+                                       text="Enter the parameters">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="41.0" layoutY="65.0" text="From - to ">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="41.0" layoutY="103.0" text="Total Power Consumption (kWh)">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="41.0" layoutY="141.0" text="Số hộ dùng điện (hộ)">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="433.0" layoutY="14.0" prefHeight="43.0" prefWidth="377.0"
+                                       text="Instructions for reading parameters" textFill="#0055f0">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Label>
+                                <DatePicker layoutX="433.0" layoutY="65.0"/>
+                                <DatePicker layoutX="691.0" layoutY="65.0"/>
+                                <JFXTextField layoutX="433.0" layoutY="103.0"/>
+                                <JFXTextField layoutX="433.0" layoutY="141.0"/>
+                                <JFXButton layoutX="433.0" layoutY="188.0" mnemonicParsing="false" prefHeight="31.0"
+                                           prefWidth="186.0" text="Calculate"/>
+                            </Pane>
+                        </StackPane>
+                    </VBox>
+                    <StackPane fx:id="notification" prefHeight="150.0" prefWidth="200.0" visible="false">
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                            <TableView fx:id="tableNotification" layoutX="30.0" layoutY="37.0" prefHeight="644.0"
+                                       prefWidth="806.0" styleClass="tblview">
+                                <columns>
+                                    <TableColumn fx:id="no_id" prefWidth="56.0" text="No_id"/>
+                                    <TableColumn fx:id="date" prefWidth="161.0" text="Date"/>
+                                    <TableColumn fx:id="detail" prefWidth="587.0" text="Detail"/>
+                                </columns>
+                            </TableView>
+                            <JFXButton layoutX="905.0" layoutY="37.0" mnemonicParsing="false"
+                                       style="-fx-background-color: #ec5252;" text="Reload" textFill="WHITE">
+                                <font>
+                                    <Font size="24.0"/>
+                                </font>
+                            </JFXButton>
+                            <JFXButton layoutX="905.0" layoutY="108.0" mnemonicParsing="false" prefHeight="51.0"
+                                       prefWidth="105.0" style="-fx-background-color: #ec5252;" text="Detail"
+                                       textFill="WHITE">
+                                <font>
+                                    <Font size="24.0"/>
+                                </font>
+                            </JFXButton>
+                        </Pane>
+                    </StackPane>
+                    <AnchorPane fx:id="reports" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <LineChart fx:id="lineChart" layoutX="21.0" layoutY="158.0" legendVisible="false"
+                                   styleClass="shadow">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT"/>
+                            </yAxis>
+                        </LineChart>
+                        <BarChart fx:id="barChart" layoutX="536.0" layoutY="158.0" legendVisible="false"
+                                  styleClass="shadow">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT"/>
+                            </yAxis>
+                        </BarChart>
+                        <Label layoutX="553.0" layoutY="93.0" text="Consume">
+                            <font>
+                                <Font size="36.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="35.0" layoutY="93.0" text="Total">
+                            <font>
+                                <Font size="36.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                    <VBox fx:id="account" prefHeight="200.0" prefWidth="100.0" visible="false">
+                        <TabPane prefHeight="756.0" prefWidth="1060.0" tabClosingPolicy="UNAVAILABLE">
+                            <Tab text="Profile">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <JFXTextField fx:id="txtFullName" layoutX="161.0" layoutY="49.0" prefHeight="46.0"
+                                                  prefWidth="709.0" promptText="Full Name"/>
+                                    <JFXTextField fx:id="txtNumber" layoutX="161.0" layoutY="179.0" prefHeight="46.0"
+                                                  prefWidth="709.0" promptText="Phone"/>
+                                    <DatePicker fx:id="dpBirthday" layoutX="571.0" layoutY="245.0" prefHeight="43.0"
+                                                prefWidth="299.0"/>
+                                    <JFXTextField fx:id="txtAddress" layoutX="161.0" layoutY="312.0" prefHeight="46.0"
+                                                  prefWidth="709.0" promptText="Address"/>
+                                    <JFXTextField fx:id="txtDateRegister" editable="false" layoutX="161.0"
+                                                  layoutY="507.0"
+                                                  prefHeight="46.0" prefWidth="709.0" promptText="Date Register"/>
+                                    <JFXTextField fx:id="txtNationalID" layoutX="161.0" layoutY="377.0"
+                                                  prefHeight="46.0"
+                                                  prefWidth="709.0" promptText="National ID"/>
+                                    <JFXTextField fx:id="txtID" layoutX="161.0" layoutY="115.0" prefHeight="46.0"
+                                                  prefWidth="709.0" promptText="ID"/>
+                                    <JFXButton layoutX="467.0" layoutY="644.0" mnemonicParsing="false"
+                                               style="-fx-background-color: #ec5252;" text="Save" textFill="WHITE">
+                                        <font>
+                                            <Font size="24.0"/>
+                                        </font>
+                                    </JFXButton>
+                                    <JFXRadioButton fx:id="rBtnMale" layoutX="161.0" layoutY="256.0"
+                                                    mnemonicParsing="false" text="Male">
+                                        <toggleGroup>
+                                            <ToggleGroup fx:id="gender"/>
+                                        </toggleGroup>
+                                    </JFXRadioButton>
+                                    <JFXRadioButton fx:id="rBtnFemale" layoutX="254.0" layoutY="256.0"
+                                                    mnemonicParsing="false" text="Female" toggleGroup="$gender"/>
+                                    <JFXRadioButton fx:id="rBtnOrther" layoutX="351.0" layoutY="256.0"
+                                                    mnemonicParsing="false" text="Orther" toggleGroup="$gender"/>
+                                    <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="59.0" prefHeight="27.0"
+                                           prefWidth="80.0" text="Full Name"/>
+                                    <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="189.0" prefHeight="27.0"
+                                           prefWidth="64.0" text="Number"/>
+                                    <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="125.0" prefHeight="27.0"
+                                           prefWidth="64.0" text="ID"/>
+                                    <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="253.0" prefHeight="27.0"
+                                           prefWidth="64.0" text="Gender"/>
+                                    <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="322.0" prefHeight="27.0"
+                                           prefWidth="64.0" text="Address"/>
+                                    <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="387.0" prefHeight="27.0"
+                                           prefWidth="80.0" text="National ID"/>
+                                    <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="453.0" prefHeight="27.0"
+                                           prefWidth="64.0" text="Region"/>
+                                    <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="517.0" prefHeight="27.0"
+                                           prefWidth="94.0" text="Date Register"/>
+                                    <Label alignment="CENTER_RIGHT" layoutX="476.0" layoutY="253.0" prefHeight="27.0"
+                                           prefWidth="64.0" text="Birthday"/>
+                                    <JFXComboBox fx:id="cbRegion" layoutX="161.0" layoutY="443.0" prefHeight="46.0"
+                                                 prefWidth="708.0" promptText="Region"/>
+                                </AnchorPane>
+                            </Tab>
+                            <Tab text="Account">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <JFXTextField fx:id="txtUsername" layoutX="161.0" layoutY="50.0" prefHeight="46.0"
+                                                  prefWidth="709.0" promptText="Username"/>
+                                    <Separator layoutY="154.0" prefHeight="3.0" prefWidth="1060.0"/>
+                                    <JFXButton layoutX="391.0" layoutY="532.0" mnemonicParsing="false"
+                                               style="-fx-background-color: #ec5252;" text="Change Password"
+                                               textFill="WHITE">
+                                        <font>
+                                            <Font size="24.0"/>
+                                        </font>
+                                    </JFXButton>
+                                    <Separator layoutY="475.0" prefHeight="3.0" prefWidth="1060.0"/>
+                                    <JFXPasswordField fx:id="pwfCurrentPassword" layoutX="161.0" layoutY="222.0"
+                                                      prefHeight="47.0" prefWidth="708.0"
+                                                      promptText="Enter Current Password"/>
+                                    <JFXPasswordField fx:id="pwfNewPassword" layoutX="161.0" layoutY="289.0"
+                                                      prefHeight="47.0" prefWidth="708.0"
+                                                      promptText="Enter New Password"/>
+                                    <JFXPasswordField fx:id="pwfRetypePassword" layoutX="161.0" layoutY="359.0"
+                                                      prefHeight="47.0" prefWidth="708.0"
+                                                      promptText="Re-type New Password"/>
+                                </AnchorPane>
+                            </Tab>
+                            <Tab text="Payment method">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <TableView fx:id="tblCreditCard" layoutX="26.0" layoutY="44.0" prefHeight="555.0"
+                                               prefWidth="753.0">
+                                        <columns>
+                                            <TableColumn fx:id="tblColumnCardHolderName" prefWidth="180.0"
+                                                         text="CardHolderName"/>
+                                            <TableColumn fx:id="tblColumnAccountNumber" prefWidth="194.0"
+                                                         text="AccountNumber"/>
+                                            <TableColumn fx:id="tblColumnBank" prefWidth="179.0" text="Bank"/>
+                                            <TableColumn fx:id="tblColumnStatus" prefWidth="199.0" text="Status"/>
+                                        </columns>
+                                    </TableView>
+                                    <JFXButton fx:id="btnAddCredit" layoutX="836.0" layoutY="44.0"
+                                               mnemonicParsing="false"
+                                               onAction="#btnAddCredit" prefWidth="156.0"
+                                               style="-fx-background-color: #ec5252;" text="Add Credit"
+                                               textFill="WHITE">
+                                        <font>
+                                            <Font size="24.0"/>
+                                        </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnSetDefaultCredit" layoutX="836.0" layoutY="186.0"
+                                               mnemonicParsing="false" prefWidth="156.0"
+                                               style="-fx-background-color: #ec5252;" text="Set Default"
+                                               textFill="WHITE">
+                                        <font>
+                                            <Font size="24.0"/>
+                                        </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnRemoveCredit" layoutX="836.0" layoutY="112.0"
+                                               mnemonicParsing="false" prefWidth="156.0"
+                                               style="-fx-background-color: #ec5252;" text="Remove" textFill="WHITE">
+                                        <font>
+                                            <Font size="24.0"/>
+                                        </font>
+                                    </JFXButton>
+                                </AnchorPane>
+                            </Tab>
+                        </TabPane>
+                    </VBox>
+                    <Pane fx:id="bill" prefHeight="200.0" prefWidth="200.0" visible="false">
+                        <Pane layoutX="1.0" layoutY="283.0" prefHeight="473.0" prefWidth="1060.0">
+                            <Label layoutX="21.0" layoutY="14.0" prefHeight="43.0" prefWidth="397.0" text="Details">
+                                <font>
+                                    <Font size="24.0"/>
+                                </font>
+                            </Label>
+                            <Label layoutX="21.0" layoutY="75.0" text="ELEC_BILL_ID">
+                                <font>
+                                    <Font size="14.0"/>
+                                </font>
+                            </Label>
+                            <JFXTextField fx:id="idText" layoutX="21.0" layoutY="100.0"/>
+                            <Label layoutX="21.0" layoutY="135.0" text="PreviousValue">
+                                <font>
+                                    <Font size="14.0"/>
+                                </font>
+                            </Label>
+                            <JFXTextField fx:id="previousValue" layoutX="21.0" layoutY="160.0"/>
+                            <JFXTextField fx:id="currentValue" layoutX="21.0" layoutY="225.0"/>
+                            <Label layoutX="21.0" layoutY="200.0" text="CurrentValue">
+                                <font>
+                                    <Font size="14.0"/>
+                                </font>
+                            </Label>
+                            <Label layoutX="230.0" layoutY="75.0" text="FromDate">
+                                <font>
+                                    <Font size="14.0"/>
+                                </font>
+                            </Label>
+                            <JFXTextField fx:id="fromDate" layoutX="231.0" layoutY="100.0"/>
+                            <Label layoutX="231.0" layoutY="135.0" text="ToDate">
+                                <font>
+                                    <Font size="14.0"/>
+                                </font>
+                            </Label>
+                            <JFXTextField fx:id="toDate" layoutX="231.0" layoutY="160.0"/>
+                            <JFXTextField fx:id="electricityType" layoutX="231.0" layoutY="225.0"/>
+                            <Label layoutX="231.0" layoutY="200.0" text="Electricity_Type">
+                                <font>
+                                    <Font size="14.0"/>
+                                </font>
+                            </Label>
+                            <JFXTextField fx:id="consumeValue" layoutX="439.0" layoutY="100.0"/>
+                            <Label layoutX="439.0" layoutY="75.0" text="ConsumeValue">
+                                <font>
+                                    <Font size="14.0"/>
+                                </font>
+                            </Label>
+                            <Label layoutX="439.0" layoutY="135.0" text="VAT">
+                                <font>
+                                    <Font size="14.0"/>
+                                </font>
+                            </Label>
+                            <JFXTextField fx:id="VAT" layoutX="439.0" layoutY="160.0"/>
+                            <Label layoutX="439.0" layoutY="200.0" text="Total">
+                                <font>
+                                    <Font size="14.0"/>
+                                </font>
+                            </Label>
+                            <JFXTextField fx:id="total" layoutX="439.0" layoutY="225.0"/>
+                            <JFXButton fx:id="checkin" layoutX="874.0" layoutY="329.0" mnemonicParsing="false"
+                                       prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #ec5252;"
+                                       text="Payment" textFill="WHITE" visible="false">
+                                <font>
+                                    <Font size="24.0"/>
+                                </font>
+                                <styleClass>
+                                    <String fx:value="btn"/>
+                                    <String fx:value="container"/>
+                                </styleClass>
+                            </JFXButton>
+                        </Pane>
+                        <TableView fx:id="tableBill" prefHeight="282.0" prefWidth="1060.0">
+                            <columns>
+                                <TableColumn fx:id="idColumn" prefWidth="105.0" text="ELEC_BILL_ID"/>
+                                <TableColumn fx:id="timeColumn" prefWidth="155.0" text="Period"/>
+                                <TableColumn fx:id="valueColumn" prefWidth="489.0" text="Total"/>
+                                <TableColumn fx:id="status" prefWidth="309.0" text="Status"/>
+                            </columns>
+                        </TableView>
+                        <Pane fx:id="slider" layoutX="751.0" prefHeight="756.0" prefWidth="317.0"
+                              style="-fx-background-color: #343434;">
+                            <Label layoutX="29.0" layoutY="50.0" text="PAYMENT" textFill="WHITE">
+                                <font>
+                                    <Font size="32.0"/>
+                                </font>
+                            </Label>
+                            <JFXButton layoutX="29.0" layoutY="151.0" mnemonicParsing="false" prefHeight="58.0"
+                                       prefWidth="80.0" style="-fx-background-color: #343434;">
+                                <graphic>
+                                    <ImageView fitHeight="44.0" fitWidth="55.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@images/vcb.jpg"/>
+                                    </ImageView>
+                                </graphic>
+                                <styleClass>
+                                    <String fx:value="btn"/>
+                                    <String fx:value="container"/>
+                                </styleClass>
+                            </JFXButton>
+                            <JFXButton layoutX="29.0" layoutY="220.0" mnemonicParsing="false" prefHeight="58.0"
+                                       prefWidth="80.0" style="-fx-background-color: #343434;">
+                                <graphic>
+                                    <ImageView fitHeight="56.0" fitWidth="101.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@images/sacombank.jpg"/>
+                                    </ImageView>
+                                </graphic>
+                                <styleClass>
+                                    <String fx:value="btn"/>
+                                    <String fx:value="container"/>
+                                </styleClass>
+                            </JFXButton>
+                            <JFXButton layoutX="118.0" layoutY="151.0" mnemonicParsing="false" prefHeight="58.0"
+                                       prefWidth="80.0" style="-fx-background-color: #343434;">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="95.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@images/dongabank.jpg"/>
+                                    </ImageView>
+                                </graphic>
+                                <styleClass>
+                                    <String fx:value="btn"/>
+                                    <String fx:value="container"/>
+                                </styleClass>
+                            </JFXButton>
+                            <JFXTextField fx:id="txtInvoiceCardHolderName" layoutX="29.0" layoutY="311.0"
+                                          prefHeight="53.0"
+                                          prefWidth="270.0" promptText="Cardholder Name"
+                                          style="-fx-background-color: #343434;" styleClass="txtfield"/>
+                            <JFXTextField fx:id="txtInvoiceCardNumber" layoutX="29.0" layoutY="395.0" prefHeight="53.0"
+                                          prefWidth="270.0" promptText="CardNumber"
+                                          style="-fx-background-color: #343434;"
+                                          styleClass="txtfield"/>
+                            <JFXTextField fx:id="txtInvoiceAccountNumber" layoutX="27.0" layoutY="491.0"
+                                          prefHeight="53.0"
+                                          prefWidth="270.0" promptText="Account Number"
+                                          style="-fx-background-color: #343434;" styleClass="txtfield"/>
+                            <JFXButton fx:id="checkout" layoutX="154.0" layoutY="581.0" mnemonicParsing="false"
+                                       prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #343434;"
+                                       text="Checkout" textFill="WHITE">
+                                <font>
+                                    <Font size="24.0"/>
+                                </font>
+                                <styleClass>
+                                    <String fx:value="btn"/>
+                                    <String fx:value="container"/>
+                                </styleClass>
+                                <cursor>
+                                    <Cursor fx:constant="HAND"/>
+                                </cursor>
+                            </JFXButton>
+                        </Pane>
+                    </Pane>
+                </StackPane>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>

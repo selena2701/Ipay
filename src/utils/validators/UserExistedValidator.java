@@ -6,7 +6,6 @@ import de.jensd.fx.glyphs.materialicons.MaterialIcon;
 import de.jensd.fx.glyphs.materialicons.MaterialIconView;
 import javafx.scene.Node;
 import javafx.scene.control.TextInputControl;
-import utils.exceptions.UserExistsException;
 
 import java.sql.SQLException;
 

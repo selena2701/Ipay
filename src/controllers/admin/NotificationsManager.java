@@ -1,7 +1,7 @@
 package controllers.admin;
 
 import com.jfoenix.controls.JFXButton;
-import database.repos.NotificationsRepo;
+import database.repos.admin.NotificationsRepo;
 import javafx.beans.binding.Bindings;
 import javafx.event.Event;
 import javafx.fxml.FXML;

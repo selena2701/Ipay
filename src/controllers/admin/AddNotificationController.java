@@ -1,6 +1,6 @@
 package controllers.admin;
 
-import database.repos.NotificationsRepo;
+import database.repos.admin.NotificationsRepo;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

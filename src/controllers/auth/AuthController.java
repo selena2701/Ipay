@@ -1,6 +1,9 @@
 package controllers.auth;
 
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import database.authAPI.Authenticate;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -17,6 +20,7 @@ import javafx.util.StringConverter;
 import models.Customer;
 import models.Region;
 import utils.exceptions.UserExistsException;
+import utils.helper.DataHolder;
 import utils.helper.Navigator;
 import utils.helper.NavigatorDetail;
 import utils.validators.NonEmptyValidator;
@@ -170,7 +174,10 @@ public class AuthController implements Initializable {
             //TODO Navigate to appropriate screen
 
             try {
-                Navigator.navigate((Stage) mainPane.getScene().getWindow(), new NavigatorDetail("admin/admin-home-screen.fxml", "Admin Screen"));
+                NavigatorDetail detail = new NavigatorDetail(isCorrectUser ? "admin/admin-home-screen.fxml" : "client/client.fxml");
+                detail.setTitle(isCorrectUser ? "Admin" : "Customer");
+                DataHolder.getINSTANCE().setUserName(loginUsername.getText());
+                Navigator.navigate((Stage) mainPane.getScene().getWindow(), detail);
             } catch (IOException e) {
                 e.printStackTrace();
             }

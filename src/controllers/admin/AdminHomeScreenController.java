@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import utils.helper.DataHolder;
 
 import java.io.IOException;
 import java.net.URL;
@@ -38,6 +39,8 @@ public class AdminHomeScreenController implements Initializable {
     private final Node providersNode;
     private final Node notificationsNode;
 
+    private String adminUsername;
+
     public AdminHomeScreenController() throws IOException {
         FXMLLoader usersLoader = new FXMLLoader(getClass().getResource(USERS_MANAGER));
         FXMLLoader providersLoader = new FXMLLoader(getClass().getResource(PROVIDERS_MANAGER));
@@ -46,10 +49,13 @@ public class AdminHomeScreenController implements Initializable {
         usersNode = usersLoader.load();
         providersNode = providersLoader.load();
         notificationsNode = notificationsLoader.load();
+
+        this.adminUsername = DataHolder.getINSTANCE().getUserName();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println(adminUsername);
         InitListeners();
         setContent(usersNode);
     }

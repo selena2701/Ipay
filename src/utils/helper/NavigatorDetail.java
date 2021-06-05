@@ -12,8 +12,8 @@ public class NavigatorDetail {
     private double height = 720;
 
 
-    public NavigatorDetail() {
-
+    public NavigatorDetail(String destination) {
+        this.destination = destination;
     }
 
     public NavigatorDetail(String destination, String title, double width, double height) {

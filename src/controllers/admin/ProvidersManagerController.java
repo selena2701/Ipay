@@ -1,7 +1,7 @@
 package controllers.admin;
 
-import database.repos.AdminRepo;
-import database.repos.ProvidersRepo;
+import database.repos.admin.AdminRepo;
+import database.repos.admin.ProvidersRepo;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
