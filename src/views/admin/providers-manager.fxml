@@ -38,8 +38,11 @@
                </DropShadow>
             </effect>
             <GridPane.margin>
-               <Insets top="15.0" />
+               <Insets bottom="10.0" top="15.0" />
             </GridPane.margin>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
             </Label>
             <JFXButton alignment="CENTER" contentDisplay="CENTER" defaultButton="true" onMouseClicked="#newProviderOnClick" text="   " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                 <graphic>
@@ -59,9 +62,12 @@
                 <font>
                     <Font size="28.0" />
                 </font>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
             </JFXButton>
          <padding>
-            <Insets bottom="15.0" />
+            <Insets bottom="20.0" top="10.0" />
          </padding>
         </GridPane>
     </top>
