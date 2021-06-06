@@ -57,7 +57,7 @@ public class NotificationsRepo {
         statement.setObject(1, notification.getDatePublished());
         statement.setString(2, notification.getEditedBy());
         statement.setString(3, notification.getDescription());
-        statement.setString(4, notification.getDescription());
+        statement.setString(4, notification.getId());
         statement.execute();
         connection.close();
         loadNotificationsFromDB();
