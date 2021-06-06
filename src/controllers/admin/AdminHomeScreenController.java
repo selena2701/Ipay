@@ -11,6 +11,7 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import utils.helper.DataHolder;
@@ -33,7 +34,7 @@ public class AdminHomeScreenController implements Initializable {
     private ImageView iconImageView;
 
     @FXML
-    private StackPane mainroot;
+    private GridPane mainroot;
 
     @FXML
     private JFXButton usersButton;

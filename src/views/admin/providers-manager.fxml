@@ -26,7 +26,7 @@
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
-            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Providers Manager" textFill="#ff9800">
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Providers Management" textFill="#ff9800">
                 <font>
                     <Font name="Segoe UI Bold" size="36.0" />
                 </font>

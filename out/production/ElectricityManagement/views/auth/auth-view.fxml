@@ -9,9 +9,9 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane fx:id="mainPane" prefHeight="720.0" prefWidth="1080.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.auth.AuthController">
+<StackPane fx:id="mainPane" prefHeight="800.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.auth.AuthController">
     <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login-bg">
-        <ImageView fitHeight="485.0" fitWidth="452.0" layoutX="83.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="485.0" fitWidth="452.0" layoutX="179.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
             <effect>
                 <DropShadow spread="0.3">
                     <color>
@@ -21,7 +21,7 @@
             </effect>
             <Image url="@PicsArt_05-09-12.29.09.jpg" />
         </ImageView>
-        <AnchorPane layoutX="509.0" layoutY="50.0" prefHeight="622.0" prefWidth="495.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+        <AnchorPane layoutX="605.0" layoutY="89.0" prefHeight="622.0" prefWidth="495.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
             <effect>
                 <DropShadow>
                     <color>

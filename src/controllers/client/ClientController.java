@@ -42,7 +42,9 @@ public class ClientController implements Initializable {
 
 
     @FXML
-    private StackPane main, notification, service;
+    private StackPane main;
+    @FXML
+    private StackPane notification, service;
     @FXML
     private VBox home;
     @FXML
