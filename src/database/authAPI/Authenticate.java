@@ -42,7 +42,7 @@ public class Authenticate {
 
     private static void addUserToAccountTable(String username, String rawPassword) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.connect();
-        PreparedStatement addUserToAccountStatement = connection.prepareStatement("INSERT INTO USER_ACCOUNT VALUES (?,?,1)");
+        PreparedStatement addUserToAccountStatement = connection.prepareStatement("INSERT INTO USER_ACCOUNT VALUES (?,?,0)");
         addUserToAccountStatement.setString(1, username);
         addUserToAccountStatement.setString(2, Encryption.encrypt(rawPassword));
         addUserToAccountStatement.executeUpdate();
