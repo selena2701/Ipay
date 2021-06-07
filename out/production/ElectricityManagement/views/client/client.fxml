@@ -13,9 +13,9 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../css/client.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientController">
-    <VBox prefHeight="800.0" prefWidth="1280.0">
-        <HBox fx:id="layout0" mouseTransparent="true" prefHeight="44.0" prefWidth="1080.0" style="-fx-background-color: WHITE;" styleClass="shadow">
+<AnchorPane maxHeight="800.0" maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientController">
+    <VBox prefHeight="800.0" prefWidth="1280.0" spacing="5.0">
+        <HBox fx:id="layout0" mouseTransparent="true" prefHeight="44.0" prefWidth="1080.0" style="-fx-background-color: #FFB300;" styleClass="shadow">
             <Pane prefHeight="44.0" prefWidth="221.0" style="-fx-background-color: #FFB300;">
                 <ImageView fitHeight="70.0" fitWidth="75.0" layoutX="-4.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@images/Picsart.jpg" />
@@ -29,14 +29,17 @@
                <Insets />
             </opaqueInsets>
             </Pane>
-            <Label fx:id="labelGreeting" prefHeight="56.0" prefWidth="357.0" style="-fx-background-color: WHITE;" text="Hi, ">
+            <Label fx:id="labelGreeting" prefHeight="44.0" prefWidth="1051.0" style="-fx-background-color: # #FFB300;" text="Hi, ">
                 <font>
                     <Font name="Agency FB Bold" size="36.0" />
                 </font>
             </Label>
+         <effect>
+            <DropShadow />
+         </effect>
         </HBox>
         <HBox prefHeight="754.0" prefWidth="1280.0">
-            <VBox fx:id="layout1" prefHeight="756.0" prefWidth="262.0">
+            <VBox fx:id="layout1" prefHeight="756.0" prefWidth="262.0" spacing="20.0">
                 <JFXButton fx:id="btnHome" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#btnHome" prefHeight="70.0" prefWidth="267.0" style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="Home">
                     <graphic>
                         <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
@@ -44,15 +47,18 @@
                         </ImageView>
                     </graphic>
                     <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB Bold" size="30.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
                 </JFXButton>
                 <JFXButton fx:id="btnAccount" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#btnAccount" prefHeight="70.0" prefWidth="266.0" style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="Profile">
                     <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB Bold" size="30.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
@@ -65,7 +71,7 @@
                 </JFXButton>
                 <JFXButton fx:id="btnBill" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="164.0" mnemonicParsing="false" onAction="#btnBill" prefHeight="70.0" prefWidth="291.0" style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="Invoice">
                     <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB Bold" size="30.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
@@ -78,7 +84,7 @@
                 </JFXButton>
                 <JFXButton fx:id="btnReport" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="228.0" mnemonicParsing="false" onAction="#btnReport" prefHeight="70.0" prefWidth="274.0" style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="Statistic">
                     <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB Bold" size="30.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
@@ -91,14 +97,14 @@
                 </JFXButton>
             <Pane fx:id="btnNotification" onMouseClicked="#btnNotification" prefHeight="70.0" prefWidth="274.0" styleClass="sidebarItem" stylesheets="@../css/client.css">
                <children>
-                  <Label layoutX="17.0" prefHeight="70.0" prefWidth="156.0" stylesheets="@../css/client.css" text="Notification">
+                  <Label layoutX="17.0" prefHeight="70.0" prefWidth="170.0" stylesheets="@../css/client.css" text="Notification">
                      <graphic>
                               <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                   <Image url="@images/bell.ico" />
                               </ImageView>
                      </graphic>
                      <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB Bold" size="30.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="37.0" layoutY="14.0" prefHeight="20.0" prefWidth="20.0" styleClass="round-lbl" stylesheets="@../css/client.css" textFill="WHITE">
@@ -113,7 +119,7 @@
             </Pane>
                 <JFXButton fx:id="btnLogout" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="70.0" prefWidth="286.0" style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="LogOut">
                     <font>
-                        <Font name="Agency FB" size="30.0" />
+                        <Font name="Agency FB Bold" size="30.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
@@ -127,9 +133,9 @@
             </VBox>
             <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0" style="-fx-background-color: #FFECB3;">
                 <StackPane fx:id="main" prefHeight="756.0" prefWidth="1060.0">
-               <HBox fx:id="home" style="-fx-background-color: #FFECB3;">
+               <HBox fx:id="home" style="-fx-background-color: #FFECB3;" visible="false">
                   <children>
-                            <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #FFECB3;" visible="false">
+                            <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #FFECB3;">
                                  <Pane layoutX="23.0" layoutY="246.0" prefHeight="140.0" prefWidth="503.0" style="-fx-background-color: #FFCA28;" stylesheets="@../css/client.css">
                                      <Label layoutX="9.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="New Invoice" textFill="#030303">
                                          <font>
@@ -220,7 +226,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor></Pane>
                             </Pane>
-                     <StackPane fx:id="service" prefHeight="755.0" prefWidth="515.0">
+                     <StackPane fx:id="service" prefHeight="755.0" prefWidth="515.0" visible="false">
                         <children>
                            <Pane fx:id="homescheduling" prefHeight="200.0" prefWidth="200.0" visible="false">
                               <children>
@@ -251,7 +257,7 @@
                                  </Pane>
                               </children>
                            </Pane>
-                           <Pane fx:id="homecalculate" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <Pane fx:id="homecalculate" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                               <children>
                                  <Label layoutX="38.0" layoutY="36.0" text="Calculated">
                                     <font>
@@ -306,15 +312,15 @@
                   </children>
                </HBox>
                     <StackPane fx:id="notification" prefHeight="150.0" prefWidth="200.0">
-                        <Pane prefHeight="200.0" prefWidth="200.0" visible="false">
-                            <TableView fx:id="tableNotification" layoutX="25.0" layoutY="78.0" prefHeight="660.0" prefWidth="1035.0" styleClass="tblview">
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                            <TableView fx:id="tableNotification" layoutX="64.0" layoutY="80.0" prefHeight="660.0" prefWidth="933.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA726;" styleClass="tblview">
                                 <columns>
-                                    <TableColumn fx:id="no_id" prefWidth="97.99999618530273" text="No_id" />
-                                    <TableColumn fx:id="date" prefWidth="142.00001525878906" text="Date" />
-                                    <TableColumn fx:id="detail" prefWidth="702.3999938964844" text="Detail" />
+                                    <TableColumn fx:id="no_id" prefWidth="97.99999618530273" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="No_id" />
+                                    <TableColumn fx:id="date" prefWidth="142.00001525878906" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Date" />
+                                    <TableColumn fx:id="detail" prefWidth="702.3999938964844" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Detail" />
                                 </columns>
                             </TableView>
-                     <HBox layoutX="25.0" layoutY="14.0" spacing="20.0">
+                     <HBox layoutX="64.0" layoutY="14.0" spacing="20.0">
                         <children>
                                   <JFXButton mnemonicParsing="false" prefHeight="56.0" prefWidth="22.0" text="  " textFill="WHITE">
                                       <font>
@@ -408,9 +414,9 @@
                      </effect>
                   </Pane>
                     </AnchorPane>
-                    <VBox fx:id="account" prefHeight="200.0" prefWidth="100.0" visible="false">
+                    <VBox fx:id="account" prefHeight="200.0" prefWidth="100.0">
                         <TabPane prefHeight="756.0" prefWidth="1060.0" tabClosingPolicy="UNAVAILABLE">
-                            <Tab text="Profile">
+                            <Tab style="-fx-background-color: #FFCC80;" text="Profile">
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <JFXTextField fx:id="txtFullName" layoutX="161.0" layoutY="49.0" prefHeight="46.0" prefWidth="709.0" promptText="Full Name" />
                                     <JFXTextField fx:id="txtNumber" layoutX="161.0" layoutY="179.0" prefHeight="46.0" prefWidth="709.0" promptText="Phone" />
@@ -443,7 +449,7 @@
                                     <JFXComboBox fx:id="cbRegion" layoutX="161.0" layoutY="443.0" prefHeight="46.0" prefWidth="708.0" promptText="Region" />
                                 </AnchorPane>
                             </Tab>
-                            <Tab text="Change Password">
+                            <Tab style="-fx-background-color: #FFCC80;" text="Change Password">
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <JFXTextField fx:id="txtUsername" layoutX="161.0" layoutY="50.0" prefHeight="46.0" prefWidth="709.0" promptText="Username" />
                                     <Separator layoutY="154.0" prefHeight="3.0" prefWidth="1060.0" />
@@ -458,29 +464,29 @@
                                     <JFXPasswordField fx:id="pwfRetypePassword" layoutX="161.0" layoutY="359.0" prefHeight="47.0" prefWidth="708.0" promptText="Re-type New Password" />
                                 </AnchorPane>
                             </Tab>
-                            <Tab text="Credit Cards">
+                            <Tab style="-fx-background-color: #FFCC80;" text="Credit Cards">
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                    <TableView fx:id="tblCreditCard" layoutX="21.0" layoutY="95.0" prefHeight="599.0" prefWidth="1043.0">
+                                    <TableView fx:id="tblCreditCard" layoutX="45.0" layoutY="96.0" prefHeight="599.0" prefWidth="969.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA726;">
                                         <columns>
-                                            <TableColumn fx:id="tblColumnCardHolderName" prefWidth="180.0" text="CardHolderName" />
-                                            <TableColumn fx:id="tblColumnAccountNumber" prefWidth="194.0" text="AccountNumber" />
-                                            <TableColumn fx:id="tblColumnBank" prefWidth="179.0" text="Bank" />
-                                            <TableColumn fx:id="tblColumnStatus" prefWidth="220.79997558593755" text="Status" />
+                                            <TableColumn fx:id="tblColumnCardHolderName" prefWidth="261.0000114440918" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="CardHolderName" />
+                                            <TableColumn fx:id="tblColumnAccountNumber" prefWidth="255.00003051757812" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="AccountNumber" />
+                                            <TableColumn fx:id="tblColumnBank" prefWidth="198.5999755859375" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Bank" />
+                                            <TableColumn fx:id="tblColumnStatus" prefWidth="255.20001220703125" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Status" />
                                         </columns>
                                     </TableView>
-                           <HBox layoutX="21.0" layoutY="22.0" prefHeight="43.0" prefWidth="367.0">
+                           <HBox layoutX="45.0" layoutY="26.0" prefHeight="52.0" prefWidth="287.0">
                               <children>
-                                          <JFXButton fx:id="btnAddCredit" mnemonicParsing="false" onAction="#btnAddCredit" prefHeight="66.0" prefWidth="112.0" text="   " textFill="WHITE">
+                                          <JFXButton fx:id="btnAddCredit" mnemonicParsing="false" onAction="#btnAddCredit" prefHeight="70.0" prefWidth="46.0" text="   " textFill="WHITE">
                                               <font>
-                                                  <Font size="24.0" />
+                                                  <Font size="1.0" />
                                               </font>
                                     <graphic>
                                        <MaterialIconView fill="#ff9800" glyphName="ADD_CIRCLE" size="50" strokeType="OUTSIDE" strokeWidth="0.0" />
                                     </graphic>
                                           </JFXButton>
-                                          <JFXButton fx:id="btnRemoveCredit" mnemonicParsing="false" prefHeight="66.0" prefWidth="97.0" text="  " textFill="WHITE">
+                                          <JFXButton fx:id="btnRemoveCredit" mnemonicParsing="false" prefHeight="49.0" prefWidth="41.0" text="  " textFill="WHITE">
                                               <font>
-                                                  <Font size="24.0" />
+                                                  <Font size="1.0" />
                                               </font>
                                     <graphic>
                                        <MaterialIconView fill="#ff9800" glyphName="DELETE" size="50" strokeType="OUTSIDE" strokeWidth="0.0" />
@@ -497,7 +503,7 @@
                             </Tab>
                         </TabPane>
                     </VBox>
-                    <Pane fx:id="bill" prefHeight="200.0" prefWidth="200.0" visible="false">
+                    <Pane fx:id="bill" prefHeight="200.0" prefWidth="200.0">
                         <Pane layoutX="1.0" layoutY="283.0" prefHeight="476.0" prefWidth="875.0">
                             <Label layoutX="21.0" layoutY="14.0" prefHeight="43.0" prefWidth="397.0" text="Details">
                                 <font>
@@ -568,12 +574,12 @@
                                 </styleClass>
                             </JFXButton>
                         </Pane>
-                        <TableView fx:id="tableBill" prefHeight="290.0" prefWidth="1060.0">
+                        <TableView fx:id="tableBill" prefHeight="290.0" prefWidth="1060.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA726;">
                             <columns>
-                                <TableColumn fx:id="idColumn" prefWidth="105.0" text="ELEC_BILL_ID" />
-                                <TableColumn fx:id="timeColumn" prefWidth="155.0" text="Period" />
-                                <TableColumn fx:id="valueColumn" prefWidth="489.0" text="Total" />
-                                <TableColumn fx:id="status" prefWidth="309.0" text="Status" />
+                                <TableColumn fx:id="idColumn" prefWidth="105.0" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="ELEC_BILL_ID" />
+                                <TableColumn fx:id="timeColumn" prefWidth="155.0" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Period" />
+                                <TableColumn fx:id="valueColumn" prefWidth="489.0" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Total" />
+                                <TableColumn fx:id="status" prefWidth="309.0" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Status" />
                             </columns>
                         </TableView>
                         <Pane fx:id="slider" layoutX="710.0" layoutY="290.0" prefHeight="448.0" prefWidth="350.0" style="-fx-background-color: #343434;">
