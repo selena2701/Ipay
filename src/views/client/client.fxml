@@ -89,19 +89,28 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </JFXButton>
-                <JFXButton fx:id="btnNotification" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="292.0" mnemonicParsing="false" onAction="#btnNotification" prefHeight="70.0" prefWidth="286.0" style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="Notification">
-                    <font>
+            <Pane fx:id="btnNotification" onMouseClicked="#btnNotification" prefHeight="70.0" prefWidth="274.0" styleClass="sidebarItem" stylesheets="@../css/client.css">
+               <children>
+                  <Label layoutX="17.0" prefHeight="70.0" prefWidth="156.0" stylesheets="@../css/client.css" text="Notification">
+                     <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                  <Image url="@images/bell.ico" />
+                              </ImageView>
+                     </graphic>
+                     <font>
                         <Font name="Agency FB" size="30.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@images/bell.ico" />
-                        </ImageView>
-                    </graphic>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </JFXButton>
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="37.0" layoutY="14.0" prefHeight="20.0" prefWidth="20.0" styleClass="round-lbl" stylesheets="@../css/client.css" text="8" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
                 <JFXButton fx:id="btnLogout" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="70.0" prefWidth="286.0" style="-fx-background-color: #FFB300;" styleClass="sidebarItem" text="LogOut">
                     <font>
                         <Font name="Agency FB" size="30.0" />
@@ -118,152 +127,185 @@
             </VBox>
             <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0">
                 <StackPane fx:id="main" prefHeight="756.0" prefWidth="1060.0">
-                    <VBox fx:id="home" prefHeight="756.0" prefWidth="980.0">
-                        <StackPane prefHeight="348.0" prefWidth="1003.0">
-                            <Pane fx:id="paneHome" prefHeight="348.0" prefWidth="998.0" style="-fx-background-color: #939597;">
-                                <VBox alignment="CENTER" layoutX="695.0" layoutY="10.0" prefHeight="329.0" prefWidth="203.0" spacing="10.0" style="-fx-background-color: #939597;">
+               <HBox fx:id="home">
+                  <children>
+                            <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #939597;">
+                                 <Pane layoutX="23.0" layoutY="246.0" prefHeight="140.0" prefWidth="503.0" style="-fx-background-color: #78909C;" stylesheets="@../css/client.css">
+                                     <Label layoutX="9.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="New Invoice" textFill="#030303">
+                                         <font>
+                                             <Font name="Agency FB Bold" size="50.0" />
+                                         </font>
+                                     </Label>
+                                     <Label layoutX="15.0" layoutY="72.0" prefHeight="56.0" prefWidth="170.0" text="04/2021">
+                                          <font>
+                                             <Font name="Agency FB" size="42.0" />
+                                         </font>
+                                     </Label>
+                                     <Label alignment="CENTER_RIGHT" layoutX="258.0" layoutY="74.0" prefHeight="35.0" prefWidth="186.0" text="406,502 vnd">
+                                         <font>
+                                             <Font name="Agency FB" size="42.0" />
+                                         </font>
+                                     </Label>
+                           <styleClass>
+                              <String fx:value="container" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                                 </Pane>
+                                 <Pane layoutX="23.0" layoutY="59.0" prefHeight="151.0" prefWidth="503.0" style="-fx-border-radius: 100; -fx-background-color: #78909C;" stylesheets="@../css/client.css">
+                                     <Label layoutX="20.0" layoutY="2.0" prefHeight="60.0" prefWidth="240.0" text="Total Invoices" textFill="#0d0d0d">
+                                         <font>
+                                             <Font name="Agency FB Bold" size="50.0" />
+                                         </font>
+                                     </Label>
+                                     <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="270.0" layoutY="-2.0" prefHeight="37.0" prefWidth="179.0" style="-fx-text-alignment: right;" text="18" textFill="#0d0d0d">
+                                         <font>
+                                             <Font name="Agency FB" size="50.0" />
+                                         </font>
+                                     </Label>
+                                     <Label layoutX="22.0" layoutY="72.0" prefHeight="60.0" prefWidth="156.0" text="Total" textFill="#0d0d0d">
+                                         <font>
+                                             <Font name="Agency FB Bold" size="50.0" />
+                                         </font>
+                                     </Label>
+                                     <Label alignment="CENTER_RIGHT" layoutX="195.0" layoutY="69.0" prefHeight="60.0" prefWidth="258.0" text="16.000.000vnd" textFill="#0d0d0d">
+                                         <font>
+                                             <Font name="Agency FB" size="50.0" />
+                                         </font>
+                                     </Label>
+                           <styleClass>
+                              <String fx:value="container" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                                 </Pane>
+                        <Pane layoutX="23.0" layoutY="423.0" onMouseClicked="#btnCalendar" prefHeight="140.0" prefWidth="240.0" style="-fx-background-color: #78909C;" stylesheets="@../css/client.css">
+                           <children>
+                              <ImageView fitHeight="89.0" fitWidth="90.0" layoutX="69.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/calendarcheck.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="53.0" layoutY="86.0" prefHeight="45.0" prefWidth="135.0" text="Scheduling" textFill="#030303">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="container" />
+                              <String fx:value="shadow" />
+                              <String fx:value="btnService" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Pane>
+                        <Pane layoutX="294.0" layoutY="423.0" onMouseClicked="#btnCalculator" prefHeight="140.0" prefWidth="232.0" style="-fx-background-color: #78909C;" stylesheets="@../css/client.css">
+                           <children>
+                              <ImageView fitHeight="89.0" fitWidth="90.0" layoutX="71.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/calculate.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="57.0" layoutY="86.0" prefHeight="45.0" prefWidth="135.0" text="Calculator" textFill="#030303">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="container" />
+                              <String fx:value="shadow" />
+                              <String fx:value="btnService" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Pane>
+                            </Pane>
+                     <StackPane fx:id="service" prefHeight="755.0" prefWidth="515.0">
+                        <children>
+                           <Pane fx:id="homescheduling" prefHeight="200.0" prefWidth="200.0">
+                              <children>
+                                 <Label layoutX="38.0" layoutY="36.0" text="Scheduling">
+                                    <font>
+                                       <Font name="Agency FB" size="30.0" />
+                                    </font>
+                                 </Label>
+                                 <Separator layoutX="40.0" layoutY="88.0" prefHeight="0.0" prefWidth="424.0" />
+                                 <ListView layoutX="40.0" layoutY="138.0" prefHeight="457.0" prefWidth="270.0" />
+                                 <ListView layoutX="314.0" layoutY="138.0" prefHeight="457.0" prefWidth="150.0" />
+                                 <Pane layoutX="40.0" layoutY="626.0" onMouseClicked="#btnCalculator" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #78909C;" stylesheets="@../css/client.css">
                                     <children>
-                                        <JFXButton fx:id="btnCalendar" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#btnCalendar" prefHeight="143.0" prefWidth="184.0" style="-fx-background-color: #78909C; -fx-background-radius: 15;" text="Scheduling">
-                                            <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                            </cursor>
-                                            <styleClass>
-                                                <String fx:value="container" />
-                                                <String fx:value="btnService" />
-                                            </styleClass>
-                                            <graphic>
-                                                <ImageView fitHeight="70.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
-                                                    <Image url="@images/calendarrr.jpg" />
-                                                </ImageView>
-                                            </graphic>
-                                            <font>
-                                                <Font name="Agency FB Bold" size="40.0" />
-                                            </font>
-                                        </JFXButton>
-                                        <JFXButton fx:id="btnCalculator" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#btnCalculator" prefHeight="133.0" prefWidth="185.0" style="-fx-background-color: #78909C; -fx-background-radius: 15;" text="Calculate">
-                                            <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                            </cursor>
-                                            <styleClass>
-                                                <String fx:value="btnService" />
-                                                <String fx:value="container" />
-                                            </styleClass>
-                                            <font>
-                                                <Font name="Agency FB Bold" size="40.0" />
-                                            </font>
-                                            <graphic>
-                                                <ImageView fitHeight="55.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                                    <Image url="@images/calculatorr.jpg" />
-                                                </ImageView>
-                                            </graphic>
-                                        </JFXButton>
+                                       <ImageView fitHeight="44.0" fitWidth="45.0" layoutX="13.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@images/plus.jpg" />
+                                          </image>
+                                       </ImageView>
                                     </children>
-                                    <padding>
-                                        <Insets top="5.0" />
-                                    </padding>
-                           <styleClass>
-                              <String fx:value="container" />
-                              <String fx:value="shadow" />
-                           </styleClass>
-                                </VBox>
-                                <Pane layoutX="28.0" layoutY="4.0" prefHeight="335.0" prefWidth="536.0" style="-fx-background-color: #939597;">
-                                    <Pane layoutX="14.0" layoutY="175.0" prefHeight="140.0" prefWidth="503.0" style="-fx-background-color: #78909C;" styleClass="container">
-                                        <Label layoutX="9.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="New Invoice" textFill="#030303">
-                                            <font>
-                                                <Font name="Agency FB Bold" size="50.0" />
-                                            </font>
-                                        </Label>
-                                        <Label layoutX="15.0" layoutY="72.0" prefHeight="56.0" prefWidth="170.0" text="04/2021">
-                                            <font>
-                                                <Font name="Agency FB" size="42.0" />
-                                            </font>
-                                        </Label>
-                                        <Label alignment="CENTER_RIGHT" layoutX="258.0" layoutY="74.0" prefHeight="35.0" prefWidth="186.0" text="406,502 vnd">
-                                            <font>
-                                                <Font name="Agency FB" size="42.0" />
-                                            </font>
-                                        </Label>
-                                    </Pane>
-                                    <Pane layoutX="14.0" layoutY="14.0" prefHeight="151.0" prefWidth="503.0" style="-fx-border-radius: 100; -fx-background-color: #78909C;" styleClass="container">
-                                        <Label layoutX="20.0" layoutY="2.0" prefHeight="60.0" prefWidth="240.0" text="Total Invoices" textFill="#0d0d0d">
-                                            <font>
-                                                <Font name="Agency FB Bold" size="50.0" />
-                                            </font>
-                                        </Label>
-                                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="270.0" layoutY="-2.0" prefHeight="37.0" prefWidth="179.0" style="-fx-text-alignment: right;" text="18" textFill="#0d0d0d">
-                                            <font>
-                                                <Font name="Agency FB" size="50.0" />
-                                            </font>
-                                        </Label>
-                                        <Label layoutX="22.0" layoutY="72.0" prefHeight="60.0" prefWidth="156.0" text="Total" textFill="#0d0d0d">
-                                            <font>
-                                                <Font name="Agency FB Bold" size="50.0" />
-                                            </font>
-                                        </Label>
-                                        <Label alignment="CENTER_RIGHT" layoutX="195.0" layoutY="69.0" prefHeight="60.0" prefWidth="258.0" text="16.000.000vnd" textFill="#0d0d0d">
-                                            <font>
-                                                <Font name="Agency FB" size="50.0" />
-                                            </font>
-                                        </Label>
-                                    </Pane>
-                           <styleClass>
-                              <String fx:value="shadow" />
-                              <String fx:value="container" />
-                           </styleClass>
-                                </Pane>
-                            </Pane>
-                        </StackPane>
-                        <StackPane fx:id="tabClone" alignment="CENTER_LEFT">
-                            <Label fx:id="tabCloneHome" prefHeight="46.0" prefWidth="221.0" text="   Announcement">
-                                <font>
-                                    <Font name="Agency FB Bold" size="37.0" />
-                                </font>
-                            </Label>
-                        </StackPane>
-                        <StackPane fx:id="service" prefHeight="359.0" prefWidth="1060.0">
-                            <TableView fx:id="homescheduling" prefHeight="287.0" prefWidth="1017.0">
-                                <columns>
-                                    <TableColumn prefWidth="50.0" text="C1" />
-                                    <TableColumn prefWidth="119.0" text="C2" />
-                                    <TableColumn prefWidth="333.0" text="Column X" />
-                                </columns>
-                            </TableView>
-                            <JFXListView fx:id="homeInform" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #939597;" />
-                            <Pane fx:id="homecalculate" prefHeight="200.0" prefWidth="200.0">
-                                <Label layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="249.0" text="Enter the parameters">
+                                    <styleClass>
+                                       <String fx:value="container" />
+                                       <String fx:value="shadow" />
+                                       <String fx:value="btnService" />
+                                    </styleClass>
+                                    <cursor>
+                                       <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                 </Pane>
+                              </children>
+                           </Pane>
+                           <Pane fx:id="homecalculate" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                              <children>
+                                 <Label layoutX="38.0" layoutY="36.0" text="Calculated">
                                     <font>
-                                        <Font size="24.0" />
+                                       <Font name="Agency FB" size="30.0" />
                                     </font>
-                                </Label>
-                                <Label layoutX="41.0" layoutY="65.0" text="From - to ">
+                                 </Label>
+                                 <Separator layoutX="40.0" layoutY="88.0" prefHeight="0.0" prefWidth="424.0" />
+                                 <Label layoutX="34.0" layoutY="117.0" text="Enter the parameters">
                                     <font>
-                                        <Font size="18.0" />
+                                       <Font size="24.0" />
                                     </font>
-                                </Label>
-                                <Label layoutX="41.0" layoutY="103.0" text="Total Power Consumption (kWh)">
+                                 </Label>
+                                 <Label layoutX="38.0" layoutY="184.0" text="Total Power Consumption (kWh)">
                                     <font>
-                                        <Font size="18.0" />
+                                       <Font size="14.0" />
                                     </font>
-                                </Label>
-                                <Label layoutX="41.0" layoutY="141.0" text="Số hộ dùng điện (hộ)">
+                                 </Label>
+                                 <JFXTextField fx:id="consumeValue1" layoutX="321.0" layoutY="181.0" />
+                                 <Label layoutX="38.0" layoutY="229.0" text="Số hộ dùng điện (hộ)">
                                     <font>
-                                        <Font size="18.0" />
+                                       <Font size="14.0" />
                                     </font>
-                                </Label>
-                                <Label layoutX="433.0" layoutY="14.0" prefHeight="43.0" prefWidth="377.0" text="Instructions for reading parameters" textFill="#0055f0">
+                                 </Label>
+                                 <JFXTextField fx:id="consumeValue11" layoutX="321.0" layoutY="227.0" />
+                                 <JFXButton fx:id="btnReport1" alignment="CENTER" layoutX="321.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnReport" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #FFB300;" text="Calculate">
                                     <font>
-                                        <Font size="24.0" />
+                                       <Font name="Agency FB" size="24.0" />
                                     </font>
-                                </Label>
-                                <DatePicker layoutX="433.0" layoutY="65.0" />
-                                <DatePicker layoutX="691.0" layoutY="65.0" />
-                                <JFXTextField layoutX="433.0" layoutY="103.0" />
-                                <JFXTextField layoutX="433.0" layoutY="141.0" />
-                                <JFXButton layoutX="433.0" layoutY="188.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" text="Calculate" />
-                            </Pane>
-                        </StackPane>
-                    </VBox>
-                    <StackPane fx:id="notification" prefHeight="150.0" prefWidth="200.0">
+                                    <cursor>
+                                       <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                 </JFXButton>
+                                 <Separator layoutX="36.0" layoutY="405.0" prefHeight="3.0" prefWidth="424.0" />
+                                 <Label layoutX="326.0" layoutY="117.0" text="Instructions" textFill="#0055f0" underline="true">
+                                    <font>
+                                       <Font size="24.0" />
+                                    </font>
+                                    <cursor>
+                                       <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                 </Label>
+                                 <Label layoutX="38.0" layoutY="273.0" text="Electricity type">
+                                    <font>
+                                       <Font size="14.0" />
+                                    </font>
+                                 </Label>
+                                 <JFXComboBox fx:id="cbRegion1" layoutX="321.0" layoutY="271.0" prefHeight="25.0" prefWidth="135.0" promptText="Region" />
+                              </children>
+                           </Pane>
+                        </children>
+                     </StackPane>
+                  </children>
+               </HBox>
+                    <StackPane fx:id="notification" prefHeight="150.0" prefWidth="200.0" visible="false">
                         <Pane prefHeight="200.0" prefWidth="200.0">
                             <TableView fx:id="tableNotification" layoutX="25.0" layoutY="78.0" prefHeight="660.0" prefWidth="1035.0" styleClass="tblview">
                                 <columns>
@@ -310,7 +352,7 @@
                      </HBox>
                         </Pane>
                     </StackPane>
-                    <AnchorPane fx:id="reports" prefHeight="754.0" prefWidth="851.0">
+                    <AnchorPane fx:id="reports" prefHeight="754.0" prefWidth="851.0" visible="false">
                         <LineChart fx:id="lineChart" layoutX="21.0" layoutY="158.0" prefHeight="402.0" prefWidth="471.0" styleClass="shadow">
                             <xAxis>
                                 <CategoryAxis side="BOTTOM" />
@@ -338,9 +380,9 @@
                             </font>
                         </Label>
                     </AnchorPane>
-                    <VBox fx:id="account" prefHeight="200.0" prefWidth="100.0">
+                    <VBox fx:id="account" prefHeight="200.0" prefWidth="100.0" visible="false">
                         <TabPane prefHeight="756.0" prefWidth="1060.0" tabClosingPolicy="UNAVAILABLE">
-                            <Tab text="Personal Information">
+                            <Tab text="Profile">
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <JFXTextField fx:id="txtFullName" layoutX="161.0" layoutY="49.0" prefHeight="46.0" prefWidth="709.0" promptText="Full Name" />
                                     <JFXTextField fx:id="txtNumber" layoutX="161.0" layoutY="179.0" prefHeight="46.0" prefWidth="709.0" promptText="Phone" />
@@ -427,7 +469,7 @@
                             </Tab>
                         </TabPane>
                     </VBox>
-                    <Pane fx:id="bill" prefHeight="200.0" prefWidth="200.0">
+                    <Pane fx:id="bill" prefHeight="200.0" prefWidth="200.0" visible="false">
                         <Pane layoutX="1.0" layoutY="283.0" prefHeight="476.0" prefWidth="875.0">
                             <Label layoutX="21.0" layoutY="14.0" prefHeight="43.0" prefWidth="397.0" text="Details">
                                 <font>
@@ -506,45 +548,12 @@
                                 <TableColumn fx:id="status" prefWidth="309.0" text="Status" />
                             </columns>
                         </TableView>
-                        <Pane fx:id="slider" layoutX="710.0" layoutY="290.0" prefHeight="448.0" prefWidth="350.0" style="-fx-background-color: #343434;">
+                        <Pane fx:id="slider" layoutX="710.0" layoutY="290.0" prefHeight="448.0" prefWidth="350.0" style="-fx-background-color: #343434;" visible="false">
                             <Label layoutX="27.0" layoutY="22.0" text="PAYMENT" textFill="WHITE">
                                 <font>
                                     <Font name="Segoe UI Bold" size="32.0" />
                                 </font>
                             </Label>
-                            <JFXButton layoutX="256.0" layoutY="89.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="75.0" style="-fx-background-color: #343434;">
-                                <graphic>
-                                    <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                        <Image url="@images/vcb.jpg" />
-                                    </ImageView>
-                                </graphic>
-                                <styleClass>
-                                    <String fx:value="btn" />
-                                    <String fx:value="container" />
-                                </styleClass>
-                            </JFXButton>
-                            <JFXButton layoutX="20.0" layoutY="90.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="102.0" style="-fx-background-color: #343434;">
-                                <graphic>
-                                    <ImageView fitHeight="43.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
-                                        <Image url="@images/sacombank.jpg" />
-                                    </ImageView>
-                                </graphic>
-                                <styleClass>
-                                    <String fx:value="btn" />
-                                    <String fx:value="container" />
-                                </styleClass>
-                            </JFXButton>
-                            <JFXButton layoutX="138.0" layoutY="89.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="118.0" style="-fx-background-color: #343434;">
-                                <graphic>
-                                    <ImageView fitHeight="37.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
-                                        <Image url="@images/dongabank.jpg" />
-                                    </ImageView>
-                                </graphic>
-                                <styleClass>
-                                    <String fx:value="btn" />
-                                    <String fx:value="container" />
-                                </styleClass>
-                            </JFXButton>
                             <JFXTextField fx:id="txtInvoiceCardHolderName" layoutX="19.0" layoutY="178.0" prefHeight="43.0" prefWidth="270.0" promptText="Cardholder Name" style="-fx-background-color: #343434;" styleClass="txtfield" />
                             <JFXTextField fx:id="txtInvoiceCardNumber" layoutX="19.0" layoutY="221.0" prefHeight="43.0" prefWidth="270.0" promptText="CardNumber" style="-fx-background-color: #343434;" styleClass="txtfield" />
                             <JFXTextField fx:id="txtInvoiceAccountNumber" layoutX="19.0" layoutY="264.0" prefHeight="43.0" prefWidth="270.0" promptText="Account Number" style="-fx-background-color: #343434;" styleClass="txtfield" />

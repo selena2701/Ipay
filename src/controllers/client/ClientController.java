@@ -17,15 +17,13 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
 import models.*;
+import models.Region;
 import utils.helper.DataHolder;
 import utils.helper.Navigator;
 import utils.helper.NavigatorDetail;
@@ -46,19 +44,17 @@ public class ClientController implements Initializable {
     @FXML
     private StackPane notification, service;
     @FXML
-    private VBox home;
+    private HBox home;
     @FXML
-    private Pane account, bill, homecalculate, slider;
+    private Pane account, bill, homecalculate, homescheduling, slider;
     @FXML
     private Label tabCloneHome, labelGreeting;
     @FXML
     private JFXButton btnLogout, checkin, checkout;
     @FXML
-    private JFXButton btnNotification;
+    private Pane btnNotification;
     @FXML
     private AnchorPane reports;
-    @FXML
-    private JFXListView<String> homeInform;
     @FXML
     private TableView<Invoice> tableBill;
     @FXML
@@ -75,8 +71,6 @@ public class ClientController implements Initializable {
     private LineChart<?, ?> lineChart;
     @FXML
     private BarChart<?, ?> barChart;
-    @FXML
-    private TableView<?> homescheduling;
     @FXML
     private TableView<Notification> tableNotification;
     @FXML
@@ -100,8 +94,6 @@ public class ClientController implements Initializable {
     private TableColumn<CreditCard, String> tblColumnCardHolderName, tblColumnAccountNumber, tblColumnBank, tblColumnStatus;
 
 
-    String[] inform = {"Vui lòng thanh toán trước ngày chốt chỉ số 28/04/2021", "Đã có lịch cúp điện tháng 5"};
-
     private ClientRepo repo;
     private Customer user = new Customer();
 
@@ -124,21 +116,16 @@ public class ClientController implements Initializable {
         setLblWelcome(user.getName());
         checkSum(main);
         home.setVisible(true);
-        tabCloneHome.setText("Announcement");
-        checkSum(service);
-        homeInform.setVisible(true);
     }
 
     @FXML
-    private void btnCalendar() {
-        tabCloneHome.setText("Scheduling");
+    private void btnCalendar(MouseEvent mouseEvent) {
         checkSum(service);
         homescheduling.setVisible(true);
     }
 
     @FXML
-    private void btnCalculator() {
-        tabCloneHome.setText("Calculate");
+    private void btnCalculator(MouseEvent mouseEvent) {
         checkSum(service);
         homecalculate.setVisible(true);
     }
@@ -179,7 +166,7 @@ public class ClientController implements Initializable {
 
     //Event handlers for Notification
     @FXML
-    private void btnNotification(ActionEvent event) {
+    private void btnNotification(MouseEvent mouseEvent) {
         labelGreeting.setText("Notification");
         checkSum(main);
         notification.setVisible(true);
@@ -226,7 +213,6 @@ public class ClientController implements Initializable {
     //Initializations
 
     private void initComponents() {
-        homeInform.getItems().addAll(inform);
 
         setLblWelcome(user.getName());
         initComboBoxRegion();

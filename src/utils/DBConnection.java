@@ -10,4 +10,6 @@ public class DBConnection {
         String url = "jdbc:sqlserver://localhost:1433;databaseName=DBC_EBAY;username=sa;password=112367";
         return DriverManager.getConnection(url);
     }
+
 }
+
