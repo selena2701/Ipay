@@ -7,7 +7,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFECB3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.StatisticsManagerController">
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFECB3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.StatisticsManagerController">
    <children>
       <VBox prefHeight="430.0" prefWidth="630.0" spacing="10.0">
          <children>
@@ -32,12 +32,12 @@
             </HBox>
             <HBox prefHeight="680.0" prefWidth="1080.0">
                <children>
-                  <TableView fx:id="tbStatistic" prefHeight="647.0" prefWidth="1299.0">
+                  <TableView fx:id="tbStatistic" prefHeight="647.0" prefWidth="1215.0">
                     <columns>
-                      <TableColumn fx:id="clPeriod" prefWidth="261.8000030517578" text="Period" />
-                        <TableColumn fx:id="clAmountofUser" minWidth="0.0" prefWidth="317.3999938964844" text="Amount of User" />
-                      <TableColumn fx:id="clAmountofPayment" minWidth="0.0" prefWidth="344.0" text="Amount of Payment" />
-                        <TableColumn fx:id="clAmountofMoney" minWidth="0.0" prefWidth="356.79998779296875" text="Amount of Money" />
+                      <TableColumn fx:id="clPeriod" prefWidth="148.40000307559967" text="Period" />
+                        <TableColumn fx:id="clAmountofUser" minWidth="0.0" prefWidth="276.5999755859375" text="Amount of User" />
+                      <TableColumn fx:id="clAmountofPayment" minWidth="0.0" prefWidth="361.8000183105469" text="Amount of Payment" />
+                        <TableColumn fx:id="clAmountofMoney" minWidth="0.0" prefWidth="293.39996337890625" text="Amount of Money" />
                     </columns>
                   </TableView>
                </children>
