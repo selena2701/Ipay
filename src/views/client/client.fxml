@@ -101,9 +101,9 @@
                         <Font name="Agency FB" size="30.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="37.0" layoutY="14.0" prefHeight="20.0" prefWidth="20.0" styleClass="round-lbl" stylesheets="@../css/client.css" text="8" textFill="WHITE">
+                  <Label alignment="CENTER" layoutX="37.0" layoutY="14.0" prefHeight="20.0" prefWidth="20.0" styleClass="round-lbl" stylesheets="@../css/client.css" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="4.0" />
                      </font>
                   </Label>
                </children>
@@ -181,10 +181,10 @@
                            <children>
                               <ImageView fitHeight="89.0" fitWidth="90.0" layoutX="69.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@images/calendarcheck.jpg" />
+                                    <Image url="@images/calendarrr.jpg" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="53.0" layoutY="86.0" prefHeight="45.0" prefWidth="135.0" text="Scheduling" textFill="#030303">
+                              <Label layoutX="53.0" layoutY="95.0" prefHeight="45.0" prefWidth="135.0" text="Scheduling" textFill="#030303">
                                  <font>
                                     <Font name="Agency FB Bold" size="36.0" />
                                  </font>
@@ -202,10 +202,10 @@
                            <children>
                               <ImageView fitHeight="89.0" fitWidth="90.0" layoutX="71.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@images/calculate.jpg" />
+                                    <Image url="@images/calculatorr.jpg" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="57.0" layoutY="86.0" prefHeight="45.0" prefWidth="135.0" text="Calculator" textFill="#030303">
+                              <Label layoutX="49.0" layoutY="95.0" prefHeight="45.0" prefWidth="135.0" text="Calculator" textFill="#030303">
                                  <font>
                                     <Font name="Agency FB Bold" size="36.0" />
                                  </font>
@@ -548,7 +548,7 @@
                                 <TableColumn fx:id="status" prefWidth="309.0" text="Status" />
                             </columns>
                         </TableView>
-                        <Pane fx:id="slider" layoutX="710.0" layoutY="290.0" prefHeight="448.0" prefWidth="350.0" style="-fx-background-color: #343434;" visible="false">
+                        <Pane fx:id="slider" layoutX="710.0" layoutY="290.0" prefHeight="448.0" prefWidth="350.0" style="-fx-background-color: #343434;">
                             <Label layoutX="27.0" layoutY="22.0" text="PAYMENT" textFill="WHITE">
                                 <font>
                                     <Font name="Segoe UI Bold" size="32.0" />
