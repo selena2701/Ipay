@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import de.jensd.fx.glyphs.materialicons.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
@@ -50,11 +48,6 @@
                   <Insets bottom="5.0" top="5.0" />
                </padding>
                </Label>
-            <JFXButton mnemonicParsing="false" prefHeight="53.0" prefWidth="60.0" text=" ">
-               <graphic>
-                  <MaterialIconView fill="#ff9800" glyphName="PRINT" size="35" strokeType="OUTSIDE" strokeWidth="0.0" />
-               </graphic>
-            </JFXButton>
          </children>
       </HBox>
    </top>

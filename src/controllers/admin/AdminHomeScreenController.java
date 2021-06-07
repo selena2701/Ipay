@@ -29,7 +29,7 @@ public class AdminHomeScreenController implements Initializable {
     private static final String PROVIDERS_MANAGER = "./../../views/admin/providers-manager.fxml";
     //private static final String INVOICES_MANAGER = "./../../views/admin/invoices-manager.fxml";
     private static final String NOTIFICATIONS_MANAGER = "./../../views/admin/notifications-manager.fxml";
-    private static final String STATISTICS_MANAGER = "./../../views/admin/statistic-manager.fxml";
+    private static final String REPORT_MANAGER = "./../../views/admin/report-manager.fxml";
     @FXML
     private ImageView iconImageView;
 
@@ -56,7 +56,7 @@ public class AdminHomeScreenController implements Initializable {
     private final Node usersNode;
     private final Node providersNode;
     private final Node notificationsNode;
-    private final Node statisticNode;
+    private final Node reportNode;
 
     private String adminUsername;
 
@@ -64,12 +64,12 @@ public class AdminHomeScreenController implements Initializable {
         FXMLLoader usersLoader = new FXMLLoader(getClass().getResource(USERS_MANAGER));
         FXMLLoader providersLoader = new FXMLLoader(getClass().getResource(PROVIDERS_MANAGER));
         FXMLLoader notificationsLoader = new FXMLLoader(getClass().getResource(NOTIFICATIONS_MANAGER));
-        FXMLLoader statisticLoader = new FXMLLoader(getClass().getResource(STATISTICS_MANAGER));
+        FXMLLoader statisticLoader = new FXMLLoader(getClass().getResource(REPORT_MANAGER));
 
         usersNode = usersLoader.load();
         providersNode = providersLoader.load();
         notificationsNode = notificationsLoader.load();
-        statisticNode = statisticLoader.load();
+        reportNode = statisticLoader.load();
 
         this.adminUsername = DataHolder.getINSTANCE().getUserName();
     }
@@ -98,7 +98,7 @@ public class AdminHomeScreenController implements Initializable {
             setContent(notificationsNode);
         });
         statisticButton.setOnMouseClicked(mouseEvent -> {
-            setContent(statisticNode);
+            setContent(reportNode);
         });
 
 

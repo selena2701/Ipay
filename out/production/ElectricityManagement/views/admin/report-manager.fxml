@@ -13,7 +13,7 @@
 
 <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.StatisticsManager">
    <children>
-      <VBox prefHeight="430.0" prefWidth="630.0" spacing="10.0">
+      <VBox prefHeight="430.0" prefWidth="630.0">
          <children>
             <HBox prefHeight="48.0" prefWidth="1025.0">
                <VBox.margin>
