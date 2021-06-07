@@ -22,8 +22,8 @@ public class PhoneValidator extends ValidatorBase {
 
     }
 
-    @Override
 
+    @Override
     public void validate() {
         TextInputControl textField = (TextInputControl) this.srcControl.get();
         if (textField.getText().isEmpty() || textField.getText().length() != 10) {

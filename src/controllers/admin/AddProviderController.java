@@ -56,11 +56,12 @@ public class AddProviderController implements Initializable {
     @FXML
     private JFXComboBox<Admin> adminNameComboBox;
 
+    //Save and Back Button
     @FXML
     private void submitClick(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException, IOException {
         if (validate()) {
             if (idLabel.getText().isEmpty()) {
-                providersRepo.addNewProvider(UUID.randomUUID().toString().substring(0, 4),
+                providersRepo.addNewProvider(UUID.randomUUID().toString().substring(0, 20),
                         nameTextField.getText(),
                         phoneTextField.getText(),
                         addressTextField.getText(),
@@ -85,11 +86,20 @@ public class AddProviderController implements Initializable {
     private void backClick(MouseEvent mouseEvent) throws IOException {
         onNavigateBack((Node) mouseEvent.getSource());
     }
+    // Return admin-home-screen after click Back Button
+    private void onNavigateBack(Node node) throws IOException {
+        Scene currentScene = node.getScene();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../views/admin/admin-home-screen.fxml")));
+        currentScene.setRoot(root);
+    }
 
+
+    // ? //
     public AddProviderController() throws Exception {
 
     }
 
+    // ? //
     public void setProviderId(String id) {
         if (id == null) {
             titleLabel.setText("Add New Provider");
@@ -123,12 +133,7 @@ public class AddProviderController implements Initializable {
         setValidation();
     }
 
-    private void onNavigateBack(Node node) throws IOException {
-        Scene currentScene = node.getScene();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../views/admin/admin-home-screen.fxml")));
-        currentScene.setRoot(root);
-    }
-
+    // Check Validate TextField
     private boolean validate() {
         return nameTextField.validate() && phoneTextField.validate() && adminNameComboBox.validate() && addressTextField.validate();
     }
@@ -140,6 +145,7 @@ public class AddProviderController implements Initializable {
         adminNameComboBox.setValidators(new NonEmptyValidator("You must specify the admin promoted"));
     }
 
+    // ? //
     private int getAdminIndexInComboBox(String id) {
         for (int i = 0; i < adminNameComboBox.getItems().size(); i++) {
             if (adminNameComboBox.getItems().get(i).getId().equals(id)) {

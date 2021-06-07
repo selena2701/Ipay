@@ -45,11 +45,15 @@ public class AddNotificationController implements Initializable {
         // TODO
 
     }
-
+    // Save and Back Button
     @FXML
     private void save(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
         if (idLabel.getText().isEmpty()) {
-            notificationsRepo.addNotification(new Notification(UUID.randomUUID().toString().substring(0, 4), ncontentFld.getText(), Date.from(dcreateFld.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()), Date.from(dsentFld.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()), editFld.getText()));
+            notificationsRepo.addNotification(new Notification(UUID.randomUUID().toString().substring(0, 10),
+                    ncontentFld.getText(),
+                    Date.from(dcreateFld.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
+                    Date.from(dsentFld.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
+                    editFld.getText()));
         } else {
             notificationsRepo.updateNotification(
                     new Notification(
@@ -63,6 +67,17 @@ public class AddNotificationController implements Initializable {
         onNavigateBack((Node) event.getSource());
 
     }
+    public void back(MouseEvent mouseEvent) throws IOException {
+        onNavigateBack((Node) mouseEvent.getSource());
+    }
+    private void onNavigateBack(Node node) throws IOException {
+        Scene currentScene = node.getScene();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../views/admin/admin-home-screen.fxml")));
+        currentScene.setRoot(root);
+    }
+
+    public AddNotificationController() throws Exception {
+    }
 
     public void setNotificationId(String id) {
         if (id == null) {
@@ -72,6 +87,9 @@ public class AddNotificationController implements Initializable {
         }
     }
 
+    /*
+     * Set fields for update by passing values to fields
+     * */
     private void setFields(Notification notification) {
         titleLabel.setText("Update " + notification.getId());
         idLabel.setText(notification.getId());
@@ -81,14 +99,8 @@ public class AddNotificationController implements Initializable {
         ncontentFld.setText(notification.getDescription());
     }
 
-    private void onNavigateBack(Node node) throws IOException {
-        Scene currentScene = node.getScene();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../views/admin/admin-home-screen.fxml")));
-        currentScene.setRoot(root);
-    }
 
-    public void back(MouseEvent mouseEvent) throws IOException {
-        onNavigateBack((Node) mouseEvent.getSource());
-    }
+
+
 }
 

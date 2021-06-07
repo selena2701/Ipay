@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class StatisticsManager implements Initializable {
+public class StatisticsManagerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TO DO
