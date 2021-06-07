@@ -340,7 +340,7 @@
                     </AnchorPane>
                     <VBox fx:id="account" prefHeight="200.0" prefWidth="100.0">
                         <TabPane prefHeight="756.0" prefWidth="1060.0" tabClosingPolicy="UNAVAILABLE">
-                            <Tab text="Profile">
+                            <Tab text="Personal Information">
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <JFXTextField fx:id="txtFullName" layoutX="161.0" layoutY="49.0" prefHeight="46.0" prefWidth="709.0" promptText="Full Name" />
                                     <JFXTextField fx:id="txtNumber" layoutX="161.0" layoutY="179.0" prefHeight="46.0" prefWidth="709.0" promptText="Phone" />

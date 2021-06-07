@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.materialicons.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
@@ -27,25 +29,34 @@
         </TableView>
     </center>
    <top>
-
-         <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="758.0" text="User Management" textAlignment="CENTER" textFill="#ff9800" BorderPane.alignment="CENTER">
-             <font>
-                 <Font name="Segoe UI Bold" size="36.0" />
-             </font>
-         <effect>
-            <DropShadow>
-               <color>
-                  <Color red="1.0" green="0.5960784554481506" />
-               </color>
-            </DropShadow>
-         </effect>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <padding>
-            <Insets bottom="5.0" top="5.0" />
-         </padding>
-         </Label>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+      
+               <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="700.0" text="User Management" textAlignment="CENTER" textFill="#ff9800">
+                   <font>
+                       <Font name="Segoe UI Bold" size="36.0" />
+                   </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+               </Label>
+            <JFXButton mnemonicParsing="false" prefHeight="53.0" prefWidth="60.0" text=" ">
+               <graphic>
+                  <MaterialIconView fill="#ff9800" glyphName="PRINT" size="35" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
    </top>
 
 </BorderPane>
