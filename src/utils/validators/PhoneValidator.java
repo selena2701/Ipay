@@ -1,14 +1,10 @@
 package utils.validators;
 
-import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.base.ValidatorBase;
-import database.authAPI.Authenticate;
 import de.jensd.fx.glyphs.materialicons.MaterialIcon;
 import de.jensd.fx.glyphs.materialicons.MaterialIconView;
 import javafx.scene.Node;
 import javafx.scene.control.TextInputControl;
-
-import java.sql.SQLException;
 
 public class PhoneValidator extends ValidatorBase {
 

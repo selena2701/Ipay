@@ -1,7 +1,7 @@
 package utils.validators;
 
 import com.jfoenix.validation.base.ValidatorBase;
-import database.authAPI.Authenticate;
+import database.authRepo.AuthRepo;
 import de.jensd.fx.glyphs.materialicons.MaterialIcon;
 import de.jensd.fx.glyphs.materialicons.MaterialIconView;
 import javafx.scene.Node;
@@ -18,7 +18,7 @@ public class UserExistedValidator extends ValidatorBase {
     public void validate() {
         TextInputControl textField = (TextInputControl) this.srcControl.get();
         try {
-            this.hasErrors.set(Authenticate.checkUserExists(textField.getText()));
+            this.hasErrors.set(AuthRepo.checkUserExists(textField.getText()));
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
