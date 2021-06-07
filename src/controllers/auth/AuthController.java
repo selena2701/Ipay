@@ -170,9 +170,6 @@ public class AuthController implements Initializable {
 
         Boolean isCorrectUser = Authenticate.login(loginUsername.getText(), loginPassword.getText());
         if (isCorrectUser != null) {
-            LoginMessText.setText(isCorrectUser ? "You are Admin" : "You are Customer");
-            //TODO Navigate to appropriate screen
-
             try {
                 NavigatorDetail detail = new NavigatorDetail(isCorrectUser ? "admin/admin-home-screen.fxml" : "client/client.fxml");
                 detail.setTitle(isCorrectUser ? "Admin" : "Customer");

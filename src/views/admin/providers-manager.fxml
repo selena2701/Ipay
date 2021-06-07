@@ -61,14 +61,6 @@
                      <Insets top="10.0" />
                   </padding>
                   </JFXButton>
-               <JFXButton mnemonicParsing="false" prefHeight="91.0" prefWidth="63.0" text="  " textFill="#ff9800">
-                  <graphic>
-                     <MaterialIconView fill="#ff9800" glyphName="PRINT" size="35" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="31.0" />
-                  </graphic>
-                  <HBox.margin>
-                     <Insets top="10.0" />
-                  </HBox.margin>
-               </JFXButton>
             </children>
          </HBox>
          <padding>
