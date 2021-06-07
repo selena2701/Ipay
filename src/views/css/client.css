@@ -37,3 +37,12 @@
     -fx-background-color: #FE7A79;
     -fx-background-radius: 100%;
 }
+
+.axis{
+    -fx-stroke: #263238;
+    -fx-fill: #263238;
+    -fx-font-size: 18;
+    -fx-tick-label-fill: #263238;
+}
+
+.default-color0.chart-bar { -fx-bar-fill: #F5F5F5; }

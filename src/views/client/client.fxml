@@ -125,12 +125,12 @@
                     </cursor>
                 </JFXButton>
             </VBox>
-            <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0">
+            <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0" style="-fx-background-color: #FFECB3;">
                 <StackPane fx:id="main" prefHeight="756.0" prefWidth="1060.0">
-               <HBox fx:id="home">
+               <HBox fx:id="home" style="-fx-background-color: #FFECB3;">
                   <children>
-                            <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #939597;">
-                                 <Pane layoutX="23.0" layoutY="246.0" prefHeight="140.0" prefWidth="503.0" style="-fx-background-color: #78909C;" stylesheets="@../css/client.css">
+                            <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #FFECB3;" visible="false">
+                                 <Pane layoutX="23.0" layoutY="246.0" prefHeight="140.0" prefWidth="503.0" style="-fx-background-color: #FFCA28;" stylesheets="@../css/client.css">
                                      <Label layoutX="9.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="New Invoice" textFill="#030303">
                                          <font>
                                              <Font name="Agency FB Bold" size="50.0" />
@@ -151,7 +151,7 @@
                               <String fx:value="shadow" />
                            </styleClass>
                                  </Pane>
-                                 <Pane layoutX="23.0" layoutY="59.0" prefHeight="151.0" prefWidth="503.0" style="-fx-border-radius: 100; -fx-background-color: #78909C;" stylesheets="@../css/client.css">
+                                 <Pane layoutX="23.0" layoutY="59.0" prefHeight="151.0" prefWidth="503.0" style="-fx-border-radius: 100; -fx-background-color: #FFCA28;" stylesheets="@../css/client.css">
                                      <Label layoutX="20.0" layoutY="2.0" prefHeight="60.0" prefWidth="240.0" text="Total Invoices" textFill="#0d0d0d">
                                          <font>
                                              <Font name="Agency FB Bold" size="50.0" />
@@ -177,7 +177,7 @@
                               <String fx:value="shadow" />
                            </styleClass>
                                  </Pane>
-                        <Pane layoutX="23.0" layoutY="423.0" onMouseClicked="#btnCalendar" prefHeight="140.0" prefWidth="240.0" style="-fx-background-color: #78909C;" stylesheets="@../css/client.css">
+                        <Pane layoutX="23.0" layoutY="423.0" onMouseClicked="#btnCalendar" prefHeight="140.0" prefWidth="240.0" style="-fx-background-color: #FFCA28;" stylesheets="@../css/client.css">
                            <children>
                               <ImageView fitHeight="89.0" fitWidth="90.0" layoutX="69.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -198,7 +198,7 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Pane>
-                        <Pane layoutX="294.0" layoutY="423.0" onMouseClicked="#btnCalculator" prefHeight="140.0" prefWidth="232.0" style="-fx-background-color: #78909C;" stylesheets="@../css/client.css">
+                        <Pane layoutX="294.0" layoutY="423.0" onMouseClicked="#btnCalculator" prefHeight="140.0" prefWidth="232.0" style="-fx-background-color: #FFCA28;" stylesheets="@../css/client.css">
                            <children>
                               <ImageView fitHeight="89.0" fitWidth="90.0" layoutX="71.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -222,7 +222,7 @@
                             </Pane>
                      <StackPane fx:id="service" prefHeight="755.0" prefWidth="515.0">
                         <children>
-                           <Pane fx:id="homescheduling" prefHeight="200.0" prefWidth="200.0">
+                           <Pane fx:id="homescheduling" prefHeight="200.0" prefWidth="200.0" visible="false">
                               <children>
                                  <Label layoutX="38.0" layoutY="36.0" text="Scheduling">
                                     <font>
@@ -305,8 +305,8 @@
                      </StackPane>
                   </children>
                </HBox>
-                    <StackPane fx:id="notification" prefHeight="150.0" prefWidth="200.0" visible="false">
-                        <Pane prefHeight="200.0" prefWidth="200.0">
+                    <StackPane fx:id="notification" prefHeight="150.0" prefWidth="200.0">
+                        <Pane prefHeight="200.0" prefWidth="200.0" visible="false">
                             <TableView fx:id="tableNotification" layoutX="25.0" layoutY="78.0" prefHeight="660.0" prefWidth="1035.0" styleClass="tblview">
                                 <columns>
                                     <TableColumn fx:id="no_id" prefWidth="97.99999618530273" text="No_id" />
@@ -316,9 +316,9 @@
                             </TableView>
                      <HBox layoutX="25.0" layoutY="14.0" spacing="20.0">
                         <children>
-                                  <JFXButton mnemonicParsing="false" prefHeight="51.0" prefWidth="85.0" text="  " textFill="WHITE">
+                                  <JFXButton mnemonicParsing="false" prefHeight="56.0" prefWidth="22.0" text="  " textFill="WHITE">
                                       <font>
-                                          <Font size="24.0" />
+                                          <Font size="1.0" />
                                       </font>
                               <graphic>
                                  <MaterialIconView fill="#ff9800" glyphName="CACHED" size="40" strokeType="OUTSIDE" strokeWidth="0.0">
@@ -332,9 +332,9 @@
                                  </MaterialIconView>
                               </graphic>
                                   </JFXButton>
-                                  <JFXButton mnemonicParsing="false" prefHeight="51.0" prefWidth="93.0" text="   " textFill="WHITE">
+                                  <JFXButton mnemonicParsing="false" prefHeight="51.0" prefWidth="34.0" text="   " textFill="WHITE">
                                       <font>
-                                          <Font size="24.0" />
+                                          <Font size="1.0" />
                                       </font>
                               <graphic>
                                  <MaterialIconView fill="#ff9800" glyphName="LOCAL_LIBRARY" size="40" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="31.0">
@@ -352,33 +352,61 @@
                      </HBox>
                         </Pane>
                     </StackPane>
-                    <AnchorPane fx:id="reports" prefHeight="754.0" prefWidth="851.0" visible="false">
-                        <LineChart fx:id="lineChart" layoutX="21.0" layoutY="158.0" prefHeight="402.0" prefWidth="471.0" styleClass="shadow">
-                            <xAxis>
-                                <CategoryAxis side="BOTTOM" />
-                            </xAxis>
-                            <yAxis>
-                                <NumberAxis side="LEFT" />
-                            </yAxis>
-                        </LineChart>
-                        <BarChart fx:id="barChart" layoutX="501.0" layoutY="158.0" legendVisible="false" prefHeight="402.0" prefWidth="503.0" styleClass="shadow">
-                            <xAxis>
-                                <CategoryAxis side="BOTTOM" />
-                            </xAxis>
-                            <yAxis>
-                                <NumberAxis side="LEFT" />
-                            </yAxis>
-                        </BarChart>
-                        <Label layoutX="553.0" layoutY="93.0" text="Consume">
-                            <font>
-                                <Font size="36.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="35.0" layoutY="93.0" text="Total">
-                            <font>
-                                <Font size="36.0" />
-                            </font>
-                        </Label>
+                    <AnchorPane fx:id="reports" prefHeight="754.0" prefWidth="851.0">
+                  <Pane layoutX="14.0" layoutY="201.0" prefHeight="476.0" prefWidth="490.0" style="-fx-background-color: #FFE082; -fx-background-radius: 30;">
+                     <children>
+                              <LineChart fx:id="lineChart" layoutX="14.0" layoutY="60.0" legendVisible="false" prefHeight="402.0" prefWidth="450.0" styleClass="shadow">
+                                  <xAxis>
+                                      <CategoryAxis side="BOTTOM" />
+                                  </xAxis>
+                                  <yAxis>
+                                      <NumberAxis label="vnd" lowerBound="1000.0" minorTickCount="1000" side="LEFT" upperBound="500000.0">
+                                 <tickLabelFont>
+                                    <Font name="Segoe UI Bold" size="8.0" />
+                                 </tickLabelFont></NumberAxis>
+                                  </yAxis>
+                              </LineChart>
+                              <Label layoutX="23.0" layoutY="14.0" text="Monthly Electricity Bill in VND" textFill="#263238">
+                                  <font>
+                                      <Font name="Segoe UI Bold" size="24.0" />
+                                  </font>
+                              </Label>
+                     </children>
+                     <effect>
+                        <DropShadow height="57.43" radius="34.285" width="81.71">
+                           <color>
+                              <Color red="1.0" green="0.7176470756530762" blue="0.3019607961177826" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Pane>
+                  <Pane layoutX="530.0" layoutY="201.0" prefHeight="476.0" prefWidth="490.0" style="-fx-background-radius: 30; -fx-background-color: #FFE082;">
+                     <children>
+                              <BarChart fx:id="barChart" layoutX="10.0" layoutY="60.0" legendVisible="false" prefHeight="402.0" prefWidth="471.0" styleClass="shadow">
+                                  <xAxis>
+                                      <CategoryAxis side="BOTTOM" />
+                                  </xAxis>
+                                  <yAxis>
+                                      <NumberAxis label="Kwh" side="LEFT">
+                                 <tickLabelFont>
+                                    <Font name="System Bold" size="8.0" />
+                                 </tickLabelFont></NumberAxis>
+                                  </yAxis>
+                              </BarChart>
+                              <Label layoutX="27.0" layoutY="7.0" text="Monthly Electricity Usage in kwh" textFill="#263238">
+                                  <font>
+                                      <Font name="Segoe UI Bold" size="24.0" />
+                                  </font>
+                              </Label>
+                     </children>
+                     <effect>
+                        <DropShadow height="75.0" radius="38.5" width="81.0">
+                           <color>
+                              <Color red="1.0" green="0.7176470756530762" blue="0.3019607961177826" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Pane>
                     </AnchorPane>
                     <VBox fx:id="account" prefHeight="200.0" prefWidth="100.0" visible="false">
                         <TabPane prefHeight="756.0" prefWidth="1060.0" tabClosingPolicy="UNAVAILABLE">

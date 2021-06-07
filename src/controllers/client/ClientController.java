@@ -341,6 +341,7 @@ public class ClientController implements Initializable {
 
         lineChart.getData().addAll(series);
         lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
+        series.getNode().setStyle("-fx-stroke: #F5F5F5");
     }
 
     private void initStatisticBarChart() {
