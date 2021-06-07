@@ -133,10 +133,10 @@
             </VBox>
             <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0" style="-fx-background-color: #FFECB3;">
                 <StackPane fx:id="main" prefHeight="756.0" prefWidth="1060.0">
-               <HBox fx:id="home" style="-fx-background-color: #FFECB3;" visible="false">
+               <HBox fx:id="home" style="-fx-background-color: #FFECB3;">
                   <children>
                             <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #FFECB3;">
-                                 <Pane layoutX="23.0" layoutY="246.0" prefHeight="140.0" prefWidth="503.0" style="-fx-background-color: #FFCA28;" stylesheets="@../css/client.css">
+                                 <Pane layoutX="23.0" layoutY="246.0" prefHeight="140.0" prefWidth="503.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
                                      <Label layoutX="9.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="New Invoice" textFill="#030303">
                                          <font>
                                              <Font name="Agency FB Bold" size="50.0" />
@@ -157,7 +157,7 @@
                               <String fx:value="shadow" />
                            </styleClass>
                                  </Pane>
-                                 <Pane layoutX="23.0" layoutY="59.0" prefHeight="151.0" prefWidth="503.0" style="-fx-border-radius: 100; -fx-background-color: #FFCA28;" stylesheets="@../css/client.css">
+                                 <Pane layoutX="23.0" layoutY="59.0" prefHeight="151.0" prefWidth="503.0" style="-fx-border-radius: 100; -fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
                                      <Label layoutX="20.0" layoutY="2.0" prefHeight="60.0" prefWidth="240.0" text="Total Invoices" textFill="#0d0d0d">
                                          <font>
                                              <Font name="Agency FB Bold" size="50.0" />
@@ -183,7 +183,7 @@
                               <String fx:value="shadow" />
                            </styleClass>
                                  </Pane>
-                        <Pane layoutX="23.0" layoutY="423.0" onMouseClicked="#btnCalendar" prefHeight="140.0" prefWidth="240.0" style="-fx-background-color: #FFCA28;" stylesheets="@../css/client.css">
+                        <Pane layoutX="23.0" layoutY="423.0" onMouseClicked="#btnCalendar" prefHeight="140.0" prefWidth="240.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
                            <children>
                               <ImageView fitHeight="89.0" fitWidth="90.0" layoutX="69.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -204,7 +204,7 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Pane>
-                        <Pane layoutX="294.0" layoutY="423.0" onMouseClicked="#btnCalculator" prefHeight="140.0" prefWidth="232.0" style="-fx-background-color: #FFCA28;" stylesheets="@../css/client.css">
+                        <Pane layoutX="294.0" layoutY="423.0" onMouseClicked="#btnCalculator" prefHeight="140.0" prefWidth="232.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
                            <children>
                               <ImageView fitHeight="89.0" fitWidth="90.0" layoutX="71.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -226,9 +226,9 @@
                               <Cursor fx:constant="HAND" />
                            </cursor></Pane>
                             </Pane>
-                     <StackPane fx:id="service" prefHeight="755.0" prefWidth="515.0" visible="false">
+                     <StackPane fx:id="service" prefHeight="755.0" prefWidth="515.0">
                         <children>
-                           <Pane fx:id="homescheduling" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <Pane fx:id="homescheduling" prefHeight="200.0" prefWidth="200.0">
                               <children>
                                  <Label layoutX="38.0" layoutY="36.0" text="Scheduling">
                                     <font>
@@ -282,9 +282,9 @@
                                     </font>
                                  </Label>
                                  <JFXTextField fx:id="consumeValue11" layoutX="321.0" layoutY="227.0" />
-                                 <JFXButton fx:id="btnReport1" alignment="CENTER" layoutX="321.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnReport" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #FFB300;" text="Calculate">
+                                 <JFXButton fx:id="btnReport1" alignment="CENTER" layoutX="321.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnReport" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #FF9800; -fx-background-radius: 15;" text="Calculate" textFill="WHITE">
                                     <font>
-                                       <Font name="Agency FB" size="24.0" />
+                                       <Font name="Segoe UI Bold" size="24.0" />
                                     </font>
                                     <cursor>
                                        <Cursor fx:constant="HAND" />
