@@ -79,7 +79,7 @@
       </JFXButton>
       <ImageView fitHeight="160.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../auth/PicsArt_05-09-12.29.09.jpg" />
+            <Image url="@../images/PicsArt_05-09-12.29.09.jpg" />
          </image>
       </ImageView>
     </GridPane>

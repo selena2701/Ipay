@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:id="mainroot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.AdminHomeScreenController">
+<GridPane fx:id="mainroot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.admin.AdminHomeScreenController">
     <columnConstraints>
         <ColumnConstraints hgrow="ALWAYS" maxWidth="294.4000244140625" minWidth="10.0" prefWidth="102.0" />
         <ColumnConstraints hgrow="ALWAYS" maxWidth="522.0" minWidth="10.0" percentWidth="88.0" prefWidth="498.0" />
@@ -79,7 +79,7 @@
       </JFXButton>
       <ImageView fitHeight="160.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../auth/PicsArt_05-09-12.29.09.jpg" />
+            <Image url="@../images/PicsArt_05-09-12.29.09.jpg" />
          </image>
       </ImageView>
     </GridPane>
