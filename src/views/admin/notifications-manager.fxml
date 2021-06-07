@@ -38,7 +38,7 @@
             <children>
                   <JFXButton fx:id="addNotificationButton" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" prefHeight="60.0" prefWidth="41.0" text="  ">
                       <graphic>
-                          <MaterialIconView fill="#ff9800" glyphName="ADD_ALERT" size="35">
+                          <MaterialIconView fill="#ff9800" glyphName="ADD_ALERT" size="35" text="">
                               <font>
                                   <Font size="38.0" />
                               </font>
@@ -48,14 +48,6 @@
                           <Font size="1.0" />
                       </font>
                   </JFXButton>
-               <JFXButton mnemonicParsing="false" prefHeight="46.0" prefWidth="42.0" text="  ">
-                  <graphic>
-                     <MaterialIconView fill="#ff9800" glyphName="PRINT" size="35" strokeType="OUTSIDE" strokeWidth="0.0" />
-                  </graphic>
-                  <font>
-                     <Font size="1.0" />
-                  </font>
-               </JFXButton>
             </children>
          </HBox>
         </GridPane>
