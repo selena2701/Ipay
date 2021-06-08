@@ -3,7 +3,7 @@ package utils.helper;
 public class NavigatorDetail {
 
     /*
-     * Destination is path to the fxml from views folder
+     * Destination is path to the fxml from VIEWS folder
      * e.g: admin/admin-home-screen
      */
     private String destination = "";

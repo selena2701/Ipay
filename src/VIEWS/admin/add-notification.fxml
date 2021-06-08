@@ -68,7 +68,7 @@
                     <Font name="Segoe UI Bold" size="20.0" />
                 </font>
             </Text>
-            <Label fx:id="idLabel" prefHeight="41.0" prefWidth="350.0" />
+            <Label fx:id="idLabel" prefHeight="30.0" prefWidth="340.0" style="-fx-background-color: #FFE0B2; -fx-border-color: #FF9800;" />
         </HBox>
         <HBox alignment="CENTER" layoutX="10.0" layoutY="68.0">
             <children>
@@ -77,7 +77,7 @@
                         <Font name="Segoe UI Bold" size="20.0" />
                     </font>
                 </Text>
-                <DatePicker fx:id="dcreateFld" editable="false" prefHeight="41.0" prefWidth="350.0" />
+            <DatePicker fx:id="dcreateFld" prefWidth="340.0" style="-fx-background-color: #FF9800;" />
             </children>
             <VBox.margin>
                 <Insets top="30.0" />
@@ -92,7 +92,7 @@
                     <Font name="Segoe UI Bold" size="20.0" />
                 </font>
             </Text>
-            <DatePicker fx:id="dsentFld" editable="false" prefHeight="41.0" prefWidth="350.0" />
+         <DatePicker fx:id="dsentFld" prefWidth="340.0" style="-fx-background-color: #FF9800;" />
         </HBox>
         <HBox alignment="CENTER" layoutX="10.0" layoutY="68.0">
             <children>
@@ -101,11 +101,7 @@
                         <Font name="Segoe UI Bold" size="20.0" />
                     </font>
                 </Text>
-                <TextField fx:id="editFld" prefHeight="41.0" prefWidth="350.0">
-                    <font>
-                        <Font name="Century Gothic" size="24.0" />
-                    </font>
-                </TextField>
+            <JFXComboBox fx:id="cbbEditBy" prefHeight="30.0" prefWidth="340.0" unFocusColor="#ff9800" />
             </children>
             <VBox.margin>
                 <Insets top="30.0" />
@@ -120,11 +116,7 @@
                     <Font name="Segoe UI Bold" size="20.0" />
                 </font>
             </Text>
-            <TextField fx:id="ncontentFld" prefHeight="41.0" prefWidth="350.0">
-                <font>
-                    <Font name="Century Gothic" size="24.0" />
-                </font>
-            </TextField>
+         <JFXTextField fx:id="ncontentFld" prefHeight="30.0" prefWidth="340.0" promptText="Detail of Notification" unFocusColor="#ff9800" />
         </HBox>
     </children>
     <padding>

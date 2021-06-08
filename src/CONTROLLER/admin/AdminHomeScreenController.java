@@ -23,11 +23,11 @@ import java.util.ResourceBundle;
 
 public class AdminHomeScreenController implements Initializable {
 
-    private static final String USERS_MANAGER = "./../../views/admin/users-manager.fxml";
-    private static final String PROVIDERS_MANAGER = "./../../views/admin/providers-manager.fxml";
-    //private static final String INVOICES_MANAGER = "./../../views/admin/invoices-manager.fxml";
-    private static final String NOTIFICATIONS_MANAGER = "./../../views/admin/notifications-manager.fxml";
-    private static final String REPORT_MANAGER = "./../../views/admin/report-manager.fxml";
+    private static final String USERS_MANAGER = "./../../VIEWS/admin/users-manager.fxml";
+    private static final String PROVIDERS_MANAGER = "./../../VIEWS/admin/providers-manager.fxml";
+    //private static final String INVOICES_MANAGER = "./../../VIEWS/admin/invoices-manager.fxml";
+    private static final String NOTIFICATIONS_MANAGER = "./../../VIEWS/admin/notifications-manager.fxml";
+    private static final String REPORT_MANAGER = "./../../VIEWS/admin/report-manager.fxml";
     @FXML
     private ImageView iconImageView;
 

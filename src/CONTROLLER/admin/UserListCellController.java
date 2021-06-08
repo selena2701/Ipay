@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import controllers.Customer;
+import MODELS.Customer;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -24,7 +24,7 @@ public class UserListCellController extends JFXListCell<Customer> {
     public UserListCellController() {
         try {
             FXMLLoader loader;
-            loader = new FXMLLoader(getClass().getResource("../views/admin/user-list-cell.fxml"));
+            loader = new FXMLLoader(getClass().getResource("../VIEWS/admin/user-list-cell.fxml"));
             loader.setController(this);
             gridPane = loader.load();
 

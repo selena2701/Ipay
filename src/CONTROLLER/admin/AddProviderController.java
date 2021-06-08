@@ -14,8 +14,8 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
-import controllers.Admin;
-import controllers.Provider;
+import MODELS.Admin;
+import MODELS.Provider;
 import utils.validators.NonEmptyValidator;
 import utils.validators.PhoneValidator;
 
@@ -89,7 +89,7 @@ public class AddProviderController implements Initializable {
     // Return admin-home-screen after click Back Button
     private void onNavigateBack(Node node) throws IOException {
         Scene currentScene = node.getScene();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../views/admin/admin-home-screen.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../VIEWS/admin/admin-home-screen.fxml")));
         currentScene.setRoot(root);
     }
 

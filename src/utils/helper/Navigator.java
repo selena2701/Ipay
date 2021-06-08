@@ -20,7 +20,7 @@ public class Navigator {
         stage.setWidth(destination.getWidth());
         stage.setHeight(destination.getHeight());
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(Navigator.class.getResource("./../../views/" + destination.getDestination())));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(Navigator.class.getResource("./../../VIEWS/" + destination.getDestination())));
         stage.setScene(new Scene(root));
         currentStage.close();
         stage.show();

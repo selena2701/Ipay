@@ -7,8 +7,8 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import controllers.Customer;
-import controllers.Region;
+import MODELS.Customer;
+import MODELS.Region;
 
 import java.net.URL;
 import java.sql.SQLException;

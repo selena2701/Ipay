@@ -1,4 +1,4 @@
-package controllers;
+package MODELS;
 
 
 import java.sql.ResultSet;

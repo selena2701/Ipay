@@ -21,8 +21,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
-import controllers.*;
-import controllers.Region;
+import MODELS.*;
+import MODELS.Region;
 import utils.helper.DataHolder;
 import utils.helper.Navigator;
 import utils.helper.NavigatorDetail;
@@ -140,7 +140,7 @@ public class ClientController implements Initializable {
     @FXML
     private void btnAddCredit() throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../views/client/add-credit-card.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../VIEWS/client/add-credit-card.fxml")));
         Scene scene = new Scene(root, 600, 420);
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
