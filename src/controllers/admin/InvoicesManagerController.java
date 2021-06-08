@@ -1,4 +1,4 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import database.adminRepo.InvoicesRepo;
 import javafx.beans.binding.Bindings;
@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import controllers.Invoice;
+import models.Invoice;
 
 import java.net.URL;
 import java.sql.SQLException;

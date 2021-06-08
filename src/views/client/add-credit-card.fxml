@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="357.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.client.AddCreditCardController">
+<AnchorPane prefHeight="357.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.AddCreditCardController">
    <HBox layoutY="8.0" prefHeight="50.0" prefWidth="601.0">
       <children>
          <JFXButton fx:id="btnCreditCardBack" onAction="#backButtonOnAction" prefHeight="50.0" prefWidth="58.0" text="  ">

@@ -1,4 +1,4 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import com.jfoenix.controls.*;
 import database.adminRepo.AdminRepo;
@@ -14,8 +14,8 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
-import controllers.Admin;
-import controllers.Provider;
+import models.Admin;
+import models.Provider;
 import utils.validators.NonEmptyValidator;
 import utils.validators.PhoneValidator;
 

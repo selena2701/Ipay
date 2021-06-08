@@ -1,4 +1,4 @@
-package controllers;
+package models;
 
 public class Region {
     public enum REGION_ENUM {

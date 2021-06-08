@@ -1,11 +1,11 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import com.jfoenix.controls.JFXListCell;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import controllers.Customer;
+import models.Customer;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;

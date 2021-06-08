@@ -1,4 +1,4 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import database.adminRepo.CustomersRepo;
 import javafx.fxml.FXML;
@@ -7,8 +7,8 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import controllers.Customer;
-import controllers.Region;
+import models.Customer;
+import models.Region;
 
 import java.net.URL;
 import java.sql.SQLException;

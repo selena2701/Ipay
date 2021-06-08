@@ -1,7 +1,7 @@
 package database.authRepo;
 
-import controllers.Customer;
-import controllers.Region;
+import models.Customer;
+import models.Region;
 import utils.DBConnection;
 import utils.helper.Encryption;
 import utils.exceptions.UserExistsException;

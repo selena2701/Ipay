@@ -1,4 +1,4 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import com.jfoenix.controls.JFXButton;
 import database.adminRepo.NotificationsRepo;
@@ -12,7 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import controllers.Notification;
+import models.Notification;
 
 import java.io.IOException;
 import java.net.URL;

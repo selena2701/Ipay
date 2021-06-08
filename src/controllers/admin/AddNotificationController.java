@@ -1,4 +1,4 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import database.adminRepo.NotificationsRepo;
 import javafx.fxml.FXML;
@@ -11,7 +11,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import controllers.Notification;
+import models.Notification;
 import utils.helper.DateConverter;
 
 import java.io.IOException;

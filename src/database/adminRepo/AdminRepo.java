@@ -3,7 +3,7 @@ package database.adminRepo;
 import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import controllers.Admin;
+import models.Admin;
 
 import java.sql.*;
 

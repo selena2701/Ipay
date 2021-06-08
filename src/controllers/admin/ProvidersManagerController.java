@@ -1,4 +1,4 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import database.adminRepo.AdminRepo;
 import database.adminRepo.ProvidersRepo;
@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import controllers.Provider;
+import models.Provider;
 
 import java.io.IOException;
 import java.net.URL;
