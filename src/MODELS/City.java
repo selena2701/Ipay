@@ -1,8 +1,6 @@
-<<<<<<< HEAD:src/MODELS/City.java
+
 package MODELS;
-=======
-package models;
->>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/models/City.java
+
 
 public enum City {
     ANGIANG,

@@ -1,8 +1,4 @@
-<<<<<<< HEAD:src/MODELS/Customer.java
 package MODELS;
-=======
-package models;
->>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/models/Customer.java
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
