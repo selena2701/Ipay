@@ -12,7 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import MODELS.Notification;
+import controllers.Notification;
 
 import java.io.IOException;
 import java.net.URL;
@@ -93,7 +93,7 @@ public class NotificationsManagerController implements Initializable {
     }
 
     private void onAddNotificationClicked(Event event, String notificationId) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-notification.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../views/admin/add-notification.fxml"));
         Parent root = null;
         try {
             root = loader.load();

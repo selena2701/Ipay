@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import MODELS.Provider;
+import controllers.Provider;
 
 import java.io.IOException;
 import java.net.URL;
@@ -48,7 +48,7 @@ public class ProvidersManagerController implements Initializable {
     @FXML
     private TableColumn<Provider, String> promotedByColumn;
 
-    private final FXMLLoader addProviderLoader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-provider.fxml"));
+    private final FXMLLoader addProviderLoader = new FXMLLoader(getClass().getResource("../../views/admin/add-provider.fxml"));
 
     public ProvidersManagerController() throws Exception {
     }
@@ -113,7 +113,7 @@ public class ProvidersManagerController implements Initializable {
 
     @FXML
     private void newProviderOnClick(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-provider.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../views/admin/add-provider.fxml"));
         Parent root = loader.load();
 
         AddProviderController controller = loader.getController();

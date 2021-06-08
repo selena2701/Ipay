@@ -2,9 +2,9 @@ package database.clientRepo;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import MODELS.CreditCard;
-import MODELS.Customer;
-import MODELS.Invoice;
+import controllers.CreditCard;
+import controllers.Customer;
+import controllers.Invoice;
 import utils.DBConnection;
 
 import java.sql.Connection;

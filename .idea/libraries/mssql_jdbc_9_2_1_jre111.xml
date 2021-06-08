@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="mssql-jdbc-9.2.1.jre111">
-    <CLASSES>
-      <root url="jar://C:/OracleSoftware/sqljdbc_9.2.1.0_enu/sqljdbc_9.2/enu/mssql-jdbc-9.2.1.jre11.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

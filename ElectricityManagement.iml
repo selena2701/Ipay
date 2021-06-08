@@ -12,8 +12,6 @@
     <orderEntry type="library" exported="" name="fontawesomefx-fontawesome-4.7.0-9.1.2" level="project" />
     <orderEntry type="library" exported="" name="fontawesomefx-materialicons-2.2.0-9.1.2" level="project" />
     <orderEntry type="library" exported="" name="jfoenix-9.0.10" level="project" />
-    <orderEntry type="library" exported="" name="lib" level="project" />
-    <orderEntry type="library" exported="" name="mssql-jdbc-9.2.1.jre111" level="project" />
-    <orderEntry type="library" exported="" name="lib1" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

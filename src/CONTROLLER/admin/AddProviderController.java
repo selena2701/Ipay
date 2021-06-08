@@ -14,8 +14,8 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
-import MODELS.Admin;
-import MODELS.Provider;
+import controllers.Admin;
+import controllers.Provider;
 import utils.validators.NonEmptyValidator;
 import utils.validators.PhoneValidator;
 

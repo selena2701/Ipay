@@ -11,7 +11,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import MODELS.Notification;
+import controllers.Notification;
 import utils.helper.DateConverter;
 
 import java.io.IOException;

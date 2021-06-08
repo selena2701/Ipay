@@ -1,4 +1,4 @@
-package MODELS;
+package controllers;
 
 public enum City {
     ANGIANG,

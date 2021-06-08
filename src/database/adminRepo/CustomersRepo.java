@@ -1,6 +1,6 @@
 package database.adminRepo;
 
-import MODELS.Customer;
+import controllers.Customer;
 import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
