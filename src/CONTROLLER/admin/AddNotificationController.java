@@ -40,11 +40,6 @@ public class AddNotificationController implements Initializable {
 
     private final NotificationsRepo notificationsRepo = new NotificationsRepo();
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-
-    }
     // Save and Back Button
     @FXML
     private void save(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
@@ -54,6 +49,9 @@ public class AddNotificationController implements Initializable {
                     Date.from(dcreateFld.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
                     Date.from(dsentFld.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
                     editFld.getText()));
+
+            //TODO ix notification to be passed to Repository at admin edit field
+
         } else {
             notificationsRepo.updateNotification(
                     new Notification(
@@ -62,6 +60,8 @@ public class AddNotificationController implements Initializable {
                             DateConverter.fromLocalDate(dcreateFld.getValue()),
                             DateConverter.fromLocalDate(dsentFld.getValue()),
                             editFld.getText()));
+
+            //TODO ix notification to be passed to Repository at admin edit field
         }
 
         onNavigateBack((Node) event.getSource());
@@ -74,9 +74,6 @@ public class AddNotificationController implements Initializable {
         Scene currentScene = node.getScene();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../views/admin/admin-home-screen.fxml")));
         currentScene.setRoot(root);
-    }
-
-    public AddNotificationController() throws Exception {
     }
 
     public void setNotificationId(String id) {
@@ -99,8 +96,9 @@ public class AddNotificationController implements Initializable {
         ncontentFld.setText(notification.getDescription());
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
-
+    }
 }
 

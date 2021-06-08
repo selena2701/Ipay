@@ -34,9 +34,4 @@ public class CustomersRepo {
     public ObservableList<Customer> getCustomers() {
         return customers;
     }
-
-    public void addNewUser() {
-        //TODO add new user
-    }
-
 }

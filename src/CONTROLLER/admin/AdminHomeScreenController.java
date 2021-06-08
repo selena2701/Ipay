@@ -74,7 +74,6 @@ public class AdminHomeScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println(adminUsername);
         InitListeners();
         setContent(usersNode);
     }

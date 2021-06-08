@@ -21,7 +21,7 @@ public class AdminRepo {
         return admins;
     }
 
-    public void loadAdminsFromDB() throws SQLException, ClassNotFoundException {
+    private void loadAdminsFromDB() throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.connect();
         Statement statement = connection.createStatement();
         String query = "SELECT * FROM E_ADMIN";

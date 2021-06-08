@@ -35,6 +35,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+//TODO fix user interface when first time enter the client
 public class ClientController implements Initializable {
 
 
