@@ -1,4 +1,4 @@
-package controllers.auth;
+package CONTROLLERS.auth;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
@@ -17,13 +17,8 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
 import javafx.util.StringConverter;
-<<<<<<< HEAD:src/CONTROLLER/auth/AuthController.java
 import MODELS.Customer;
 import MODELS.Region;
-=======
-import models.Customer;
-import models.Region;
->>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/MODELS/auth/AuthController.java
 import utils.exceptions.UserExistsException;
 import utils.helper.DataHolder;
 import utils.helper.Navigator;

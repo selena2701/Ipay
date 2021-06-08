@@ -1,4 +1,4 @@
-package controllers.client;
+package CONTROLLERS.client;
 
 import com.jfoenix.controls.*;
 import database.adminRepo.NotificationsRepo;
@@ -21,13 +21,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
-<<<<<<< HEAD:src/CONTROLLER/client/ClientController.java
 import MODELS.*;
 import MODELS.Region;
-=======
-import models.*;
-import models.Region;
->>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/MODELS/client/ClientController.java
 import utils.helper.DataHolder;
 import utils.helper.Navigator;
 import utils.helper.NavigatorDetail;

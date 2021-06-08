@@ -1,4 +1,4 @@
-package controllers.admin;
+package CONTROLLERS.admin;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;

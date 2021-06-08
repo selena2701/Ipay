@@ -1,4 +1,4 @@
-package controllers.admin;
+package CONTROLLERS.admin;
 
 import javafx.fxml.Initializable;
 

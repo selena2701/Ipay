@@ -1,4 +1,4 @@
-package controllers.admin;
+package CONTROLLERS.admin;
 
 import com.jfoenix.controls.JFXButton;
 import database.adminRepo.NotificationsRepo;
@@ -12,11 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-<<<<<<< HEAD:src/CONTROLLER/admin/NotificationsManagerController.java
 import MODELS.Notification;
-=======
-import models.Notification;
->>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/MODELS/admin/NotificationsManagerController.java
 
 import java.io.IOException;
 import java.net.URL;
@@ -105,7 +101,8 @@ public class NotificationsManagerController implements Initializable {
             e.printStackTrace();
         }
 
-        AddNotificationController controller = loader.getController();
+        AddNotificationController controller;
+        controller = loader.getController();
         controller.setNotificationId(notificationId);
 
         Scene currentScene;

@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.client.ClientController">
+<AnchorPane maxHeight="800.0" maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.client.ClientController">
     <VBox prefHeight="800.0" prefWidth="1280.0">
         <HBox fx:id="layout0" mouseTransparent="true" prefHeight="44.0" prefWidth="1080.0" style="-fx-background-color: #FFB300;" styleClass="shadow">
             <Pane prefHeight="44.0" prefWidth="221.0" style="-fx-background-color: #FFB300;">

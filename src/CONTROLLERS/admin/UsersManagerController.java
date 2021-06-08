@@ -1,4 +1,4 @@
-package controllers.admin;
+package CONTROLLERS.admin;
 
 import database.adminRepo.CustomersRepo;
 import javafx.fxml.FXML;
@@ -7,13 +7,8 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-<<<<<<< HEAD:src/CONTROLLER/admin/UsersManagerController.java
 import MODELS.Customer;
 import MODELS.Region;
-=======
-import models.Customer;
-import models.Region;
->>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/MODELS/admin/UsersManagerController.java
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -99,7 +94,5 @@ public class UsersManagerController implements Initializable {
         userTableView.setItems(usersRepo.getCustomers());
     }
 
-    public void addUser() {
-        usersRepo.addNewUser();
-    }
+
 }

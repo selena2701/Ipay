@@ -16,7 +16,7 @@
 <!--<TableColumn fx:id="dateJoinedColumn" prefWidth="114.0" text="Date Joined" />-->
 <!--<TableColumn fx:id="promotedByColumn" prefWidth="110.0" text="Promoted By" />-->
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@./../css/admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.ProvidersManagerController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@./../css/admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.admin.ProvidersManagerController">
     <top>
         <GridPane BorderPane.alignment="CENTER">
             <columnConstraints>
