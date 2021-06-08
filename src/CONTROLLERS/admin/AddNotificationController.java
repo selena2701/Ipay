@@ -48,6 +48,8 @@ public class AddNotificationController implements Initializable {
     @FXML
     private Label idLabel;
 
+    public AddNotificationController() throws SQLException, ClassNotFoundException {
+    }
 
 
     @Override
