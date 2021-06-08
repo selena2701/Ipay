@@ -1,11 +1,15 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import com.jfoenix.controls.JFXListCell;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+<<<<<<< HEAD:src/CONTROLLER/admin/UserListCellController.java
 import MODELS.Customer;
+=======
+import models.Customer;
+>>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/MODELS/admin/UserListCellController.java
 
 import java.io.IOException;
 import java.io.UncheckedIOException;

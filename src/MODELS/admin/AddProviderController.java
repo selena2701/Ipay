@@ -1,4 +1,4 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import com.jfoenix.controls.*;
 import database.adminRepo.AdminRepo;
@@ -14,8 +14,13 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
+<<<<<<< HEAD:src/CONTROLLER/admin/AddProviderController.java
 import MODELS.Admin;
 import MODELS.Provider;
+=======
+import models.Admin;
+import models.Provider;
+>>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/MODELS/admin/AddProviderController.java
 import utils.validators.NonEmptyValidator;
 import utils.validators.PhoneValidator;
 

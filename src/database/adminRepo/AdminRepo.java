@@ -3,7 +3,11 @@ package database.adminRepo;
 import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+<<<<<<< HEAD
 import MODELS.Admin;
+=======
+import models.Admin;
+>>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556
 
 import java.sql.*;
 
@@ -21,7 +25,7 @@ public class AdminRepo {
         return admins;
     }
 
-    public void loadAdminsFromDB() throws SQLException, ClassNotFoundException {
+    private void loadAdminsFromDB() throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.connect();
         Statement statement = connection.createStatement();
         String query = "SELECT * FROM E_ADMIN";

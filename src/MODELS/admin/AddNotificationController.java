@@ -1,4 +1,4 @@
-package CONTROLLER.admin;
+package controllers.admin;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
@@ -15,8 +15,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+<<<<<<< HEAD:src/CONTROLLER/admin/AddNotificationController.java
 import MODELS.Notification;
 import javafx.util.Callback;
+=======
+import models.Notification;
+>>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/MODELS/admin/AddNotificationController.java
 import utils.helper.DateConverter;
 import utils.validators.NonEmptyValidator;
 
@@ -49,6 +53,7 @@ public class AddNotificationController implements Initializable {
     private final NotificationsRepo notificationsRepo = new NotificationsRepo();
     private final AdminRepo adminRepo = new AdminRepo();
 
+<<<<<<< HEAD:src/CONTROLLER/admin/AddNotificationController.java
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -91,6 +96,30 @@ public class AddNotificationController implements Initializable {
             }
 
             onNavigateBack((Node) event.getSource());
+=======
+    // Save and Back Button
+    @FXML
+    private void save(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
+        if (idLabel.getText().isEmpty()) {
+            notificationsRepo.addNotification(new Notification(UUID.randomUUID().toString().substring(0, 10),
+                    ncontentFld.getText(),
+                    Date.from(dcreateFld.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
+                    Date.from(dsentFld.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()),
+                    editFld.getText()));
+
+            //TODO ix notification to be passed to Repository at admin edit field
+
+        } else {
+            notificationsRepo.updateNotification(
+                    new Notification(
+                            idLabel.getText(),
+                            ncontentFld.getText(),
+                            DateConverter.fromLocalDate(dcreateFld.getValue()),
+                            DateConverter.fromLocalDate(dsentFld.getValue()),
+                            editFld.getText()));
+
+            //TODO ix notification to be passed to Repository at admin edit field
+>>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556:src/MODELS/admin/AddNotificationController.java
         }
     }
     public void back(MouseEvent mouseEvent) throws IOException {
@@ -100,9 +129,6 @@ public class AddNotificationController implements Initializable {
         Scene currentScene = node.getScene();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../VIEWS/admin/admin-home-screen.fxml")));
         currentScene.setRoot(root);
-    }
-
-    public AddNotificationController() throws Exception {
     }
 
     public void setNotificationId(String id) {
@@ -143,8 +169,9 @@ public class AddNotificationController implements Initializable {
         ncontentFld.setText(notification.getDescription());
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
-
+    }
 }
 

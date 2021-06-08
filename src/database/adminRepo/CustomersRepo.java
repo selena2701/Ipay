@@ -1,6 +1,10 @@
 package database.adminRepo;
 
+<<<<<<< HEAD
 import MODELS.Customer;
+=======
+import models.Customer;
+>>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556
 import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -34,9 +38,4 @@ public class CustomersRepo {
     public ObservableList<Customer> getCustomers() {
         return customers;
     }
-
-    public void addNewUser() {
-        //TODO add new user
-    }
-
 }

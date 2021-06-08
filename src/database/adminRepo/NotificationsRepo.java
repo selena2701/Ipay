@@ -3,7 +3,11 @@ package database.adminRepo;
 import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+<<<<<<< HEAD
 import MODELS.Notification;
+=======
+import models.Notification;
+>>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556
 
 import java.sql.*;
 
@@ -41,6 +45,7 @@ public class NotificationsRepo {
     public void addNotification(Notification notification) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("INSERT INTO E_NOTIFICATION VALUES(?,?,?,?,?)");
+        System.out.println(notification.getDateCreated());
         statement.setString(1, notification.getId());
         statement.setDate(2, new Date(notification.getDateCreated().getTime()));
         statement.setDate(3, new Date(notification.getDatePublished().getTime()));
@@ -51,6 +56,7 @@ public class NotificationsRepo {
         loadNotificationsFromDB();
     }
 
+    //TODO recheck here to make sure things work precisely
     public void updateNotification(Notification notification) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("UPDATE E_NOTIFICATION SET DateSent=?,EditedBy=?,Detail=? WHERE NO_ID=?");
@@ -63,6 +69,7 @@ public class NotificationsRepo {
         loadNotificationsFromDB();
     }
 
+    //TODO recheck here to make sure things work precisely
     public void deleteNotification(String notificationId) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("DELETE FROM E_NOTIFICATION WHERE NO_ID=?");

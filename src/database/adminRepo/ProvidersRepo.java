@@ -3,7 +3,11 @@ package database.adminRepo;
 import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+<<<<<<< HEAD
 import MODELS.Provider;
+=======
+import models.Provider;
+>>>>>>> b46c0cc0da32f7bf4e24fa2aa3679d67f7533556
 
 import java.sql.*;
 import java.util.Date;
