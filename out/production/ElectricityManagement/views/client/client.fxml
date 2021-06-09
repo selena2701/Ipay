@@ -14,7 +14,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="800.0" maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.client.ClientController">
-    <VBox prefHeight="800.0" prefWidth="1280.0" spacing="5.0">
+    <VBox prefHeight="800.0" prefWidth="1280.0" spacing="3.0">
         <HBox fx:id="layout0" mouseTransparent="true" prefHeight="44.0" prefWidth="1080.0" style="-fx-background-color: #FFB300;" styleClass="shadow">
             <Pane prefHeight="44.0" prefWidth="221.0" style="-fx-background-color: #FFB300;">
                 <ImageView fitHeight="70.0" fitWidth="75.0" layoutX="-4.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
@@ -24,6 +24,9 @@
                <font>
                   <Font name="Cooper Black" size="38.0" />
                </font>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
             </Label>
             <opaqueInsets>
                <Insets />
@@ -260,7 +263,7 @@
                                  </Pane>
                               </children>
                            </Pane>
-                           <Pane fx:id="homecalculate" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <Pane fx:id="homecalculate" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                               <children>
                                  <Label layoutX="38.0" layoutY="36.0" text="Calculated">
                                     <font>
@@ -278,13 +281,13 @@
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <JFXTextField fx:id="txtttpwconsump" layoutX="321.0" layoutY="181.0" />
+                                 <JFXTextField fx:id="txtttpwconsump" alignment="CENTER_RIGHT" layoutX="321.0" layoutY="181.0" />
                                  <Label layoutX="38.0" layoutY="229.0" text="Number of households">
                                     <font>
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <JFXTextField fx:id="txtnbohouseholds" layoutX="321.0" layoutY="227.0" />
+                                 <JFXTextField fx:id="txtnbohouseholds" alignment="CENTER_RIGHT" layoutX="321.0" layoutY="227.0" />
                                  <JFXButton alignment="CENTER" layoutX="321.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnCalculate" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #FF9800; -fx-background-radius: 15;" text="Calculate" textFill="WHITE">
                                     <font>
                                        <Font name="Segoe UI Bold" size="24.0" />
@@ -310,7 +313,7 @@
                                  <JFXComboBox fx:id="cbbelectrictype" layoutX="321.0" layoutY="271.0" prefHeight="25.0" prefWidth="135.0" promptText="Region" />
                               </children>
                            </Pane>
-                           <Pane fx:id="homecalculateresult" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                           <Pane fx:id="homecalculateresult" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
                               <children>
                                  <Label layoutX="38.0" layoutY="36.0" text="Calculated">
                                     <font>
@@ -328,13 +331,13 @@
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <JFXTextField fx:id="txtecharges" layoutX="321.0" layoutY="184.0" />
+                                 <JFXTextField fx:id="txtecharges" alignment="CENTER_RIGHT" layoutX="321.0" layoutY="184.0" />
                                  <Label layoutX="38.0" layoutY="229.0" text="VAT(10%)">
                                     <font>
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <JFXTextField fx:id="txtVAT" layoutX="321.0" layoutY="229.0" />
+                                 <JFXTextField fx:id="txtVAT" alignment="CENTER_RIGHT" layoutX="321.0" layoutY="229.0" />
                                  <JFXButton alignment="CENTER" layoutX="321.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnCalculateBack" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #FF9800; -fx-background-radius: 15;" text="Back" textFill="WHITE">
                                     <font>
                                        <Font name="Segoe UI Bold" size="24.0" />
@@ -349,7 +352,7 @@
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <JFXTextField fx:id="txttt" layoutX="321.0" layoutY="273.0" />
+                                 <JFXTextField fx:id="txttt" alignment="CENTER_RIGHT" layoutX="321.0" layoutY="273.0" />
                                  <Label layoutX="31.0" layoutY="417.0" prefHeight="35.0" prefWidth="106.0" text="Unit price" wrapText="true">
                                     <font>
                                        <Font size="24.0" />
@@ -435,32 +438,32 @@
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="lbltt1" alignment="CENTER_RIGHT" layoutX="408.0" layoutY="494.0" text="0" textAlignment="RIGHT">
+                                 <Label fx:id="lbltt1" alignment="CENTER_RIGHT" layoutX="370.0" layoutY="494.0" text="0" textAlignment="RIGHT">
                                     <font>
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="lbltt2" alignment="CENTER_RIGHT" layoutX="408.0" layoutY="534.0" text="0" textAlignment="RIGHT">
+                                 <Label fx:id="lbltt2" alignment="CENTER_RIGHT" layoutX="370.0" layoutY="534.0" text="0" textAlignment="RIGHT">
                                     <font>
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="lbltt3" alignment="CENTER_RIGHT" layoutX="408.0" layoutY="574.0" text="0" textAlignment="RIGHT">
+                                 <Label fx:id="lbltt3" alignment="CENTER_RIGHT" layoutX="370.0" layoutY="574.0" text="0" textAlignment="RIGHT">
                                     <font>
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="lbltt4" alignment="CENTER_RIGHT" layoutX="408.0" layoutY="614.0" text="0" textAlignment="RIGHT">
+                                 <Label fx:id="lbltt4" alignment="CENTER_RIGHT" layoutX="370.0" layoutY="614.0" text="0" textAlignment="RIGHT">
                                     <font>
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="lbltt5" alignment="CENTER_RIGHT" layoutX="408.0" layoutY="654.0" text="0" textAlignment="RIGHT">
+                                 <Label fx:id="lbltt5" alignment="CENTER_RIGHT" layoutX="370.0" layoutY="654.0" text="0" textAlignment="RIGHT">
                                     <font>
                                        <Font size="14.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="lbltt6" alignment="CENTER_RIGHT" layoutX="408.0" layoutY="694.0" text="0" textAlignment="RIGHT">
+                                 <Label fx:id="lbltt6" alignment="CENTER_RIGHT" layoutX="370.0" layoutY="694.0" text="0" textAlignment="RIGHT">
                                     <font>
                                        <Font size="14.0" />
                                     </font>

@@ -147,6 +147,7 @@ public class ClientController implements Initializable {
     private void btnCalculate(){
         checkSum(service);
         homecalculateresult.setVisible(true);
+        refreshCalculate();
 
         int ttpw, nbofhouse, qtt, tt;
         int echarges = 0;
@@ -157,7 +158,7 @@ public class ClientController implements Initializable {
             qtt = ttpw - 400 * nbofhouse;
             lblqtt6.setText(Integer.toString(qtt));
             tt = qtt * 2927;
-            lbltt6.setText(Integer.toString(tt));
+            lbltt6.setText(NumberFormat.getNumberInstance().format(tt));
             echarges += tt;
             ttpw = 400* nbofhouse;
         }
@@ -165,7 +166,7 @@ public class ClientController implements Initializable {
             qtt = ttpw - 300 * nbofhouse;
             lblqtt5.setText(Integer.toString(qtt));
             tt = qtt * 2834;
-            lbltt5.setText(Integer.toString(tt));
+            lbltt5.setText(NumberFormat.getNumberInstance().format(tt));
             echarges += tt;
             ttpw = 300 * nbofhouse;
         }
@@ -173,7 +174,7 @@ public class ClientController implements Initializable {
             qtt = ttpw - 200 * nbofhouse;
             lblqtt4.setText(Integer.toString(qtt));
             tt = qtt * 2536;
-            lbltt4.setText(Integer.toString(tt));
+            lbltt4.setText(NumberFormat.getNumberInstance().format(tt));
             echarges += tt;
             ttpw = 200 * nbofhouse;
         }
@@ -181,7 +182,7 @@ public class ClientController implements Initializable {
             qtt = ttpw - 100 * nbofhouse;
             lblqtt3.setText(Integer.toString(qtt));
             tt = qtt * 2014;
-            lbltt3.setText(Integer.toString(tt));
+            lbltt3.setText(NumberFormat.getNumberInstance().format(tt));
             echarges += tt;
             ttpw = 100 * nbofhouse;
         }
@@ -189,7 +190,7 @@ public class ClientController implements Initializable {
             qtt = ttpw - 50 * nbofhouse;
             lblqtt2.setText(Integer.toString(qtt));
             tt = qtt * 1734;
-            lbltt2.setText(Integer.toString(tt));
+            lbltt2.setText(NumberFormat.getNumberInstance().format(tt));
             echarges += tt;
             ttpw = 50 * nbofhouse;
         }
@@ -197,13 +198,13 @@ public class ClientController implements Initializable {
             qtt = ttpw;
             lblqtt1.setText(Integer.toString(qtt));
             tt = qtt * 1678;
-            lbltt1.setText(Integer.toString(tt));
+            lbltt1.setText(NumberFormat.getNumberInstance().format(tt));
             echarges += tt;
         }
 
-        txtecharges.setText(Integer.toString(echarges));
-        txtVAT.setText(Double.toString(echarges * 10 / 100));
-        txttt.setText(Double.toString(echarges * 110 / 100));
+        txtecharges.setText(NumberFormat.getNumberInstance().format(echarges));
+        txtVAT.setText(NumberFormat.getNumberInstance().format(echarges * 10 / 100));
+        txttt.setText(NumberFormat.getNumberInstance().format(echarges * 110 / 100));
     }
 
     @FXML
@@ -290,6 +291,21 @@ public class ClientController implements Initializable {
             str = s;
         }
         labelGreeting.setText("Hi, " + str);
+    }
+
+    private void refreshCalculate(){
+        lblqtt1.setText("0");
+        lblqtt2.setText("0");
+        lblqtt3.setText("0");
+        lblqtt4.setText("0");
+        lblqtt5.setText("0");
+        lblqtt6.setText("0");
+        lbltt1.setText("0");
+        lbltt2.setText("0");
+        lbltt3.setText("0");
+        lbltt4.setText("0");
+        lbltt5.setText("0");
+        lbltt6.setText("0");
     }
 
     //Initializations
