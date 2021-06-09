@@ -5,6 +5,7 @@ import database.adminRepo.NotificationsRepo;
 import database.clientRepo.ClientRepo;
 import javafx.animation.TranslateTransition;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -30,6 +31,9 @@ import utils.helper.NavigatorDetail;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.NumberFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Objects;
 import java.util.Optional;
@@ -46,9 +50,13 @@ public class ClientController implements Initializable {
     @FXML
     private HBox home;
     @FXML
-    private Pane account, bill, homecalculate, homescheduling, slider;
+    private Pane account, bill, homecalculate, homescheduling, slider, homecalculateresult;
     @FXML
-    private Label tabCloneHome, labelGreeting;
+    private Label labelGreeting;
+    @FXML
+    private JFXTextField txtttpwconsump, txtnbohouseholds, txtecharges, txtVAT, txttt;
+    @FXML
+    private JFXButton btncalculate, btncalculateback;
     @FXML
     private JFXButton btnLogout, checkin, checkout;
     @FXML
@@ -83,6 +91,8 @@ public class ClientController implements Initializable {
     private JFXTextField txtFullName, txtID, txtNumber, txtAddress, txtNationalID, txtDateRegister, txtUsername,
             txtInvoiceCardHolderName, txtInvoiceCardNumber, txtInvoiceAccountNumber;
     @FXML
+    private Label lblqtt1, lblqtt2, lblqtt3, lblqtt4, lblqtt5, lblqtt6, lbltt1, lbltt2, lbltt3, lbltt4, lbltt5, lbltt6;
+    @FXML
     private JFXPasswordField pwfCurrentPassword, pwfNewPassword, pwfRetypePassword;
     @FXML
     private RadioButton rBtnMale, rBtnFemale, rBtnOrther;
@@ -92,6 +102,8 @@ public class ClientController implements Initializable {
     private TableView<CreditCard> tblCreditCard;
     @FXML
     private TableColumn<CreditCard, String> tblColumnCardHolderName, tblColumnAccountNumber, tblColumnBank, tblColumnStatus;
+    @FXML
+    private Label lbltotalinvoices, lbltotal, lblperiodnewinvoice, lbltotalnewinvoice;
 
 
     private ClientRepo repo;
@@ -118,6 +130,7 @@ public class ClientController implements Initializable {
         home.setVisible(true);
     }
 
+
     @FXML
     private void btnCalendar(MouseEvent mouseEvent) {
         checkSum(service);
@@ -126,6 +139,75 @@ public class ClientController implements Initializable {
 
     @FXML
     private void btnCalculator(MouseEvent mouseEvent) {
+        checkSum(service);
+        homecalculate.setVisible(true);
+    }
+
+    @FXML
+    private void btnCalculate(){
+        checkSum(service);
+        homecalculateresult.setVisible(true);
+
+        int ttpw, nbofhouse, qtt, tt;
+        int echarges = 0;
+        ttpw = Integer.parseInt(txtttpwconsump.getText());
+        nbofhouse = Integer.parseInt(txtnbohouseholds.getText());
+
+        if (ttpw > 400 * nbofhouse) {
+            qtt = ttpw - 400 * nbofhouse;
+            lblqtt6.setText(Integer.toString(qtt));
+            tt = qtt * 2927;
+            lbltt6.setText(Integer.toString(tt));
+            echarges += tt;
+            ttpw = 400* nbofhouse;
+        }
+        if(ttpw > 300 * nbofhouse){
+            qtt = ttpw - 300 * nbofhouse;
+            lblqtt5.setText(Integer.toString(qtt));
+            tt = qtt * 2834;
+            lbltt5.setText(Integer.toString(tt));
+            echarges += tt;
+            ttpw = 300 * nbofhouse;
+        }
+        if(ttpw > 200 * nbofhouse){
+            qtt = ttpw - 200 * nbofhouse;
+            lblqtt4.setText(Integer.toString(qtt));
+            tt = qtt * 2536;
+            lbltt4.setText(Integer.toString(tt));
+            echarges += tt;
+            ttpw = 200 * nbofhouse;
+        }
+        if(ttpw > 100 * nbofhouse){
+            qtt = ttpw - 100 * nbofhouse;
+            lblqtt3.setText(Integer.toString(qtt));
+            tt = qtt * 2014;
+            lbltt3.setText(Integer.toString(tt));
+            echarges += tt;
+            ttpw = 100 * nbofhouse;
+        }
+        if(ttpw > 50 * nbofhouse){
+            qtt = ttpw - 50 * nbofhouse;
+            lblqtt2.setText(Integer.toString(qtt));
+            tt = qtt * 1734;
+            lbltt2.setText(Integer.toString(tt));
+            echarges += tt;
+            ttpw = 50 * nbofhouse;
+        }
+        if(ttpw > 0 * nbofhouse){
+            qtt = ttpw;
+            lblqtt1.setText(Integer.toString(qtt));
+            tt = qtt * 1678;
+            lbltt1.setText(Integer.toString(tt));
+            echarges += tt;
+        }
+
+        txtecharges.setText(Integer.toString(echarges));
+        txtVAT.setText(Double.toString(echarges * 10 / 100));
+        txttt.setText(Double.toString(echarges * 110 / 100));
+    }
+
+    @FXML
+    private void btnCalculateBack(){
         checkSum(service);
         homecalculate.setVisible(true);
     }
@@ -272,9 +354,25 @@ public class ClientController implements Initializable {
         initStatisticLineChart();
         initStatisticBarChart();
         initNotificationsTable();
+        initLabelOverviewHome();
+    }
+
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+    private void initLabelOverviewHome(){
+        ObservableList<Invoice> invoices = tableBill.getItems();
+        lbltotalinvoices.setText(Integer.toString(invoices.size()));
+        float total = 0;
+        for(Invoice invoice : invoices){
+            total += invoice.getTotal();
+        }
+        lbltotal.setText(NumberFormat.getInstance().format(total));
+        lblperiodnewinvoice.setText(LocalDate.parse(invoices.get(invoices.size() - 1).getFromDate().toString(), formatter).toString());
+        lbltotalnewinvoice.setText(NumberFormat.getNumberInstance().format(invoices.get(invoices.size() - 1).getTotal()));
     }
 
     private void initAccountProfile() {
+
         txtFullName.setText(user.getName());
         txtID.setText(user.getId());
         txtNumber.setText(user.getPhoneNumber());
