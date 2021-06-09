@@ -139,23 +139,23 @@
                <HBox fx:id="home" style="-fx-background-color: #FFECB3;">
                   <children>
                             <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #FFECB3;">
-                                 <Pane layoutX="23.0" layoutY="307.0" prefHeight="140.0" prefWidth="503.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
-                                     <Label layoutX="9.0" layoutY="4.0" prefHeight="62.0" prefWidth="247.0" text="New Invoice" textFill="#030303">
+                                 <Pane layoutX="22.0" layoutY="415.0" prefHeight="200.0" prefWidth="503.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
+                                     <Label layoutX="14.0" layoutY="28.0" prefHeight="62.0" prefWidth="247.0" text="New Invoice" textFill="#030303">
                                          <font>
                                              <Font name="Agency FB Bold" size="50.0" />
                                          </font>
                                      </Label>
-                                     <Label fx:id="lblperiodnewinvoice" layoutX="15.0" layoutY="72.0" prefHeight="56.0" prefWidth="170.0" text="04/2021">
+                                     <Label fx:id="lblperiodnewinvoice" layoutX="28.0" layoutY="117.0" prefHeight="56.0" prefWidth="170.0" text="04/2021">
                                           <font>
                                              <Font name="Agency FB" size="42.0" />
                                          </font>
                                      </Label>
-                                     <Label fx:id="lbltotalnewinvoice" alignment="CENTER_RIGHT" layoutX="211.0" layoutY="74.0" prefHeight="52.0" prefWidth="189.0" text="406,502">
+                                     <Label fx:id="lbltotalnewinvoice" alignment="CENTER_RIGHT" layoutX="216.0" layoutY="119.0" prefHeight="52.0" prefWidth="189.0" text="406,502">
                                          <font>
                                              <Font name="Agency FB" size="42.0" />
                                          </font>
                                      </Label>
-                           <Label fx:id="lbltotalnewinvoice1" alignment="CENTER_RIGHT" layoutX="397.0" layoutY="74.0" prefHeight="52.0" prefWidth="54.0" text="vnd">
+                           <Label fx:id="lbltotalnewinvoice1" alignment="CENTER_RIGHT" layoutX="402.0" layoutY="119.0" prefHeight="52.0" prefWidth="54.0" text="vnd">
                               <font>
                                  <Font name="Agency FB" size="42.0" />
                               </font>
@@ -165,28 +165,28 @@
                               <String fx:value="shadow" />
                            </styleClass>
                                  </Pane>
-                                 <Pane layoutX="22.0" layoutY="109.0" prefHeight="151.0" prefWidth="503.0" style="-fx-border-radius: 100; -fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
-                                     <Label layoutX="20.0" layoutY="2.0" prefHeight="60.0" prefWidth="240.0" text="Total Invoices" textFill="#0d0d0d">
+                                 <Pane layoutX="22.0" layoutY="86.0" prefHeight="200.0" prefWidth="503.0" style="-fx-border-radius: 100; -fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
+                                     <Label layoutX="14.0" layoutY="30.0" prefHeight="60.0" prefWidth="240.0" text="Total Invoices" textFill="#0d0d0d">
                                          <font>
                                              <Font name="Agency FB Bold" size="50.0" />
                                          </font>
                                      </Label>
-                                     <Label fx:id="lbltotalinvoices" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="270.0" layoutY="-2.0" prefHeight="37.0" prefWidth="179.0" style="-fx-text-alignment: right;" text="18" textFill="#0d0d0d">
+                                     <Label fx:id="lbltotalinvoices" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="264.0" layoutY="26.0" prefHeight="37.0" prefWidth="179.0" style="-fx-text-alignment: right;" text="18" textFill="#0d0d0d">
                                          <font>
                                              <Font name="Agency FB" size="50.0" />
                                          </font>
                                      </Label>
-                                     <Label layoutX="22.0" layoutY="72.0" prefHeight="62.0" prefWidth="135.0" text="Total" textFill="#0d0d0d">
+                                     <Label layoutX="14.0" layoutY="112.0" prefHeight="62.0" prefWidth="135.0" text="Total" textFill="#0d0d0d">
                                          <font>
                                              <Font name="Agency FB Bold" size="50.0" />
                                          </font>
                                      </Label>
-                                     <Label fx:id="lbltotal" alignment="CENTER_RIGHT" layoutX="168.0" layoutY="69.0" prefHeight="60.0" prefWidth="221.0" text="16.000.000" textFill="#0d0d0d">
+                                     <Label fx:id="lbltotal" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="109.0" prefHeight="60.0" prefWidth="221.0" text="16.000.000" textFill="#0d0d0d">
                                          <font>
                                              <Font name="Agency FB" size="50.0" />
                                          </font>
                                      </Label>
-                           <Label fx:id="lbltotal1" alignment="CENTER_RIGHT" layoutX="388.0" layoutY="69.0" prefHeight="60.0" prefWidth="61.0" text="vnd" textFill="#0d0d0d">
+                           <Label fx:id="lbltotal1" alignment="CENTER_RIGHT" layoutX="380.0" layoutY="109.0" prefHeight="60.0" prefWidth="61.0" text="vnd" textFill="#0d0d0d">
                               <font>
                                  <Font name="Agency FB" size="50.0" />
                               </font>
@@ -196,27 +196,7 @@
                               <String fx:value="shadow" />
                            </styleClass>
                                  </Pane>
-                        <Pane layoutX="23.0" layoutY="491.0" onMouseClicked="#btnCalculator" prefHeight="79.0" prefWidth="503.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
-                           <children>
-                              <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="31.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/calculatorr.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="83.0" layoutY="15.0" prefHeight="45.0" prefWidth="309.0" text=" Electricity Calculator" textFill="#030303">
-                                 <font>
-                                    <Font name="Agency FB Bold" size="36.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <styleClass>
-                              <String fx:value="container" />
-                              <String fx:value="shadow" />
-                              <String fx:value="btnService" />
-                           </styleClass>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></Pane>
+                        <Separator layoutX="543.0" orientation="VERTICAL" prefHeight="754.0" prefWidth="8.0" style="-fx-background-color: FF9800;" />
                             </Pane>
                      <StackPane fx:id="service" prefHeight="755.0" prefWidth="515.0">
                         <children>
@@ -382,14 +362,9 @@
                                  </Label>
                               </children>
                            </Pane>
-                           <Pane fx:id="homecalculate" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                           <Pane fx:id="homecalculate" layoutX="10.0" layoutY="10.0" prefHeight="754.0" prefWidth="503.0">
                               <children>
-                                 <Label layoutX="34.0" layoutY="25.0" text="Electricity Bill Calculator">
-                                    <font>
-                                       <Font name="Agency FB" size="30.0" />
-                                    </font>
-                                 </Label>
-                                 <Separator layoutX="34.0" layoutY="71.0" prefHeight="0.0" prefWidth="424.0" />
+                                 <Separator layoutX="34.0" layoutY="103.0" prefHeight="0.0" prefWidth="424.0" />
                                  <Label layoutX="34.0" layoutY="117.0" text="Enter the parameters">
                                     <font>
                                        <Font size="24.0" />
@@ -430,6 +405,28 @@
                                     </font>
                                  </Label>
                                  <JFXComboBox fx:id="cbbelectrictype" layoutX="321.0" layoutY="271.0" prefHeight="25.0" prefWidth="135.0" promptText="Electricity type" />
+                                 <Pane layoutX="33.0" layoutY="14.0" onMouseClicked="#btnCalculator" prefHeight="79.0" prefWidth="411.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
+                                    <children>
+                                       <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="31.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@../images/calculatorr.jpg" />
+                                          </image>
+                                       </ImageView>
+                                       <Label layoutX="83.0" layoutY="15.0" prefHeight="45.0" prefWidth="326.0" text=" Electricity Bill Calculator" textFill="#030303">
+                                          <font>
+                                             <Font name="Agency FB Bold" size="36.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                    <styleClass>
+                                       <String fx:value="container" />
+                                       <String fx:value="shadow" />
+                                       <String fx:value="btnService" />
+                                    </styleClass>
+                                    <cursor>
+                                       <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                 </Pane>
                               </children>
                            </Pane>
                         </children>
