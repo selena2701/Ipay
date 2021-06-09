@@ -34,9 +34,9 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <JFXButton mnemonicParsing="false" prefHeight="60.0" prefWidth="86.0" text="  ">
+                  <JFXButton fx:id="btnPrint" mnemonicParsing="false" onAction="#PrintOnAction" prefHeight="60.0" prefWidth="86.0" text="  ">
                      <graphic>
-                        <MaterialIconView fx:id="btnPrint" fill="#ff9800" glyphName="PRINT" size="40" strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <MaterialIconView fill="#ff9800" glyphName="PRINT" size="40" strokeType="OUTSIDE" strokeWidth="0.0" />
                      </graphic>
                   </JFXButton>
                </children>
