@@ -6,12 +6,8 @@ import java.sql.SQLException;
 
 public class DBConnection {
     public static Connection connect() throws ClassNotFoundException, SQLException {
-        String url = "jdbc:mysql://localhost:3306/dbc_connection";
-        String user = "root";
-        String password = "Phanvuthuyduong2806";
-        Class.forName("com.mysql.jdbc.Driver");
-        return DriverManager.getConnection(url, user, password);
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=DBC_EBAY;username=sa;password=112367";
+        return DriverManager.getConnection(url);
     }
-
 }
-
