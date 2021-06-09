@@ -76,6 +76,7 @@ public class AddNotificationController implements Initializable {
     // Save and Back Button
     @FXML
     private void save(MouseEvent event) throws SQLException, ClassNotFoundException, IOException {
+
         if (validate()) {
             if (idLabel.getText().isEmpty()) {
                 notificationsRepo.addNotification(new Notification(UUID.randomUUID().toString().substring(0, 10),

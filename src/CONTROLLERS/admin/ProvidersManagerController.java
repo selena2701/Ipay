@@ -1,3 +1,4 @@
+
 package CONTROLLERS.admin;
 
 import database.adminRepo.AdminRepo;
@@ -123,4 +124,3 @@ public class ProvidersManagerController implements Initializable {
         currentScene.setRoot(root);
     }
 }
-
