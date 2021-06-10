@@ -116,7 +116,7 @@ public class AdminHomeScreenController implements Initializable {
         if (result.get() == btnTypeYes) {
             try {
                 DataHolder.getINSTANCE().setUserName(null);
-                Navigator.navigate((Stage) mainroot.getScene().getWindow(), new NavigatorDetail("auth/auth-view.fxml"));
+                Navigator.navigate((Stage) mainroot.getScene().getWindow(), new NavigatorDetail("auth/auth_screen.fxml"));
             } catch (IOException e) {
                 e.printStackTrace();
             }

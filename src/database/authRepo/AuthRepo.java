@@ -14,20 +14,18 @@ public class AuthRepo {
      * This will return [null] if (fail), [true] if (admin) and [false] if (customer)
      * */
     public static Boolean login(String userName, String password) throws SQLException, ClassNotFoundException {
-        Boolean isAdmin = null;
-
+        Boolean isUser= null;
         String hashPassword = Encryption.encrypt(password);
-
         Connection connection = DBConnection.connect();
-        String sql = "SELECT * FROM USER_ACCOUNT WHERE Username=? ";
+        String sql = "SELECT * FROM USER_ACCOUNT WHERE Username=? AND Password_Login=?";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, userName);
+        statement.setString(2, hashPassword);
         ResultSet resultSet = statement.executeQuery();
-        if (resultSet.next() && resultSet.getString("Password_Login").equals(hashPassword))
-            isAdmin = resultSet.getInt("Role") == 1;
-
+        if (resultSet.next())
+            isUser = resultSet.getInt("Role") == 1;
         connection.close();
-        return isAdmin;
+        return isUser;
     }
 
 

@@ -271,7 +271,7 @@ public class ClientController implements Initializable {
         if (result.get() == btnTypeYes) {
             try {
                 DataHolder.getINSTANCE().setUserName(null);
-                Navigator.navigate((Stage) main.getScene().getWindow(), new NavigatorDetail("auth/auth-view.fxml"));
+                Navigator.navigate((Stage) main.getScene().getWindow(), new NavigatorDetail("auth/auth_screen.fxml"));
             } catch (IOException e) {
                 e.printStackTrace();
             }

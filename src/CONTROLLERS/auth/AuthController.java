@@ -136,7 +136,7 @@ public class AuthController implements Initializable {
             @Override
             public void updateItem(LocalDate localDate, boolean b) {
                 super.updateItem(localDate, b);
-                setDisable(localDate.isBefore(LocalDate.now()));
+                //setDisable(localDate.isBefore(LocalDate.now()));
             }
         });
 
