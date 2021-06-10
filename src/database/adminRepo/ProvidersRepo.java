@@ -38,6 +38,7 @@ public class ProvidersRepo {
         return providers;
     }
 
+    //Add Provider
     public void addNewProvider(String id, String name, String phone, String address, Date dateJoined, String promotedBy) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("INSERT INTO E_PROVIDER VALUES (?,?,?,?,?,?)");
@@ -52,7 +53,7 @@ public class ProvidersRepo {
 
         loadProviderFromDB();
     }
-
+    //Delete Provider
     public void deleteProvider(String providerId) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("DELETE FROM E_PROVIDER WHERE PRO_ID=?");
@@ -63,15 +64,7 @@ public class ProvidersRepo {
         loadProviderFromDB();
     }
 
-    public Provider getProviderById(String id) {
-        for (Provider provider : providers) {
-            if (provider.getId().equals(id)) {
-                return provider;
-            }
-        }
-        return null;
-    }
-
+    //Modify Provider
     public void updateProvider(Provider provider) throws SQLException, ClassNotFoundException {
 
         connection = DBConnection.connect();
@@ -87,5 +80,14 @@ public class ProvidersRepo {
         loadProviderFromDB();
     }
 
+
+    public Provider getProviderById(String id) {
+        for (Provider provider : providers) {
+            if (provider.getId().equals(id)) {
+                return provider;
+            }
+        }
+        return null;
+    }
 
 }

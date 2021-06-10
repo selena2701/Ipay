@@ -49,7 +49,7 @@ public class ProvidersManagerController implements Initializable {
     @FXML
     private TableColumn<Provider, String> promotedByColumn;
 
-    private final FXMLLoader addProviderLoader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-provider.fxml"));
+    private final FXMLLoader addProviderLoader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-or-modify-provider_Screen.fxml"));
 
     public ProvidersManagerController() throws Exception {
     }
@@ -114,7 +114,7 @@ public class ProvidersManagerController implements Initializable {
 
     @FXML
     private void newProviderOnClick(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-provider.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-or-modify-provider_Screen.fxml"));
         Parent root = loader.load();
 
         AddProviderController controller = loader.getController();
