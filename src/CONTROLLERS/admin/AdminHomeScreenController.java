@@ -25,7 +25,6 @@ public class AdminHomeScreenController implements Initializable {
 
     private static final String USERS_MANAGER = "./../../VIEWS/admin/users-manager.fxml";
     private static final String PROVIDERS_MANAGER = "./../../VIEWS/admin/providers-manager.fxml";
-    //private static final String INVOICES_MANAGER = "./../../VIEWS/admin/invoices-manager.fxml";
     private static final String NOTIFICATIONS_MANAGER = "./../../VIEWS/admin/notifications-manager.fxml";
     private static final String REPORT_MANAGER = "./../../VIEWS/admin/report-manager.fxml";
     @FXML
@@ -44,7 +43,7 @@ public class AdminHomeScreenController implements Initializable {
     private JFXButton notificationsButton;
 
     @FXML
-    private JFXButton statisticButton;
+    private JFXButton reportButton;
 
     @FXML JFXButton btnLogOut;
 
@@ -62,12 +61,12 @@ public class AdminHomeScreenController implements Initializable {
         FXMLLoader usersLoader = new FXMLLoader(getClass().getResource(USERS_MANAGER));
         FXMLLoader providersLoader = new FXMLLoader(getClass().getResource(PROVIDERS_MANAGER));
         FXMLLoader notificationsLoader = new FXMLLoader(getClass().getResource(NOTIFICATIONS_MANAGER));
-        FXMLLoader statisticLoader = new FXMLLoader(getClass().getResource(REPORT_MANAGER));
+        FXMLLoader reportLoader = new FXMLLoader(getClass().getResource(REPORT_MANAGER));
 
         usersNode = usersLoader.load();
         providersNode = providersLoader.load();
         notificationsNode = notificationsLoader.load();
-        reportNode = statisticLoader.load();
+        reportNode = reportLoader.load();
 
         this.adminUsername = DataHolder.getINSTANCE().getUserName();
     }
@@ -94,7 +93,7 @@ public class AdminHomeScreenController implements Initializable {
         notificationsButton.setOnMouseClicked(mouseEvent -> {
             setContent(notificationsNode);
         });
-        statisticButton.setOnMouseClicked(mouseEvent -> {
+        reportButton.setOnMouseClicked(mouseEvent -> {
             setContent(reportNode);
         });
 

@@ -38,5 +38,9 @@ public class ReportManagerController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TO DO
     }
+
+    public void PrintOnAction(javafx.event.ActionEvent event) {
+        //TO DO
+    }
 }
 

@@ -196,7 +196,7 @@
                               <String fx:value="shadow" />
                            </styleClass>
                                  </Pane>
-                        <Separator layoutX="543.0" orientation="VERTICAL" prefHeight="754.0" prefWidth="8.0" style="-fx-background-color: FF9800;" />
+                        <Separator layoutX="543.0" orientation="VERTICAL" prefHeight="754.0" prefWidth="5.0" style="-fx-background-color: FF9800;" />
                             </Pane>
                      <StackPane fx:id="service" prefHeight="755.0" prefWidth="515.0">
                         <children>
