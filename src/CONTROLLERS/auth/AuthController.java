@@ -170,7 +170,7 @@ public class AuthController implements Initializable {
         Boolean isCorrectUser = AuthRepo.login(loginUsername.getText(), loginPassword.getText());
         if (isCorrectUser != null) {
             try {
-                NavigatorDetail detail = new NavigatorDetail(isCorrectUser ? "admin/admin-home-screen.fxml" : "client/client.fxml");
+                NavigatorDetail detail = new NavigatorDetail(isCorrectUser ? "admin/admin-home-screen.fxml" : "client/client_Screen.fxml");
                 detail.setTitle(isCorrectUser ? "Admin" : "Customer");
                 DataHolder.getINSTANCE().setUserName(loginUsername.getText());
                 Navigator.navigate((Stage) mainPane.getScene().getWindow(), detail);

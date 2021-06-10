@@ -224,7 +224,7 @@ public class ClientController implements Initializable {
     @FXML
     private void btnAddCredit() throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../VIEWS/client/add-credit-card.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("./../../VIEWS/client/add-credit-card_screen.fxml")));
         Scene scene = new Scene(root, 600, 420);
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
