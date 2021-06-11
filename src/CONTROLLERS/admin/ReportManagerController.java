@@ -1,42 +1,57 @@
 package CONTROLLERS.admin;
 
+import MODELS.Report;
 import com.jfoenix.controls.JFXButton;
-import javafx.fxml.Initializable;
-import de.jensd.fx.glyphs.materialicons.MaterialIconView;
+import database.adminRepo.ReportsRepo;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.awt.event.ActionEvent;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ReportManagerController implements Initializable {
+
+    private final ReportsRepo reportsRepo = new ReportsRepo();
+
     @FXML
     private JFXButton btnPrint;
 
     @FXML
-    private TableView<?> tbStatistic;
+    private TableView<Report> tbStatistic;
 
     @FXML
-    private TableColumn<?, ?> clPeriod;
+    private TableColumn<Report, String> clPeriod;
 
     @FXML
-    private TableColumn<?, ?> clAmountofUser;
+    private TableColumn<Report, Integer> clAmountofUser;
 
     @FXML
-    private TableColumn<?, ?> clAmountofPayment;
+    private TableColumn<Report, Integer> clAmountofPayment;
 
     @FXML
-    private TableColumn<?, ?> clAmountofMoney;
+    private TableColumn<Report, Double> clAmountofMoney;
+
+    public ReportManagerController() throws SQLException, ClassNotFoundException {
+    }
 
     @FXML
     void PrintOnAction(ActionEvent event) {
 
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TO DO
+        clPeriod.setCellValueFactory(new PropertyValueFactory<>("period"));
+        clAmountofUser.setCellValueFactory(new PropertyValueFactory<>("totalUsers"));
+        clAmountofPayment.setCellValueFactory(new PropertyValueFactory<>("numberTransactions"));
+        clAmountofMoney.setCellValueFactory(new PropertyValueFactory<>("totalTransactionValue"));
+
+        tbStatistic.setItems(reportsRepo.getReports());
     }
 
     public void PrintOnAction(javafx.event.ActionEvent event) {
