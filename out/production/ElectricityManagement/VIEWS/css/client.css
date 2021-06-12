@@ -44,5 +44,12 @@
     -fx-font-size: 18;
     -fx-tick-label-fill: #263238;
 }
+.combo-box .cell {
+    -fx-text-fill: white;
 
+}
+.combo-box{
+    -fx-border-color: white;
+    -fx-border-width: 0px 0px 1px 0px;
+}
 .default-color0.chart-bar { -fx-bar-fill: #F5F5F5; }

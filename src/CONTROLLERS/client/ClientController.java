@@ -5,7 +5,6 @@ import database.adminRepo.NotificationsRepo;
 import database.clientRepo.ClientRepo;
 import javafx.animation.TranslateTransition;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -45,11 +44,11 @@ public class ClientController implements Initializable {
     @FXML
     private StackPane main;
     @FXML
-    private StackPane notification, service;
+    private StackPane Notification_Screen, service;
     @FXML
-    private HBox home;
+    private HBox Home_Screen;
     @FXML
-    private Pane account, bill, homecalculate, homescheduling, slider, homecalculateresult;
+    private Pane Profile_Screen, Invoice_Screen, homecalculate, homescheduling, slider, homecalculateresult;
     @FXML
     private Label labelGreeting;
     @FXML
@@ -57,11 +56,11 @@ public class ClientController implements Initializable {
     @FXML
     private JFXButton btncalculate, btncalculateback;
     @FXML
-    private JFXButton btnLogout, checkin, checkout, btnRemoveCredit, btnSetDefaultCredit, btnSaveProfile;
+    private JFXButton btnLogout, btnPayment, btnCheckout, btnRemoveCredit, btnSetDefaultCredit, btnSaveProfile;
     @FXML
     private Pane btnNotification;
     @FXML
-    private AnchorPane reports;
+    private AnchorPane Statistic_Screen;
     @FXML
     private TableView<Invoice> tableBill;
     @FXML
@@ -128,7 +127,7 @@ public class ClientController implements Initializable {
     private void btnHome() {
         setLblWelcome(user.getName());
         checkSum(main);
-        home.setVisible(true);
+        Home_Screen.setVisible(true);
     }
 
 
@@ -219,7 +218,7 @@ public class ClientController implements Initializable {
     private void btnAccount() {
         labelGreeting.setText("Account");
         checkSum(main);
-        account.setVisible(true);
+        Profile_Screen.setVisible(true);
     }
 
     @FXML
@@ -240,7 +239,7 @@ public class ClientController implements Initializable {
     private void btnBill() {
         labelGreeting.setText("Invoice");
         checkSum(main);
-        bill.setVisible(true);
+        Invoice_Screen.setVisible(true);
     }
 
     //Event handlers for Statistic
@@ -248,7 +247,7 @@ public class ClientController implements Initializable {
     private void btnReport() {
         labelGreeting.setText("Statistic");
         checkSum(main);
-        reports.setVisible(true);
+        Statistic_Screen.setVisible(true);
     }
 
     //Event handlers for Notification
@@ -256,7 +255,7 @@ public class ClientController implements Initializable {
     private void btnNotification(MouseEvent mouseEvent) {
         labelGreeting.setText("Notification");
         checkSum(main);
-        notification.setVisible(true);
+        Notification_Screen.setVisible(true);
     }
 
     //Log out
@@ -397,14 +396,14 @@ public class ClientController implements Initializable {
                     fromDate.setText(String.valueOf(invoice.getFromDate()));
                     toDate.setText(String.valueOf(invoice.getToDate()));
                     electricityType.setText(String.valueOf(invoice.getElectricityType()));
-                    checkin.setVisible(!invoice.isPaid());
+                    btnPayment.setVisible(!invoice.isPaid());
                 }
             }
         });
 
 
         slider.setTranslateX(400);
-        checkin.setOnMouseClicked(event -> {
+        btnPayment.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
             slide.setDuration(Duration.seconds(0.4));
             slide.setNode(slider);
@@ -413,7 +412,7 @@ public class ClientController implements Initializable {
             slide.play();
             slider.setTranslateX(400);
         });
-        checkout.setOnMouseClicked(event -> {
+        btnCheckout.setOnMouseClicked(event -> {
             try {
                 repo.updateInvoice(idText.getText());
             } catch (SQLException | ClassNotFoundException throwables) {
@@ -493,7 +492,21 @@ public class ClientController implements Initializable {
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("fromDate"));
         valueColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
         status.setCellValueFactory(new PropertyValueFactory<>("paid"));
-
+        status.setCellFactory(BooleanTableColumn -> new TableCell<>() {
+            @Override
+            protected void updateItem(Boolean value, boolean empty) {
+                super.updateItem(value, empty);
+                if (value == null || empty) {
+                    setText(null);
+                    setStyle("");
+                } else {
+                    setText(value ? "PAID" : "UNPAID");
+                    setStyle("-fx-background-color: #FFE0B2");
+                    setStyle("-fx-border-color: #FFA726");
+                    setStyle("-fx-alignment: center");
+                }
+            }
+        });
         tableBill.setItems(repo.getInvoices());
     }
 
@@ -512,15 +525,9 @@ public class ClientController implements Initializable {
         ObservableList<Invoice> invoices = tableBill.getItems();
         int i = invoices.size();
         XYChart.Series series = new XYChart.Series();
-        if (i >= 5) {
-            for (int d = 5; d >= 1; d--) {
-                series.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getConsumedValue()));
-            }
-        } else {
             for (int d = i; d >= 1; d--) {
-                series.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getConsumedValue()));
+                series.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getTotal()));
             }
-        }
 
         lineChart.getData().addAll(series);
         lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
@@ -531,15 +538,8 @@ public class ClientController implements Initializable {
         ObservableList<Invoice> invoices = tableBill.getItems();
         int i = invoices.size();
         XYChart.Series series1 = new XYChart.Series();
-
-        if (i >= 5) {
-            for (int d = 5; d >= 1; d--) {
+        for (int d = i; d >= 1; d--) {
                 series1.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getConsumedValue()));
-            }
-        } else {
-            for (int d = i; d >= 1; d--) {
-                series1.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getConsumedValue()));
-            }
         }
         barChart.getData().addAll(series1);
         barChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
