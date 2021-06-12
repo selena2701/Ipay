@@ -23,17 +23,18 @@ public class ClientRepo {
 
 
     public ClientRepo(String username) throws SQLException, ClassNotFoundException {
-        customer = fetchCustomerData(username);
+        customer = loadCustomerFromDB(username);
         profileLoader();
     }
 
+    //Load Invoice Screen
     private void profileLoader() throws SQLException, ClassNotFoundException {
-        loadAllCreditCards();
-        loadAllInvoices();
+        loadAllCreditCardsFromDB();
+        loadAllInvoicesFromDB();
     }
 
 
-    private Customer fetchCustomerData(String username) throws SQLException, ClassNotFoundException {
+    private Customer loadCustomerFromDB(String username) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
 
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_CUSTOMER WHERE Username=?");
@@ -49,7 +50,7 @@ public class ClientRepo {
         return null;
     }
 
-    private void loadAllCreditCards() throws SQLException, ClassNotFoundException {
+    private void loadAllCreditCardsFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
 
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_CREDITCARD WHERE CUS_ID=?");
@@ -62,7 +63,7 @@ public class ClientRepo {
         connection.close();
     }
 
-    private void loadAllInvoices() throws SQLException, ClassNotFoundException {
+    private void loadAllInvoicesFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_ELECTRICITY_BILL WHERE CUS_ID=?");
         statement.setString(1, customer.getId());
@@ -78,7 +79,7 @@ public class ClientRepo {
     public void updateInvoice(String id) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement pstmt = connection.prepareStatement("UPDATE E_ELECTRICITY_BILL SET STATUSBILL=? WHERE ELEC_BILL_ID=?");
-        pstmt.setString(1, "Default");
+        pstmt.setString(1, "PAID");
         pstmt.setString(2, id);
         pstmt.executeUpdate();
     }

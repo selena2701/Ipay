@@ -102,7 +102,7 @@ public class AdminHomeScreenController implements Initializable {
 
     //Log Out
     @FXML
-    private void btnLogOut() {
+    private void btnLogOutOnAction() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("");
         alert.setHeaderText("Are you sure to log out?");

@@ -136,7 +136,7 @@
             </VBox>
             <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0" style="-fx-background-color: #FFECB3;">
                 <StackPane fx:id="main" prefHeight="756.0" prefWidth="1060.0">
-               <HBox fx:id="home" style="-fx-background-color: #FFECB3;">
+               <HBox fx:id="Home_Screen" style="-fx-background-color: #FFECB3;">
                   <children>
                             <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #FFECB3;">
                                  <Pane layoutX="22.0" layoutY="415.0" prefHeight="200.0" prefWidth="503.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
@@ -433,7 +433,7 @@
                      </StackPane>
                   </children>
                </HBox>
-                    <StackPane fx:id="notification" prefHeight="150.0" prefWidth="200.0" visible="false">
+                    <StackPane fx:id="Notification_Screen" prefHeight="150.0" prefWidth="200.0" visible="false">
                         <Pane prefHeight="200.0" prefWidth="200.0">
                             <TableView fx:id="tableNotification" layoutX="64.0" layoutY="80.0" prefHeight="660.0" prefWidth="933.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA726;" styleClass="tblview">
                                 <columns>
@@ -480,7 +480,7 @@
                      </HBox>
                         </Pane>
                     </StackPane>
-                    <AnchorPane fx:id="reports" prefHeight="754.0" prefWidth="851.0" visible="false">
+                    <AnchorPane fx:id="Statistic_Screen" prefHeight="754.0" prefWidth="851.0" visible="false">
                   <Pane layoutX="14.0" layoutY="201.0" prefHeight="476.0" prefWidth="480.0" style="-fx-background-color: #FFE082; -fx-background-radius: 30;">
                      <children>
                               <LineChart fx:id="lineChart" layoutX="14.0" layoutY="60.0" legendVisible="false" prefHeight="402.0" prefWidth="450.0" styleClass="shadow">
@@ -536,7 +536,7 @@
                      </effect>
                   </Pane>
                     </AnchorPane>
-                    <VBox fx:id="account" prefHeight="200.0" prefWidth="100.0" visible="false">
+                    <VBox fx:id="Profile_Screen" prefHeight="200.0" prefWidth="100.0" visible="false">
                         <TabPane prefHeight="756.0" prefWidth="1060.0" tabClosingPolicy="UNAVAILABLE">
                             <Tab style="-fx-background-color: #FFCC80;" text="Personal Information">
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -625,7 +625,7 @@
                             </Tab>
                         </TabPane>
                     </VBox>
-                    <Pane fx:id="bill" prefHeight="200.0" prefWidth="200.0" visible="false">
+                    <Pane fx:id="Invoice_Screen" prefHeight="200.0" prefWidth="200.0" visible="false">
                         <Pane layoutX="1.0" layoutY="283.0" prefHeight="476.0" prefWidth="875.0">
                             <Label layoutX="21.0" layoutY="14.0" prefHeight="43.0" prefWidth="397.0" text="Details">
                                 <font>
@@ -686,7 +686,7 @@
                                 </font>
                             </Label>
                             <JFXTextField fx:id="total" layoutX="439.0" layoutY="225.0" />
-                            <JFXButton fx:id="checkin" layoutX="322.0" layoutY="329.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="170.0" style="-fx-background-color: #FF9800; -fx-background-radius: 15;" text="Payment" textFill="WHITE" visible="false">
+                            <JFXButton fx:id="btnpayment" layoutX="322.0" layoutY="329.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="170.0" style="-fx-background-color: #FF9800; -fx-background-radius: 15;" text="Payment" textFill="WHITE" visible="false">
                                 <font>
                                     <Font name="Segoe UI Bold" size="24.0" />
                                 </font>
@@ -713,7 +713,7 @@
                             <JFXTextField fx:id="txtInvoiceCardHolderName" layoutX="19.0" layoutY="178.0" prefHeight="43.0" prefWidth="270.0" promptText="Cardholder Name" style="-fx-background-color: #343434;" styleClass="txtfield" />
                             <JFXTextField fx:id="txtInvoiceCardNumber" layoutX="19.0" layoutY="221.0" prefHeight="43.0" prefWidth="270.0" promptText="CardNumber" style="-fx-background-color: #343434;" styleClass="txtfield" />
                             <JFXTextField fx:id="txtInvoiceAccountNumber" layoutX="19.0" layoutY="264.0" prefHeight="43.0" prefWidth="270.0" promptText="Account Number" style="-fx-background-color: #343434;" styleClass="txtfield" />
-                            <JFXButton fx:id="checkout" layoutX="109.0" layoutY="331.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #343434;" text="Checkout" textFill="WHITE">
+                            <JFXButton fx:id="btncheckout" layoutX="109.0" layoutY="331.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #343434;" text="Checkout" textFill="WHITE">
                                 <font>
                                     <Font size="24.0" />
                                 </font>

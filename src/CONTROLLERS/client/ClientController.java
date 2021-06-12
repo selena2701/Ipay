@@ -5,7 +5,6 @@ import database.adminRepo.NotificationsRepo;
 import database.clientRepo.ClientRepo;
 import javafx.animation.TranslateTransition;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -46,11 +45,11 @@ public class ClientController implements Initializable {
     @FXML
     private StackPane main;
     @FXML
-    private StackPane notification, service;
+    private StackPane Notification_Screen, service;
     @FXML
-    private HBox home;
+    private HBox Home_Screen;
     @FXML
-    private Pane account, bill, homecalculate, homescheduling, slider, homecalculateresult;
+    private Pane Profile_Screen, Invoice_Screen, homecalculate, slider, homecalculateresult;
     @FXML
     private Label labelGreeting;
     @FXML
@@ -58,11 +57,11 @@ public class ClientController implements Initializable {
     @FXML
     private JFXButton btncalculate, btncalculateback;
     @FXML
-    private JFXButton btnLogout, checkin, checkout;
+    private JFXButton btnLogout, btnpayment, btncheckout;
     @FXML
     private Pane btnNotification;
     @FXML
-    private AnchorPane reports;
+    private AnchorPane Statistic_Screen;
     @FXML
     private TableView<Invoice> tableBill;
     @FXML
@@ -109,6 +108,7 @@ public class ClientController implements Initializable {
     private ClientRepo repo;
     private Customer user = new Customer();
 
+    //Load Invoice
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String username = DataHolder.getINSTANCE().getUserName();
@@ -127,15 +127,10 @@ public class ClientController implements Initializable {
     private void btnHome() {
         setLblWelcome(user.getName());
         checkSum(main);
-        home.setVisible(true);
+        Home_Screen.setVisible(true);
     }
 
 
-    @FXML
-    private void btnCalendar(MouseEvent mouseEvent) {
-        checkSum(service);
-        homescheduling.setVisible(true);
-    }
 
     @FXML
     private void btnCalculator(MouseEvent mouseEvent) {
@@ -218,7 +213,7 @@ public class ClientController implements Initializable {
     private void btnAccount() {
         labelGreeting.setText("Account");
         checkSum(main);
-        account.setVisible(true);
+        Profile_Screen.setVisible(true);
     }
 
     @FXML
@@ -236,7 +231,7 @@ public class ClientController implements Initializable {
     private void btnBill() {
         labelGreeting.setText("Invoice");
         checkSum(main);
-        bill.setVisible(true);
+        Invoice_Screen.setVisible(true);
     }
 
     //Event handlers for Statistic
@@ -244,7 +239,7 @@ public class ClientController implements Initializable {
     private void btnReport() {
         labelGreeting.setText("Statistic");
         checkSum(main);
-        reports.setVisible(true);
+        Statistic_Screen.setVisible(true);
     }
 
     //Event handlers for Notification
@@ -252,7 +247,7 @@ public class ClientController implements Initializable {
     private void btnNotification(MouseEvent mouseEvent) {
         labelGreeting.setText("Notification");
         checkSum(main);
-        notification.setVisible(true);
+        Notification_Screen.setVisible(true);
     }
 
     //Log out
@@ -290,7 +285,7 @@ public class ClientController implements Initializable {
         for (String s : name.split(" ")) {
             str = s;
         }
-        labelGreeting.setText("Hi, " + str);
+        labelGreeting.setText("Hi, " + name);
     }
 
     private void refreshCalculate(){
@@ -329,14 +324,14 @@ public class ClientController implements Initializable {
                     fromDate.setText(String.valueOf(invoice.getFromDate()));
                     toDate.setText(String.valueOf(invoice.getToDate()));
                     electricityType.setText(String.valueOf(invoice.getElectricityType()));
-                    checkin.setVisible(!invoice.isPaid());
+                    btnpayment.setVisible(!invoice.isPaid());
                 }
             }
         });
 
 
         slider.setTranslateX(400);
-        checkin.setOnMouseClicked(event -> {
+        btnpayment.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
             slide.setDuration(Duration.seconds(0.4));
             slide.setNode(slider);
@@ -345,7 +340,8 @@ public class ClientController implements Initializable {
             slide.play();
             slider.setTranslateX(400);
         });
-        checkout.setOnMouseClicked(event -> {
+        //Payment
+        btncheckout.setOnMouseClicked(event -> {
             try {
                 repo.updateInvoice(idText.getText());
             } catch (SQLException | ClassNotFoundException throwables) {
@@ -420,6 +416,7 @@ public class ClientController implements Initializable {
         tblCreditCard.setItems(repo.getAllCreditCards());
     }
 
+    //Table Bill of Invoice
     private void initInvoiceTable() {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("fromDate"));
