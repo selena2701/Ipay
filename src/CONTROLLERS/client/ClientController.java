@@ -503,7 +503,7 @@ public class ClientController implements Initializable {
                     setText(value ? "PAID" : "UNPAID");
                     setStyle("-fx-background-color: #FFE0B2");
                     setStyle("-fx-border-color: #FFA726");
-                    setStyle("-fx-alignment: center");
+                    setStyle("-fx-alignment: LEFT");
                 }
             }
         });

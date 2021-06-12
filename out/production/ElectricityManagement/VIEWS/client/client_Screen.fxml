@@ -399,12 +399,6 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </Label>
-                                 <Label layoutX="38.0" layoutY="273.0" text="Electricity type">
-                                    <font>
-                                       <Font size="14.0" />
-                                    </font>
-                                 </Label>
-                                 <JFXComboBox fx:id="cbbelectrictype" layoutX="321.0" layoutY="271.0" prefHeight="25.0" prefWidth="135.0" promptText="Electricity type" />
                                  <Pane layoutX="33.0" layoutY="14.0" onMouseClicked="#btnCalculator" prefHeight="79.0" prefWidth="411.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
                                     <children>
                                        <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="31.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
