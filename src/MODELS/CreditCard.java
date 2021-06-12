@@ -8,14 +8,14 @@ public class CreditCard {
     private String cardholdername;
     private String cardnumber;
     private String accountnumber;
-    private String bankname;
+    private Bank.BANK_ENUM bankname = Bank.BANK_ENUM.ACB;
     private String status;
     private String userId;
 
     public CreditCard() {
     }
 
-    public CreditCard(String id, String cardholdername, String cardnumber, String accountnumber, String bankname, String status, String userId) {
+    public CreditCard(String id, String cardholdername, String cardnumber, String accountnumber, Bank.BANK_ENUM bankname, String status, String userId) {
         this.id = id;
         this.cardholdername = cardholdername;
         this.cardnumber = cardnumber;
@@ -62,11 +62,11 @@ public class CreditCard {
         this.accountnumber = accountnumber;
     }
 
-    public String getBankname() {
+    public Bank.BANK_ENUM getBankname() {
         return bankname;
     }
 
-    public void setBankname(String bankname) {
+    public void setBankname(Bank.BANK_ENUM bankname) {
         this.bankname = bankname;
     }
 
@@ -87,6 +87,6 @@ public class CreditCard {
     }
 
     public static CreditCard fromResultSet(ResultSet resultSet) throws SQLException {
-        return new CreditCard(resultSet.getString("CC_ID"), resultSet.getString("CardHolderName"), resultSet.getString("CardNumber"), resultSet.getString("AccountNumber"), resultSet.getString("BankName"), resultSet.getString("Status"), resultSet.getString("CUS_ID"));
+        return new CreditCard(resultSet.getString("CC_ID"), resultSet.getString("CardHolderName"), resultSet.getString("CardNumber"), resultSet.getString("AccountNumber"), Bank.stringToBank(resultSet.getString("BankName")), resultSet.getString("Status"), resultSet.getString("CUS_ID"));
     }
 }

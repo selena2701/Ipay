@@ -1,16 +1,11 @@
 package database.clientRepo;
 
+import MODELS.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import MODELS.CreditCard;
-import MODELS.Customer;
-import MODELS.Invoice;
 import utils.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ClientRepo {
 
@@ -23,18 +18,17 @@ public class ClientRepo {
 
 
     public ClientRepo(String username) throws SQLException, ClassNotFoundException {
-        customer = loadCustomerFromDB(username);
+        customer = fetchCustomerData(username);
         profileLoader();
     }
 
-    //Load Invoice Screen
     private void profileLoader() throws SQLException, ClassNotFoundException {
-        loadAllCreditCardsFromDB();
-        loadAllInvoicesFromDB();
+        loadAllCreditCards();
+        loadAllInvoices();
     }
 
 
-    private Customer loadCustomerFromDB(String username) throws SQLException, ClassNotFoundException {
+    private Customer fetchCustomerData(String username) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
 
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_CUSTOMER WHERE Username=?");
@@ -50,31 +44,99 @@ public class ClientRepo {
         return null;
     }
 
-    private void loadAllCreditCardsFromDB() throws SQLException, ClassNotFoundException {
+    public void saveCustomer(Customer customer) throws SQLException, ClassNotFoundException{
+        connection = DBConnection.connect();
+        String gender = "Nam";
+
+        PreparedStatement statement = connection.prepareStatement("UPDATE E_CUSTOMER SET " +
+                "FullnameCUS = ?," +
+                "PhoneCUS = ?," +
+                "AddressCUS =?," +
+                "NationalID = ?," +
+                "Gender = ?," +
+                "Birthday = ?," +
+                "Region = ? WHERE CUS_ID = ?");
+        statement.setString(1, customer.getName());
+        statement.setString(2, customer.getPhoneNumber());
+        statement.setString(3, customer.getAddress());
+        statement.setString(4, customer.getNationalId());
+        if(!customer.getGender())
+            gender ="Nu";
+        statement.setString(5, gender);
+        statement.setString(6, customer.getBirthday().toString());
+        statement.setString(7, Region.regionToString(customer.getRegion()));
+        statement.setString(8, customer.getId());
+
+        statement.execute();
+        connection.close();
+    }
+
+    private void loadAllCreditCards() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
 
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_CREDITCARD WHERE CUS_ID=?");
         statement.setString(1, customer.getId());
 
         ResultSet resultSet = statement.executeQuery();
+        creditCards.clear();
         while (resultSet.next()) {
             creditCards.add(CreditCard.fromResultSet(resultSet));
         }
         connection.close();
     }
 
-    //Invoice
-    private void loadAllInvoicesFromDB() throws SQLException, ClassNotFoundException {
+    public void addCreditCard(CreditCard creditCard) throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO E_CREDITCARD  VALUES(?,?,?,?,?,?,?)");
+        statement.setString(1, creditCard.getId());
+        statement.setString(2, creditCard.getCardholdername());
+        statement.setString(3, creditCard.getCardnumber());
+        statement.setString(4, creditCard.getAccountnumber());
+        statement.setString(5, Bank.bankToString(creditCard.getBankname()));
+        statement.setString(6, creditCard.getStatus());
+        statement.setString(7, creditCard.getUserId());
+
+        statement.execute();
+
+        connection.close();
+        loadAllCreditCards();
+    }
+    public void deleteCreditCard(String creaditCardID) throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM E_CREDITCARD WHERE CC_ID=?");
+        statement.setString(1, creaditCardID);
+        statement.execute();
+        connection.close();
+        loadAllCreditCards();
+    }
+    public void setDefaultCreditCard(String creditCardID) throws SQLException, ClassNotFoundException{
+        connection = DBConnection.connect();
+        PreparedStatement statement = connection.prepareStatement("UPDATE E_CREDITCARD SET STATUS =? WHERE STATUS=?");
+        statement.setString(1, "");
+        statement.setString(2, "Default");
+        statement.execute();
+
+        statement = connection.prepareStatement("UPDATE E_CREDITCARD SET STATUS =? WHERE CC_ID=?");
+        statement.setString(1, "Default");
+        statement.setString(2, creditCardID);
+        statement.execute();
+        connection.close();
+        loadAllCreditCards();
+    }
+
+    private void loadAllInvoices() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_ELECTRICITY_BILL WHERE CUS_ID=?");
         statement.setString(1, customer.getId());
 
         ResultSet resultSet = statement.executeQuery();
+        invoices.clear();
         while (resultSet.next()) {
             invoices.add(Invoice.fromResultSet(resultSet));
         }
         connection.close();
     }
+
 
     public void updateInvoice(String id) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
@@ -82,7 +144,8 @@ public class ClientRepo {
         pstmt.setString(1, "PAID");
         pstmt.setString(2, id);
         pstmt.executeUpdate();
-        loadAllInvoicesFromDB();
+        connection.close();
+        loadAllInvoices();
     }
 
 

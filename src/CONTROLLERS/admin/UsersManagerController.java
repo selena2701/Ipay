@@ -1,6 +1,6 @@
 package CONTROLLERS.admin;
 
-import database.adminRepo.UsersRepo;
+import database.adminRepo.CustomersRepo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableCell;
@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 public class UsersManagerController implements Initializable {
 
     //MODEL
-    private UsersRepo usersRepo = new UsersRepo();
+    private CustomersRepo usersRepo = new CustomersRepo();
 
     @FXML
     private TableView<Customer> userTableView;
