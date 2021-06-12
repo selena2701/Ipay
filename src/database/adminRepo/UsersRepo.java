@@ -10,13 +10,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class CustomersRepo {
+public class UsersRepo {
 
     private ObservableList<Customer> customers = FXCollections.observableArrayList();
 
     private Connection connection = null;
 
-    public CustomersRepo() throws SQLException, ClassNotFoundException {
+    public UsersRepo() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         loadCustomersFromDB();
     }

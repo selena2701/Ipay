@@ -14,7 +14,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class ReportManagerController implements Initializable {
+public class ReportManagementController implements Initializable {
 
     private final ReportsRepo reportsRepo = new ReportsRepo();
 
@@ -36,7 +36,7 @@ public class ReportManagerController implements Initializable {
     @FXML
     private TableColumn<Report, Double> clAmountofMoney;
 
-    public ReportManagerController() throws SQLException, ClassNotFoundException {
+    public ReportManagementController() throws SQLException, ClassNotFoundException {
     }
 
     @FXML

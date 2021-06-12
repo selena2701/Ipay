@@ -63,6 +63,7 @@ public class ClientRepo {
         connection.close();
     }
 
+    //Invoice
     private void loadAllInvoicesFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_ELECTRICITY_BILL WHERE CUS_ID=?");
@@ -75,13 +76,13 @@ public class ClientRepo {
         connection.close();
     }
 
-
     public void updateInvoice(String id) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement pstmt = connection.prepareStatement("UPDATE E_ELECTRICITY_BILL SET STATUSBILL=? WHERE ELEC_BILL_ID=?");
         pstmt.setString(1, "PAID");
         pstmt.setString(2, id);
         pstmt.executeUpdate();
+        loadAllInvoicesFromDB();
     }
 
 

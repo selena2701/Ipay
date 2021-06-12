@@ -20,7 +20,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class NotificationsManagerController implements Initializable {
+public class NotificationsManagementController implements Initializable {
 
     //MODEL
     private final NotificationsRepo notificationsRepo = new NotificationsRepo();
@@ -46,7 +46,7 @@ public class NotificationsManagerController implements Initializable {
     @FXML
     private JFXButton addNotificationButton;
 
-    public NotificationsManagerController() throws Exception{
+    public NotificationsManagementController() throws Exception{
     }
 
     @Override

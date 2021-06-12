@@ -105,7 +105,7 @@ public class ClientController implements Initializable {
     private Label lbltotalinvoices, lbltotal, lblperiodnewinvoice, lbltotalnewinvoice;
 
 
-    private ClientRepo repo;
+    private ClientRepo clientRepo;
     private Customer user = new Customer();
 
     //Load Invoice
@@ -113,8 +113,8 @@ public class ClientController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String username = DataHolder.getINSTANCE().getUserName();
         try {
-            repo = new ClientRepo(username);
-            user = repo.getCustomer();
+            clientRepo = new ClientRepo(username);
+            user = clientRepo.getCustomer();
             initComponents();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
@@ -329,7 +329,6 @@ public class ClientController implements Initializable {
             }
         });
 
-
         slider.setTranslateX(400);
         btnpayment.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
@@ -343,7 +342,7 @@ public class ClientController implements Initializable {
         //Payment
         btncheckout.setOnMouseClicked(event -> {
             try {
-                repo.updateInvoice(idText.getText());
+                clientRepo.updateInvoice(idText.getText());
             } catch (SQLException | ClassNotFoundException throwables) {
                 throwables.printStackTrace();
             }
@@ -402,7 +401,7 @@ public class ClientController implements Initializable {
 
     private void initAccountChangePassword() {
         Customer customer = null;
-        customer = repo.getCustomer();
+        customer = clientRepo.getCustomer();
         txtUsername.setText(user.getUsername());
     }
 
@@ -413,7 +412,7 @@ public class ClientController implements Initializable {
         tblColumnBank.setCellValueFactory(new PropertyValueFactory<>("bankname"));
         tblColumnStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        tblCreditCard.setItems(repo.getAllCreditCards());
+        tblCreditCard.setItems(clientRepo.getAllCreditCards());
     }
 
     //Table Bill of Invoice
@@ -422,8 +421,22 @@ public class ClientController implements Initializable {
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("fromDate"));
         valueColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
         status.setCellValueFactory(new PropertyValueFactory<>("paid"));
-
-        tableBill.setItems(repo.getInvoices());
+        status.setCellFactory(ClientBooleanTableColumn -> new TableCell<>() {
+            @Override
+            protected void updateItem(Boolean value, boolean empty) {
+                super.updateItem(value, empty);
+                if (value == null || empty) {
+                    setText(null);
+                    setStyle("");
+                } else {
+                    setText(value ? "PAID" : "UNPAID");
+                    setStyle("-fx-alignment: center");
+                    setStyle("-fx-background-color: #FFCC80FF");
+                    setStyle("-fx-border-color: #FFA726FF");
+                }
+            }
+        });
+        tableBill.setItems(clientRepo.getInvoices());
     }
 
     private void initInvoiceSliderPayment() {
@@ -442,11 +455,11 @@ public class ClientController implements Initializable {
         XYChart.Series series = new XYChart.Series();
         if (i >= 5) {
             for (int d = 5; d >= 1; d--) {
-                series.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getConsumedValue()));
+                series.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getTotal()));
             }
         } else {
             for (int d = i; d >= 1; d--) {
-                series.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getConsumedValue()));
+                series.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getTotal()));
             }
         }
 

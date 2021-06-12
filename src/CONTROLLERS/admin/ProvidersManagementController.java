@@ -22,7 +22,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class ProvidersManagerController implements Initializable {
+public class ProvidersManagementController implements Initializable {
 
     //MODEL
     private final ProvidersRepo providersRepo = new ProvidersRepo();
@@ -51,7 +51,7 @@ public class ProvidersManagerController implements Initializable {
 
     private final FXMLLoader addProviderLoader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-or-modify-provider_Screen.fxml"));
 
-    public ProvidersManagerController() throws Exception {
+    public ProvidersManagementController() throws Exception {
     }
 
 
