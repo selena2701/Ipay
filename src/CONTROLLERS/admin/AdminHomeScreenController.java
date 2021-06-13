@@ -57,6 +57,7 @@ public class AdminHomeScreenController implements Initializable {
 
     private String adminUsername;
 
+    //Display admin home screen
     public AdminHomeScreenController() throws IOException {
         FXMLLoader usersLoader = new FXMLLoader(getClass().getResource(USERS_MANAGER));
         FXMLLoader providersLoader = new FXMLLoader(getClass().getResource(PROVIDERS_MANAGER));
@@ -81,6 +82,7 @@ public class AdminHomeScreenController implements Initializable {
         content.setCenter(node);
     }
 
+    //Select a function and then show selected screen
     private void InitListeners() {
         usersButton.setOnMouseClicked(mouseEvent -> {
             setContent(usersNode);
@@ -100,7 +102,7 @@ public class AdminHomeScreenController implements Initializable {
 
     }
 
-    //Log Out
+    // button Log Out
     @FXML
     private void btnLogOut() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

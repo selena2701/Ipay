@@ -18,6 +18,7 @@ public class ProvidersRepo {
         loadProviderFromDB();
     }
 
+    //Load Provider From DB
     private void loadProviderFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         String query = "SELECT * FROM E_PROVIDER";
@@ -38,6 +39,7 @@ public class ProvidersRepo {
         return providers;
     }
 
+
     //Add Provider
     public void addNewProvider(String id, String name, String phone, String address, Date dateJoined, String promotedBy) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
@@ -53,6 +55,8 @@ public class ProvidersRepo {
 
         loadProviderFromDB();
     }
+
+
     //Delete Provider
     public void deleteProvider(String providerId) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
@@ -63,6 +67,7 @@ public class ProvidersRepo {
 
         loadProviderFromDB();
     }
+
 
     //Modify Provider
     public void updateProvider(Provider provider) throws SQLException, ClassNotFoundException {

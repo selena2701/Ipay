@@ -383,9 +383,11 @@ public class ClientController implements Initializable {
             }
         });
 
+        //Select a Row//
         tableBill.setOnMouseClicked((MouseEvent event) -> {
             if (event.getClickCount() == 1) {
                 if (tableBill.getSelectionModel().getSelectedItems() != null) {
+                    //Display Bill Detail
                     Invoice invoice = tableBill.getSelectionModel().getSelectedItem();
                     idText.setText(String.valueOf(invoice.getId()));
                     previousValue.setText(String.valueOf(invoice.getPreviousValue()));
@@ -403,6 +405,8 @@ public class ClientController implements Initializable {
 
 
         slider.setTranslateX(400);
+
+        //Click payment and Display Payment Form
         btnPayment.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
             slide.setDuration(Duration.seconds(0.4));
@@ -412,6 +416,8 @@ public class ClientController implements Initializable {
             slide.play();
             slider.setTranslateX(400);
         });
+
+        //Click Checkout//
         btnCheckout.setOnMouseClicked(event -> {
             try {
                 repo.updateInvoice(idText.getText());
@@ -487,6 +493,7 @@ public class ClientController implements Initializable {
         tblCreditCard.setItems(repo.getAllCreditCards());
     }
 
+    //InvoiceTable//
     private void initInvoiceTable() {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("fromDate"));
@@ -521,6 +528,8 @@ public class ClientController implements Initializable {
         }
     }
 
+
+    //Statistic
     private void initStatisticLineChart() {
         ObservableList<Invoice> invoices = tableBill.getItems();
         int i = invoices.size();

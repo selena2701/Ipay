@@ -152,42 +152,12 @@ public class AuthController implements Initializable {
             }
         });
     }
-
+    /*
+    Sign up for customer
+     */
     private boolean signUpValidate() {
         return (fldFullname.validate() && fldUsername.validate() && fldPassword.validate() && fldPhone.validate() && fldAddress.validate() && fldNationId.validate() && cbGender.validate() && cbRegion.validate());
     }
-
-
-    /*
-     * Login for user
-     * */
-    @FXML
-    public void loginButtonOnClick() throws SQLException, ClassNotFoundException {
-        if (!loginValidate()) {
-            return;
-        }
-
-        Boolean isCorrectUser = AuthRepo.login(loginUsername.getText(), loginPassword.getText());
-        if (isCorrectUser != null) {
-            try {
-                NavigatorDetail detail = new NavigatorDetail(isCorrectUser ? "admin/admin-home-screen.fxml" : "client/client_Screen.fxml");
-                detail.setTitle(isCorrectUser ? "Admin" : "Customer");
-                DataHolder.getINSTANCE().setUserName(loginUsername.getText());
-                Navigator.navigate((Stage) mainPane.getScene().getWindow(), detail);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Login Error!");
-            alert.setHeaderText("Login Failed!");
-            alert.setContentText("The username or password is incorrect ");
-            alert.showAndWait();
-            loginPassword.clear();
-        }
-    }
-
-    //Register
     public void signUpButtonOnClick() throws SQLException, ClassNotFoundException {
 
         if (signUpValidate()) {
@@ -212,8 +182,37 @@ public class AuthController implements Initializable {
         }
     }
 
+
+    /*
+     * Login for user
+     * */
     private boolean loginValidate() {
         return loginUsername.validate() && loginPassword.validate();
+    }
+    @FXML
+    public void loginButtonOnClick() throws SQLException, ClassNotFoundException {
+        if (!loginValidate()) {
+            return;
+        }
+
+        Boolean isCorrectUser = AuthRepo.login(loginUsername.getText(), loginPassword.getText());
+        if (isCorrectUser != null) {
+            try {
+                NavigatorDetail detail = new NavigatorDetail(isCorrectUser ? "admin/admin-home-screen.fxml" : "client/client_Screen.fxml");
+                detail.setTitle(isCorrectUser ? "Admin" : "Customer");
+                DataHolder.getINSTANCE().setUserName(loginUsername.getText());
+                Navigator.navigate((Stage) mainPane.getScene().getWindow(), detail);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login Error!");
+            alert.setHeaderText("Login Failed!");
+            alert.setContentText("The username or password is incorrect ");
+            alert.showAndWait();
+            loginPassword.clear();
+        }
     }
 
 

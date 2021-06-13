@@ -37,16 +37,6 @@ public class AuthRepo {
         addUserToAccountTable(customer.getUsername(), rawPassword);
         addUserToCustomerTable(customer);
     }
-
-    private static void addUserToAccountTable(String username, String rawPassword) throws SQLException, ClassNotFoundException {
-        Connection connection = DBConnection.connect();
-        PreparedStatement addUserToAccountStatement = connection.prepareStatement("INSERT INTO USER_ACCOUNT VALUES (?,?,0)");
-        addUserToAccountStatement.setString(1, username);
-        addUserToAccountStatement.setString(2, Encryption.encrypt(rawPassword));
-        addUserToAccountStatement.executeUpdate();
-        connection.close();
-    }
-
     public static boolean checkUserExists(String username) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.connect();
 
@@ -61,6 +51,16 @@ public class AuthRepo {
         return false;
     }
 
+    private static void addUserToAccountTable(String username, String rawPassword) throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.connect();
+        PreparedStatement addUserToAccountStatement = connection.prepareStatement("INSERT INTO USER_ACCOUNT VALUES (?,?,0)");
+        addUserToAccountStatement.setString(1, username);
+        addUserToAccountStatement.setString(2, Encryption.encrypt(rawPassword));
+        addUserToAccountStatement.executeUpdate();
+        connection.close();
+    }
+
+
     private static void addUserToCustomerTable(Customer customer) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.connect();
 
@@ -70,35 +70,18 @@ public class AuthRepo {
                 "(CUS_ID,FullnameCUS,Username,PhoneCUS,AddressCUS,NationalID,Gender,Birthday,Region)" +
                 "VALUES(?,?,?,?,?,?,?,CONVERT (VARCHAR ,?,103),?)");
 
-        statement.setString(1, findNextCustomerId());
+        statement.setString(1, customer.getId());
         statement.setString(2, customer.getName());
         statement.setString(3, customer.getUsername());
         statement.setString(4, customer.getPhoneNumber());
         statement.setString(5, customer.getAddress());
         statement.setString(6, customer.getNationalId());
         statement.setString(7, customer.getGender() ? "Nam" : "Nu");
-        statement.setString(8, "13/04/1999");
+        statement.setObject(8, customer.getBirthday());
         statement.setString(9, Region.regionToString(customer.getRegion()));
         statement.executeUpdate();
         connection.close();
     }
 
-    private static String findNextCustomerId() throws SQLException, ClassNotFoundException {
 
-        String result = "";
-        Connection connection = DBConnection.connect();
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT CUS_ID FROM E_CUSTOMER ORDER BY CUS_ID DESC");
-
-        if (!resultSet.next()) {
-            result = "CUS1";
-            connection.close();
-            return result;
-        }
-        String currentId = resultSet.getString("CUS_ID");
-        result = "CUS" + (Integer.parseInt(currentId.substring(3, 4)) + 1);
-        connection.close();
-        return result;
-
-    }
 }

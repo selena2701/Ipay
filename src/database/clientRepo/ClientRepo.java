@@ -23,8 +23,8 @@ public class ClientRepo {
     }
 
     private void profileLoader() throws SQLException, ClassNotFoundException {
-        loadAllCreditCards();
-        loadAllInvoices();
+        loadAllCreditCardsFromDB();
+        loadAllInvoicesFromDB();
     }
 
 
@@ -71,7 +71,7 @@ public class ClientRepo {
         connection.close();
     }
 
-    private void loadAllCreditCards() throws SQLException, ClassNotFoundException {
+    private void loadAllCreditCardsFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
 
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_CREDITCARD WHERE CUS_ID=?");
@@ -99,7 +99,7 @@ public class ClientRepo {
         statement.execute();
 
         connection.close();
-        loadAllCreditCards();
+        loadAllCreditCardsFromDB();
     }
     public void deleteCreditCard(String creaditCardID) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
@@ -107,7 +107,7 @@ public class ClientRepo {
         statement.setString(1, creaditCardID);
         statement.execute();
         connection.close();
-        loadAllCreditCards();
+        loadAllCreditCardsFromDB();
     }
     public void setDefaultCreditCard(String creditCardID) throws SQLException, ClassNotFoundException{
         connection = DBConnection.connect();
@@ -121,10 +121,11 @@ public class ClientRepo {
         statement.setString(2, creditCardID);
         statement.execute();
         connection.close();
-        loadAllCreditCards();
+        loadAllCreditCardsFromDB();
     }
 
-    private void loadAllInvoices() throws SQLException, ClassNotFoundException {
+    //Load tableBill
+    private void loadAllInvoicesFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_ELECTRICITY_BILL WHERE CUS_ID=?");
         statement.setString(1, customer.getId());
@@ -137,7 +138,7 @@ public class ClientRepo {
         connection.close();
     }
 
-
+    //Change status to Paid
     public void updateInvoice(String id) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         PreparedStatement pstmt = connection.prepareStatement("UPDATE E_ELECTRICITY_BILL SET STATUSBILL=? WHERE ELEC_BILL_ID=?");
@@ -145,7 +146,7 @@ public class ClientRepo {
         pstmt.setString(2, id);
         pstmt.executeUpdate();
         connection.close();
-        loadAllInvoices();
+        loadAllInvoicesFromDB();
     }
 
 

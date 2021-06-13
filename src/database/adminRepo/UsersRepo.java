@@ -21,6 +21,7 @@ public class UsersRepo {
         loadCustomersFromDB();
     }
 
+    //Load data
     private void loadCustomersFromDB() throws SQLException {
         String query = "SELECT * FROM E_CUSTOMER";
         Statement statement = connection.createStatement();

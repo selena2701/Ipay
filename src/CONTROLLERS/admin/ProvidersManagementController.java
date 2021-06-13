@@ -72,14 +72,14 @@ public class ProvidersManagementController implements Initializable {
 
         providersTableView.setRowFactory(providerTableView -> {
             TableRow<Provider> row = new TableRow<>();
-
+            //Modify//
             MenuItem editMenuItem = new MenuItem("Modify");
             editMenuItem.setOnAction(event -> {
 
                 try {
                     Parent root = addProviderLoader.load();
 
-                    AddProviderController controller = addProviderLoader.getController();
+                    AddOrProviderController controller = addProviderLoader.getController();
                     controller.setProviderId(row.getItem().getId());
 
                     Scene currentScene = providerTableView.getScene();
@@ -88,7 +88,7 @@ public class ProvidersManagementController implements Initializable {
                     e.printStackTrace();
                 }
             });
-
+            //Delete//
             MenuItem deleteMenuItem = new MenuItem("Delete");
             deleteMenuItem.setOnAction(event -> {
                 try {
@@ -111,13 +111,13 @@ public class ProvidersManagementController implements Initializable {
         providersTableView.setItems(providersRepo.getProviders());
 
     }
-
+    //Add
     @FXML
     private void newProviderOnClick(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-or-modify-provider_Screen.fxml"));
         Parent root = loader.load();
 
-        AddProviderController controller = loader.getController();
+        AddOrProviderController controller = loader.getController();
         controller.setProviderId(null);
 
         Scene currentScene = ((Node) event.getSource()).getScene();

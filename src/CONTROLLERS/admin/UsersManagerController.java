@@ -1,6 +1,6 @@
 package CONTROLLERS.admin;
 
-import database.adminRepo.CustomersRepo;
+import database.adminRepo.UsersRepo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableCell;
@@ -17,8 +17,8 @@ import java.util.ResourceBundle;
 
 public class UsersManagerController implements Initializable {
 
-    //MODEL
-    private CustomersRepo usersRepo = new CustomersRepo();
+    //Initialize UsersRepo()
+    private UsersRepo usersRepo = new UsersRepo();
 
     @FXML
     private TableView<Customer> userTableView;
@@ -53,6 +53,7 @@ public class UsersManagerController implements Initializable {
     public UsersManagerController() throws SQLException, ClassNotFoundException {
     }
 
+    //userTableView Get and show data
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
