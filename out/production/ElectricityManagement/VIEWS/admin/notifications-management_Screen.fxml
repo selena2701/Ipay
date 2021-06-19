@@ -37,16 +37,16 @@
          <HBox GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
             <children>
                   <JFXButton fx:id="addNotificationButton" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" prefHeight="60.0" prefWidth="41.0" text="  ">
-                      <graphic>
+                      <font>
+                          <Font size="1.0" />
+                      </font>
+                  <graphic>
                           <MaterialIconView fill="#ff9800" glyphName="ADD_ALERT" size="35" text="">
                               <font>
                                   <Font size="38.0" />
                               </font>
                           </MaterialIconView>
-                      </graphic>
-                      <font>
-                          <Font size="1.0" />
-                      </font>
+                  </graphic>
                   </JFXButton>
             </children>
          </HBox>

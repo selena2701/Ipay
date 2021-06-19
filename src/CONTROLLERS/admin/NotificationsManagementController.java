@@ -101,7 +101,7 @@ public class NotificationsManagementController implements Initializable {
             e.printStackTrace();
         }
 
-        AddNotificationController controller;
+        AddOrModifyNotificationController controller;
         controller = loader.getController();
         controller.setNotificationId(notificationId);
 

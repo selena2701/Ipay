@@ -54,8 +54,5 @@ public class ReportManagementController implements Initializable {
         tbStatistic.setItems(reportsRepo.getReports());
     }
 
-    public void PrintOnAction(javafx.event.ActionEvent event) {
-        //TO DO
-    }
 }
 

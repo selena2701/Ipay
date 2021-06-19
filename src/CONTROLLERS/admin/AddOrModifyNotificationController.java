@@ -30,7 +30,7 @@ import java.util.ResourceBundle;
 import java.util.UUID;
 
 
-public class AddNotificationController implements Initializable {
+public class AddOrModifyNotificationController implements Initializable {
 
     private final NotificationsRepo notificationsRepo = new NotificationsRepo();
     private final AdminRepo adminRepo = new AdminRepo();
@@ -47,7 +47,7 @@ public class AddNotificationController implements Initializable {
     @FXML
     private Label idLabel;
 
-    public AddNotificationController() throws SQLException, ClassNotFoundException {
+    public AddOrModifyNotificationController() throws SQLException, ClassNotFoundException {
     }
 
 

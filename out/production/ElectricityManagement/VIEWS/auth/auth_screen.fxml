@@ -79,7 +79,7 @@
                         <JFXTextField fx:id="fldAddress" prefHeight="29.0" unFocusColor="#ff9800" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <JFXTextField fx:id="fldNationId" prefHeight="29.0" unFocusColor="#ff9800" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <HBox alignment="CENTER" prefHeight="78.0" prefWidth="371.0" spacing="40.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
-                            <Button mnemonicParsing="false" onAction="#signUpButtonOnClick" prefHeight="42.0" prefWidth="158.0" styleClass="btn-login" text="REGISTER">
+                            <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#signUpButtonOnClick" prefHeight="42.0" prefWidth="158.0" styleClass="btn-login" text="REGISTER">
                                 <font>
                                     <Font name="System Bold" size="15.0" />
                                 </font>

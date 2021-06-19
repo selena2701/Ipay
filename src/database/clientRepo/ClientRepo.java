@@ -44,6 +44,32 @@ public class ClientRepo {
         return null;
     }
 
+    //Load tableBill
+    private void loadAllInvoicesFromDB() throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_ELECTRICITY_BILL WHERE CUS_ID=?");
+        statement.setString(1, customer.getId());
+
+        ResultSet resultSet = statement.executeQuery();
+        invoices.clear();
+        while (resultSet.next()) {
+            invoices.add(Invoice.fromResultSet(resultSet));
+        }
+        connection.close();
+    }
+
+    //Change status to Paid
+    public void updateInvoice(String id) throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+        PreparedStatement pstmt = connection.prepareStatement("UPDATE E_ELECTRICITY_BILL SET STATUSBILL=? WHERE ELEC_BILL_ID=?");
+        pstmt.setString(1, "PAID");
+        pstmt.setString(2, id);
+        pstmt.executeUpdate();
+        connection.close();
+        loadAllInvoicesFromDB();
+    }
+
+
     public void saveCustomer(Customer customer) throws SQLException, ClassNotFoundException{
         connection = DBConnection.connect();
         String gender = "Nam";
@@ -124,30 +150,6 @@ public class ClientRepo {
         loadAllCreditCardsFromDB();
     }
 
-    //Load tableBill
-    private void loadAllInvoicesFromDB() throws SQLException, ClassNotFoundException {
-        connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_ELECTRICITY_BILL WHERE CUS_ID=?");
-        statement.setString(1, customer.getId());
-
-        ResultSet resultSet = statement.executeQuery();
-        invoices.clear();
-        while (resultSet.next()) {
-            invoices.add(Invoice.fromResultSet(resultSet));
-        }
-        connection.close();
-    }
-
-    //Change status to Paid
-    public void updateInvoice(String id) throws SQLException, ClassNotFoundException {
-        connection = DBConnection.connect();
-        PreparedStatement pstmt = connection.prepareStatement("UPDATE E_ELECTRICITY_BILL SET STATUSBILL=? WHERE ELEC_BILL_ID=?");
-        pstmt.setString(1, "PAID");
-        pstmt.setString(2, id);
-        pstmt.executeUpdate();
-        connection.close();
-        loadAllInvoicesFromDB();
-    }
 
 
     public ObservableList<CreditCard> getAllCreditCards() {

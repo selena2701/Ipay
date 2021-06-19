@@ -29,7 +29,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
-public class AddOrProviderController implements Initializable {
+public class AddOrModifyProviderController implements Initializable {
 
     //MODEL
     private final ProvidersRepo providersRepo = new ProvidersRepo();
@@ -95,7 +95,7 @@ public class AddOrProviderController implements Initializable {
 
 
     // ? //
-    public AddOrProviderController() throws Exception {
+    public AddOrModifyProviderController() throws Exception {
 
     }
 

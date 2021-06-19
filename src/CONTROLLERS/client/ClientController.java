@@ -48,7 +48,7 @@ public class ClientController implements Initializable {
     @FXML
     private HBox Home_Screen;
     @FXML
-    private Pane Profile_Screen, Invoice_Screen, homecalculate, homescheduling, slider, homecalculateresult;
+    private Pane Profile_Screen, Invoice_Screen, homecalculate, homescheduling, paymentForm, homecalculateresult;
     @FXML
     private Label labelGreeting;
     @FXML
@@ -404,17 +404,17 @@ public class ClientController implements Initializable {
         });
 
 
-        slider.setTranslateX(400);
+        paymentForm.setTranslateX(400);
 
         //Click payment and Display Payment Form
         btnPayment.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
             slide.setDuration(Duration.seconds(0.4));
-            slide.setNode(slider);
+            slide.setNode(paymentForm);
 
             slide.setToX(0);
             slide.play();
-            slider.setTranslateX(400);
+            paymentForm.setTranslateX(400);
         });
 
         //Click Checkout//
@@ -426,11 +426,11 @@ public class ClientController implements Initializable {
             }
             TranslateTransition slide = new TranslateTransition();
             slide.setDuration(Duration.seconds(0.4));
-            slide.setNode(slider);
+            slide.setNode(paymentForm);
 
             slide.setToX(400);
             slide.play();
-            slider.setTranslateX(0);
+            paymentForm.setTranslateX(0);
         });
     }
 

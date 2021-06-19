@@ -79,7 +79,7 @@ public class ProvidersManagementController implements Initializable {
                 try {
                     Parent root = addProviderLoader.load();
 
-                    AddOrProviderController controller = addProviderLoader.getController();
+                    AddOrModifyProviderController controller = addProviderLoader.getController();
                     controller.setProviderId(row.getItem().getId());
 
                     Scene currentScene = providerTableView.getScene();
@@ -117,7 +117,7 @@ public class ProvidersManagementController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../../VIEWS/admin/add-or-modify-provider_Screen.fxml"));
         Parent root = loader.load();
 
-        AddOrProviderController controller = loader.getController();
+        AddOrModifyProviderController controller = loader.getController();
         controller.setProviderId(null);
 
         Scene currentScene = ((Node) event.getSource()).getScene();

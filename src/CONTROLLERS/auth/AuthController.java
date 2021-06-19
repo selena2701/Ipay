@@ -162,6 +162,7 @@ public class AuthController implements Initializable {
 
         if (signUpValidate()) {
             Customer customer = new Customer(
+                    fldCusID.getText(),
                     fldFullname.getText(),
                     fldUsername.getText(),
                     fldPhone.getText(),
