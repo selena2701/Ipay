@@ -136,7 +136,7 @@
             </VBox>
             <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0" style="-fx-background-color: #FFECB3;">
                 <StackPane fx:id="main" prefHeight="756.0" prefWidth="1060.0">
-               <HBox fx:id="Home_Screen" style="-fx-background-color: #FFECB3;" visible="false">
+               <HBox fx:id="Home_Screen" style="-fx-background-color: #FFECB3;">
                   <children>
                             <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #FFECB3;">
                                  <Pane fx:id="pNoticeInvoice" layoutX="22.0" layoutY="415.0" prefHeight="200.0" prefWidth="503.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
@@ -594,7 +594,7 @@
                             </Tab>
                         </TabPane>
                     </VBox>
-                    <Pane fx:id="Invoice_Screen" prefHeight="200.0" prefWidth="200.0">
+                    <Pane fx:id="Invoice_Screen" prefHeight="200.0" prefWidth="200.0" visible="false">
                         <Pane layoutX="1.0" layoutY="283.0" prefHeight="476.0" prefWidth="875.0">
                             <Label layoutX="21.0" layoutY="14.0" prefHeight="43.0" prefWidth="397.0" text="Details">
                                 <font>

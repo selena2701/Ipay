@@ -12,10 +12,9 @@ public class Report {
     public Report() {
     }
 
-    public Report(String period, int numberTransaction, int totalUsers, double totalTransactionValue) {
+    public Report(String period, int numberTransaction, double totalTransactionValue) {
         this.period = period;
         this.numberTransactions = numberTransaction;
-        this.totalUsers = totalUsers;
         this.totalTransactionValue = totalTransactionValue;
     }
 
@@ -52,6 +51,6 @@ public class Report {
     }
 
     public static Report fromResultSet(ResultSet resultSet) throws SQLException {
-        return new Report(resultSet.getString("PERIOD"), resultSet.getInt("SLGIAODICH"), resultSet.getInt("SLNGUOIDUNG"), resultSet.getDouble("TONGSOTIENGD"));
+        return new Report(resultSet.getString("PERIOD"), resultSet.getInt("SLGIAODICH"), resultSet.getDouble("TONGSOTIENGD"));
     }
 }

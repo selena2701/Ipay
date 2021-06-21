@@ -35,7 +35,6 @@
                   <TableView fx:id="tbStatistic" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="647.0" prefWidth="1215.0">
                     <columns>
                       <TableColumn fx:id="clPeriod" prefWidth="148.40000307559967" text="Period" />
-                        <TableColumn fx:id="clAmountofUser" minWidth="0.0" prefWidth="276.5999755859375" text="Amount of User" />
                       <TableColumn fx:id="clAmountofPayment" minWidth="0.0" prefWidth="361.8000183105469" text="Amount of Payment" />
                         <TableColumn fx:id="clAmountofMoney" minWidth="0.0" prefWidth="293.39996337890625" text="Amount of Money" />
                     </columns>

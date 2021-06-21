@@ -47,7 +47,6 @@ public class ReportManagementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         clPeriod.setCellValueFactory(new PropertyValueFactory<>("period"));
-        clAmountofUser.setCellValueFactory(new PropertyValueFactory<>("totalUsers"));
         clAmountofPayment.setCellValueFactory(new PropertyValueFactory<>("numberTransactions"));
         clAmountofMoney.setCellValueFactory(new PropertyValueFactory<>("totalTransactionValue"));
 

@@ -22,7 +22,7 @@ public class ReportsRepo {
     private void loadReportsFromDB() throws SQLException, ClassNotFoundException {
         connection= DBConnection.connect();
 
-        String query="SELECT CAST(MONTH(DatePaid)AS varchar) +'-'+ CAST(YEAR(DatePaid)AS varchar) AS \"PERIOD\", COUNT(ELEC_BILL_ID) AS \"SLGIAODICH\", COUNT(EB.CUS_ID) AS \"SLNGUOIDUNG\", SUM(Total) AS \"TONGSOTIENGD\"FROM E_ELECTRICITY_BILL EB, E_CUSTOMER CUS WHERE EB.CUS_ID=CUS.CUS_ID AND EB.StatusBill='PAID' GROUP BY CAST(MONTH(DatePaid)AS varchar) +'-'+ CAST(YEAR(DatePaid)AS varchar)";
+        String query="SELECT CAST(MONTH(DatePaid)AS varchar) +'-'+ CAST(YEAR(DatePaid)AS varchar) AS \"PERIOD\", COUNT(ELEC_BILL_ID) AS \"SLGIAODICH\", SUM(Total) AS \"TONGSOTIENGD\"FROM E_ELECTRICITY_BILL EB, E_CUSTOMER CUS WHERE EB.CUS_ID=CUS.CUS_ID AND EB.StatusBill='PAID' GROUP BY CAST(MONTH(DatePaid)AS varchar) +'-'+ CAST(YEAR(DatePaid)AS varchar)";
 
         Statement statement=connection.createStatement();
         ResultSet resultSet=statement.executeQuery(query);

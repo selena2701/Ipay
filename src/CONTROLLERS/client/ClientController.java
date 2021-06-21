@@ -459,7 +459,7 @@ public class ClientController implements Initializable {
         lblperiodnewinvoice.setText(LocalDate.parse(invoices.get(invoices.size() - 1).getFromDate().toString(), formatter).toString());
         lbltotalnewinvoice.setText(NumberFormat.getNumberInstance().format(invoices.get(invoices.size() - 1).getTotal()));
     }
-
+    //Account Profile
     private void initAccountProfile() {
 
         txtFullName.setText(user.getName());
@@ -476,14 +476,14 @@ public class ClientController implements Initializable {
         cbRegion.setValue(user.getRegion());
         txtDateRegister.setText(user.getDateRegister().toString());
     }
-
+    //Change Pass
     private void initAccountChangePassword() {
         Customer customer = null;
         customer = repo.getCustomer();
         txtUsername.setText(user.getUsername());
     }
 
-
+    //Credit Cards
     private void initAccountPaymentMethod() {
         tblColumnCardHolderName.setCellValueFactory(new PropertyValueFactory<>("cardholdername"));
         tblColumnAccountNumber.setCellValueFactory(new PropertyValueFactory<>("accountnumber"));
@@ -553,7 +553,7 @@ public class ClientController implements Initializable {
         barChart.getData().addAll(series1);
         barChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
     }
-
+    //Notification
     private void initNotificationsTable() {
         NotificationsRepo notificationsRepo = new NotificationsRepo();
         no_id.setCellValueFactory(new PropertyValueFactory<>("id"));
