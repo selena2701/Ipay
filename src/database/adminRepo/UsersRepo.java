@@ -12,7 +12,7 @@ import java.sql.Statement;
 
 public class UsersRepo {
 
-    private ObservableList<Customer> customers = FXCollections.observableArrayList();
+    public ObservableList<Customer> customers = FXCollections.observableArrayList();
 
     private Connection connection = null;
 

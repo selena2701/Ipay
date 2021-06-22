@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="462.0" prefWidth="758.0" stylesheets="@./../css/admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.admin.UsersManagerController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="462.0" prefWidth="758.0" stylesheets="@./../css/admin.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.admin.UsersManagementController">
     <center>
-        <TableView fx:id="userTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="396.0" prefWidth="758.0" BorderPane.alignment="CENTER">
+        <TableView fx:id="userTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="359.0" prefWidth="758.0" BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="143.0" text="ID" />
                 <TableColumn fx:id="nameColumn" prefWidth="143.0" text="Full name" />
@@ -27,10 +33,10 @@
         </TableView>
     </center>
    <top>
-      <HBox BorderPane.alignment="CENTER">
+      <VBox BorderPane.alignment="CENTER">
          <children>
       
-               <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="762.0" text="User Management" textAlignment="CENTER" textFill="#ff9800">
+                     <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="762.0" text="User Management" textAlignment="CENTER" textFill="#ff9800">
                    <font>
                        <Font name="Segoe UI Bold" size="36.0" />
                    </font>
@@ -45,11 +51,24 @@
                   <Insets />
                </opaqueInsets>
                <padding>
-                  <Insets bottom="5.0" top="5.0" />
+                  <Insets top="5.0" />
                </padding>
                </Label>
+            <HBox prefHeight="32.0" prefWidth="758.0">
+               <children>
+                  <MaterialIconView fill="#ff9800" glyphName="SEARCH" size="30" tabSize="10" wrappingWidth="28.000024795532227">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </MaterialIconView>
+                  <TextField fx:id="fldFilter" prefHeight="32.0" prefWidth="284.0" promptText="Type ID, Full Name, Phone to search " style="-fx-border-color: FF9800; -fx-background-radius: 10; -fx-border-radius: 10;" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
          </children>
-      </HBox>
+      </VBox>
    </top>
 
 </BorderPane>

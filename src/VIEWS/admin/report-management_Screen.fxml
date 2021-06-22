@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFECB3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.admin.ReportManagementController">
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #FFECB3;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.admin.ReportManagementController">
    <children>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="430.0" prefWidth="630.0" spacing="10.0">
          <children>
@@ -32,7 +36,7 @@
             </HBox>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="680.0" prefWidth="1080.0">
                <children>
-                  <TableView fx:id="tbStatistic" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="647.0" prefWidth="1215.0">
+                  <TableView fx:id="tbStatistic" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="647.0" prefWidth="1100.0">
                     <columns>
                       <TableColumn fx:id="clPeriod" prefWidth="148.40000307559967" text="Period" />
                       <TableColumn fx:id="clAmountofPayment" minWidth="0.0" prefWidth="361.8000183105469" text="Amount of Payment" />

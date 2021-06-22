@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class ProvidersRepo {
 
-    private final ObservableList<Provider> providers = FXCollections.observableArrayList();
+    public final ObservableList<Provider> providers = FXCollections.observableArrayList();
 
     private Connection connection = null;
 

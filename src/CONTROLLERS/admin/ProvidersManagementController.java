@@ -1,10 +1,13 @@
 
 package CONTROLLERS.admin;
 
+import MODELS.Customer;
 import database.adminRepo.AdminRepo;
 import database.adminRepo.ProvidersRepo;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -30,6 +33,9 @@ public class ProvidersManagementController implements Initializable {
 
     @FXML
     private TableView<Provider> providersTableView;
+
+    @FXML
+    private TextField fldFilter;
 
     @FXML
     private TableColumn<Provider, String> idColumn;
@@ -109,7 +115,34 @@ public class ProvidersManagementController implements Initializable {
         });
 
         providersTableView.setItems(providersRepo.getProviders());
+        FilteredList<Provider> filterdt= new FilteredList<>(providersRepo.providers, b->true);
+        fldFilter.textProperty().addListener((observable, oldValue, newValue) -> {
+            filterdt.setPredicate(person -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
 
+                // Compare every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (person.getId().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (person.getName().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                } else if (person.getPhone().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                return false;
+            });
+
+        });
+        // 3. Wrap the FilteredList in a SortedList.
+        SortedList<Provider> sortedData = new SortedList<>(filterdt);
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(providersTableView.comparatorProperty());
+        // 5. Add sorted (and filtered) data to the table.
+        providersTableView.setItems(sortedData);
     }
     //Add
     @FXML
