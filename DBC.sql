@@ -507,3 +507,125 @@ BEGIN
         PRINT 'Success: Du lieu duoc them / cap nhat thanh cong'
     END
 END
+
+----PROCEDURE-----
+-----Procedure them thong bao-----
+CREATE PROCEDURE InsNo( @NoId char(10),
+						@DateCreated smalldatetime,
+						@DateSent smalldatetime,
+						@EditBy varchar(500),
+						@Detail nvarchar(4000))
+AS
+	INSERT INTO E_NOTIFICATION(NO_ID,DateCreated,
+							   DateSent,EditedBy,Detail)
+	VALUES(@NoId,@DateCreated,@DateSent,@EditBy,@Detail)
+
+GO
+InsNo 'NO10','02/15/2020','02/20/2020','AD04',N'Hot sun, 
+	  Electricity Sector provides cool water free of charge
+	  to people in Ho Chi Minh City'
+
+-----Procedure sua thong bao-----
+CREATE PROCEDURE UpNo( @NoId char(10),
+					   @DateCreated smalldatetime,
+					   @DateSent smalldatetime,
+					   @EditBy varchar(500),
+					   @Detail nvarchar(4000))
+AS
+	UPDATE E_NOTIFICATION SET DateCreated = @DateCreated,
+							  DateSent = @DateSent,
+							  EditedBy = @EditBy,
+							  Detail = @Detail
+	WHERE NO_ID = @NoId
+
+GO
+UpNo 'NO10','02/10/2020','02/20/2020','AD04',N'Hot sun, 
+	  Electricity Sector provides cool water free of charge
+	  to people in Ho Chi Minh City'
+
+Select * from E_NOTIFICATION
+
+-----Procedure them provider-----
+CREATE PROCEDURE InsPro( @ProId char(20),
+						 @NamePro varchar(40),
+						 @PhonePro varchar(10),
+						 @Address varchar(50),
+						 @DateJoined smalldatetime,
+						 @PromotedBy char(4))
+AS
+	INSERT INTO E_PROVIDER(PRO_ID,NamePRO,PhonePRO,
+				AddressPRO,DateJoined,PromotedBy)
+	VALUES(@ProId,@NamePro,@PhonePro,@Address,
+		   @DateJoined,@PromotedBy)
+Go
+InsPro 'PR06','Dang Thanh Thao','0237899515',
+       'Cong Ty Dien Mien Nam','08/11/2020','AD01'
+
+-----Procedure sua provider-----
+CREATE PROCEDURE UpPro( @ProId char(20),
+						@NamePro varchar(40),
+						@PhonePro varchar(10),
+						@Address varchar(50),
+						@DateJoined smalldatetime,
+						@PromotedBy char(4))
+AS
+	UPDATE E_PROVIDER SET NamePRO = @NamePro,
+						  PhonePro = @PhonePro,
+						  AddressPRO = @Address,
+						  DateJoined = @DateJoined,
+						  PromotedBy = @PromotedBy
+	WHERE PRO_ID = @ProId
+
+Go
+UpPro 'PR06','Dang Thanh','0237899515',
+      'Cong Ty Dien Mien Nam','08/11/2020','AD01'
+
+Select * from E_PROVIDER
+
+----Procedure in danh sách credit card của một khách hàng bất kỳ
+
+CREATE PROCEDURE SelectAllCreditCard (@CusID char(20))
+AS
+SELECT * FROM E_CREDITCARD WHERE CUS_ID = @CusID 
+GO
+
+EXEC SelectAllCreditCard @CusID='PE13000064176';
+
+ ----Procedure xoá một provider
+
+ CREATE PROCEDURE DeleteProvider (@ID CHAR(20))
+ AS 
+ DELETE FROM E_PROVIDER WHERE PRO_ID=@ID
+ GO
+
+ EXEC DeleteProvider @ID='PR01';
+
+ SELECT * FROM E_PROVIDER
+
+ ---Procedure description a customer:
+
+ CREATE PROCEDURE GetCustomerDesc_withparameters
+(@EID CHAR(20))
+AS
+BEGIN
+SET NOCOUNT ON
+ 
+SELECT *  FROM 
+E_CUSTOMER CUS INNER JOIN E_CREDITCARD CC ON CUS.CUS_ID=CC.CUS_ID
+WHERE CUS.CUS_ID=@EID
+END
+
+EXEC GetCustomerDesc_withparameters PD14000076344
+
+----Procedure to statistic 
+CREATE PROCEDURE STATISTIC_SYSTEM
+AS
+BEGIN
+	SET NOCOUNT ON
+	SELECT CAST(MONTH(DatePaid)AS varchar) +'-'+ CAST(YEAR(DatePaid)AS varchar) AS "PERIOD", COUNT(ELEC_BILL_ID) AS "AmountTransaction", SUM(Total) AS "AmountMoney"
+	FROM E_ELECTRICITY_BILL EB, E_CUSTOMER CUS 
+	WHERE EB.CUS_ID=CUS.CUS_ID AND EB.StatusBill='PAID' 
+	GROUP BY CAST(MONTH(DatePaid)AS varchar) +'-'+ CAST(YEAR(DatePaid)AS varchar)
+END
+
+EXEC STATISTIC_SYSTEM
