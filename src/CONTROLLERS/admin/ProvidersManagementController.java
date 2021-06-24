@@ -1,7 +1,6 @@
 
 package CONTROLLERS.admin;
 
-import MODELS.Customer;
 import database.adminRepo.AdminRepo;
 import database.adminRepo.ProvidersRepo;
 import javafx.beans.binding.Bindings;
