@@ -1,9 +1,9 @@
 package database.adminRepo;
 
 import MODELS.Customer;
-import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import utils.DBConnection;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

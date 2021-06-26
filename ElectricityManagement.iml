@@ -12,7 +12,9 @@
     <orderEntry type="library" exported="" name="fontawesomefx-materialicons-2.2.0-9.1.2" level="project" />
     <orderEntry type="library" exported="" name="jfoenix-9.0.10" level="project" />
     <orderEntry type="library" exported="" name="fontawesomefx-commons-9.1.2" level="project" />
-    <orderEntry type="library" exported="" name="lib" level="project" />
     <orderEntry type="library" exported="" name="lib1" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.23" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="net.sf.jasperreports:jasperreports:6.17.0" level="project" />
   </component>
 </module>

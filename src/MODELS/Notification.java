@@ -34,6 +34,15 @@ public class Notification {
         notification.editedBy = resultSet.getString("NameAD");
         return notification;
     }
+    public static Notification fromResultSetBadge(ResultSet resultSet) throws SQLException {
+        Notification notification = new Notification();
+        notification.id = resultSet.getString("NO_ID");
+        notification.dateCreated = resultSet.getDate("DateCreated");
+        notification.datePublished = resultSet.getDate("DateSent");
+        notification.description = resultSet.getString("Detail");
+        notification.editedBy = resultSet.getString("EditedBy");
+        return notification;
+    }
 
     public String getId() {
         return id;

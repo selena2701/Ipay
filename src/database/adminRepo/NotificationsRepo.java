@@ -1,9 +1,9 @@
 package database.adminRepo;
 
-import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import MODELS.Notification;
+import utils.DBConnection;
 
 import java.sql.*;
 

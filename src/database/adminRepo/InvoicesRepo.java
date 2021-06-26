@@ -1,9 +1,9 @@
 package database.adminRepo;
 
-import utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import MODELS.Invoice;
+import utils.DBConnection;
 
 import java.sql.*;
 
@@ -34,7 +34,7 @@ public class InvoicesRepo {
     }
 
     public void deleteInvoice(String id) throws SQLException, ClassNotFoundException {
-        connection=DBConnection.connect();
+        connection= DBConnection.connect();
         PreparedStatement statement = connection.prepareStatement("DELETE FROM E_ELECTRICITY_BILL WHERE ELEC_BILL_ID=?");
         statement.setString(1,id);
         statement.execute();

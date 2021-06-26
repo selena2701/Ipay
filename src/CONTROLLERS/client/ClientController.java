@@ -23,9 +23,17 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 import MODELS.*;
 import MODELS.Region;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+import utils.DBConnection;
 import utils.helper.DataHolder;
 import utils.helper.Navigator;
 import utils.helper.NavigatorDetail;
+import utils.helper.ReadNumber;
 
 import java.io.IOException;
 import java.net.URL;
@@ -56,7 +64,7 @@ public class ClientController implements Initializable {
     @FXML
     private JFXButton btncalculate, btncalculateback;
     @FXML
-    private JFXButton btnLogout, btnPayment, btnCheckout, btnRemoveCredit, btnSetDefaultCredit, btnSaveProfile;
+    private JFXButton btnLogout, btnPayment, btnCheckout, btnRemoveCredit, btnSetDefaultCredit, btnSaveProfile, btnChangePass;
     @FXML
     private Pane btnNotification;
     @FXML
@@ -95,7 +103,7 @@ public class ClientController implements Initializable {
     @FXML
     private JFXPasswordField pwfCurrentPassword, pwfNewPassword, pwfRetypePassword;
     @FXML
-    private RadioButton rBtnMale, rBtnFemale, rBtnOrther;
+    private RadioButton rBtnMale, rBtnFemale;
     @FXML
     private DatePicker dpBirthday;
     @FXML
@@ -103,7 +111,7 @@ public class ClientController implements Initializable {
     @FXML
     private TableColumn<CreditCard, String> tblColumnCardHolderName, tblColumnAccountNumber, tblColumnBank, tblColumnStatus;
     @FXML
-    private Label lbltotalinvoices, lbltotal, lblperiodnewinvoice, lbltotalnewinvoice;
+    private Label lbltotalinvoices, lbltotal, lblperiodnewinvoice, lbltotalnewinvoice, lblbadge;
 
 
     private ClientRepo repo;
@@ -129,14 +137,6 @@ public class ClientController implements Initializable {
         checkSum(main);
         Home_Screen.setVisible(true);
     }
-
-
-    @FXML
-    private void btnCalendar(MouseEvent mouseEvent) {
-        checkSum(service);
-        homescheduling.setVisible(true);
-    }
-
     @FXML
     private void btnCalculator(MouseEvent mouseEvent) {
         checkSum(service);
@@ -313,7 +313,7 @@ public class ClientController implements Initializable {
 
     //Initializations
 
-    private void initComponents() {
+    private void initComponents() throws SQLException, ClassNotFoundException {
 
         setLblWelcome(user.getName());
         initComboBoxRegion();
@@ -361,6 +361,48 @@ public class ClientController implements Initializable {
             user = repo.getCustomer();
             initAccountProfile();
         });
+
+        btnChangePass.setOnMouseClicked((MouseEvent event) ->{
+            try {
+                if(repo.verify(txtUsername.getText() ,pwfCurrentPassword.getText())){
+                    if(pwfCurrentPassword.getText().equals(pwfNewPassword.getText())){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setHeaderText(null);
+                        alert.setContentText("You have entered your old password!");
+                        alert.showAndWait();
+                        pwfNewPassword.requestFocus();
+                    }
+                    else {
+                        if(pwfNewPassword.getText().equals(pwfRetypePassword.getText()) ){
+                            repo.changePassword(txtUsername.getText(), pwfNewPassword.getText());
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setHeaderText(null);
+                            alert.setContentText("Save successful!");
+                            alert.showAndWait();
+                        }
+                        else{
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setHeaderText(null);
+                            alert.setContentText("Password is incorrect, please re-enter!");
+                            alert.showAndWait();
+                            pwfRetypePassword.requestFocus();
+                        }
+                    }
+
+                }
+                else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText(null);
+                    alert.setContentText("Incorrect password!");
+                    alert.showAndWait();
+                    pwfCurrentPassword.requestFocus();
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
         btnRemoveCredit.setOnMouseClicked((MouseEvent event) ->{
             String id = tblCreditCard.getSelectionModel().getSelectedItem().getId();
             try {
@@ -398,7 +440,30 @@ public class ClientController implements Initializable {
                     fromDate.setText(String.valueOf(invoice.getFromDate()));
                     toDate.setText(String.valueOf(invoice.getToDate()));
                     electricityType.setText(String.valueOf(invoice.getElectricityType()));
-                    btnPayment.setVisible(!invoice.isPaid());
+                    if(invoice.isPaid()){
+                        btnPayment.setText("View PDF");
+                        btnPayment.setVisible(true);
+                    }
+                    else{
+                        btnPayment.setText("Payment");
+                        btnPayment.setVisible(true);
+                    }
+                }
+                else{
+                    btnPayment.setVisible(false);
+                }
+            }
+        });
+
+        tableNotification.setOnMouseClicked((MouseEvent event) -> {
+            if(tableNotification.getSelectionModel().getSelectedItems() != null){
+                try {
+                    repo.saveNotificationSeen(user.getId(), tableNotification.getSelectionModel().getSelectedItem().getId());
+                    initBadgeNotification();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -408,21 +473,54 @@ public class ClientController implements Initializable {
 
         //Click payment and Display Payment Form
         btnPayment.setOnMouseClicked(event -> {
-            TranslateTransition slide = new TranslateTransition();
-            slide.setDuration(Duration.seconds(0.4));
-            slide.setNode(paymentForm);
+            if (btnPayment.getText().equals("Payment")) {
+                TranslateTransition slide = new TranslateTransition();
+                slide.setDuration(Duration.seconds(0.4));
+                slide.setNode(paymentForm);
+                slide.setToX(0);
+                slide.play();
+                paymentForm.setTranslateX(400);
+            } else {
+                try {
+                    String str = ReadNumber.numberToString(Double.parseDouble(total.getText()));
+                    JasperDesign jasdi = JRXmlLoader.load("C:\\Users\\thaitam\\IdeaProjects\\SystemManageandPayElectricity\\reports\\bill.jrxml");
+                    String sql = "SELECT PreviousValue, CurrentValue, Consumevalue, FromDate, ToDate, DatePaid  FROM E_ELECTRICITY_BILL WHERE ELEC_BILL_ID =" + idText.getText();
+                    JRDesignQuery newquery = new JRDesignQuery();
+                    newquery.setText(sql);
 
-            slide.setToX(0);
-            slide.play();
-            paymentForm.setTranslateX(400);
+                    jasdi.setQuery(newquery);
+
+                    HashMap<String, Object> para = new HashMap<>();
+                    para.put("elec_bill_id", idText.getText());
+                    para.put("FullnameCUS", txtFullName.getText());
+                    para.put("AddressCUS", txtAddress.getText());
+                    para.put("PhoneCUS", txtNumber.getText());
+                    para.put("CUS_ID", txtID.getText());
+                    para.put("Total", str);
+
+                    JasperReport js = JasperCompileManager.compileReport(jasdi);
+                    JasperPrint jp = JasperFillManager.fillReport(js, para, DBConnection.connect());
+                    JasperExportManager.exportReportToPdfFile(jp, "C:\\Users\\thaitam\\IdeaProjects\\SystemManageandPayElectricity\\reports\\" + idText.getText() + ".pdf");
+                    JasperViewer.viewReport(jp, false);
+                } catch (JRException e) {
+                    e.printStackTrace();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+
         });
 
         //Click Checkout//
         btnCheckout.setOnMouseClicked(event -> {
             try {
                 repo.updateInvoice(idText.getText());
-            } catch (SQLException | ClassNotFoundException throwables) {
+            }  catch (SQLException throwables) {
                 throwables.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
             TranslateTransition slide = new TranslateTransition();
             slide.setDuration(Duration.seconds(0.4));
@@ -434,7 +532,7 @@ public class ClientController implements Initializable {
         });
     }
 
-    private void initTables() {
+    private void initTables() throws SQLException, ClassNotFoundException {
         initAccountProfile();
         initAccountChangePassword();
         initAccountPaymentMethod();
@@ -443,6 +541,7 @@ public class ClientController implements Initializable {
         initStatisticLineChart();
         initStatisticBarChart();
         initNotificationsTable();
+        initBadgeNotification();
         initLabelOverviewHome();
     }
 
@@ -553,14 +652,44 @@ public class ClientController implements Initializable {
         barChart.getData().addAll(series1);
         barChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
     }
-    //Notification
-    private void initNotificationsTable() {
-        NotificationsRepo notificationsRepo = new NotificationsRepo();
+    private void initBadgeNotification() throws SQLException, ClassNotFoundException {
+        if( repo.displayNewNotification(user.getId()) == 0){
+            lblbadge.setVisible(false);
+        }else
+        {
+            lblbadge.setVisible(true);
+            lblbadge.setText(String.valueOf(repo.displayNewNotification(user.getId())));
+        }
+    }
+
+    private void initNotificationsTable() throws SQLException, ClassNotFoundException {
         no_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         date.setCellValueFactory(new PropertyValueFactory<>("datePublished"));
         detail.setCellValueFactory(new PropertyValueFactory<>("description"));
 
-        tableNotification.setItems(notificationsRepo.getNotifications());
+        tableNotification.setItems(repo.getNotification());
+        tableNotification.setRowFactory(tb -> new TableRow<Notification>(){
+            @Override
+            public void updateItem(Notification item, boolean empty){
+                super.updateItem(item, empty);
+                try {
+                    if (item==null){
+                        setStyle("-fx-background-color: #FFCC80");
+                    }else
+                    if (!repo.checkNotificationSeen(user.getId(),item.getId())){
+                        setStyle("-fx-background-color: yellow");
+                    }
+                    else {
+                        setStyle("-fx-background-color: #FFCC80");
+                    }
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 
 

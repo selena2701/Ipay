@@ -110,9 +110,9 @@
                         <Font name="Agency FB Bold" size="30.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="37.0" layoutY="14.0" prefHeight="15.0" prefWidth="15.0" styleClass="round-lbl" stylesheets="@../css/client.css" textFill="WHITE">
+                  <Label fx:id="lblbadge" alignment="CENTER" layoutX="37.0" layoutY="14.0" prefHeight="15.0" prefWidth="15.0" styleClass="round-lbl" stylesheets="@../css/client.css" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="4.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
                </children>
@@ -423,10 +423,13 @@
                         <Pane prefHeight="200.0" prefWidth="200.0">
                             <TableView fx:id="tableNotification" layoutX="64.0" layoutY="80.0" prefHeight="660.0" prefWidth="933.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA726;" styleClass="tblview">
                                 <columns>
-                                    <TableColumn fx:id="no_id" prefWidth="97.99999618530273" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="No_id" />
-                                    <TableColumn fx:id="date" prefWidth="142.00001525878906" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Date" />
-                                    <TableColumn fx:id="detail" prefWidth="702.3999938964844" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Detail" />
+                                    <TableColumn fx:id="no_id" prefWidth="97.99999618530273" style=" -fx-border-color: #FFA726;" text="No_id" />
+                                    <TableColumn fx:id="date" prefWidth="142.00001525878906" style=" -fx-border-color: #FFA726;" text="Date" />
+                                    <TableColumn fx:id="detail" prefWidth="702.3999938964844" style="-fx-border-color: #FFA726;" text="Detail" />
                                 </columns>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
                             </TableView>
                      <HBox layoutX="64.0" layoutY="14.0" spacing="20.0">
                         <children>
@@ -595,7 +598,19 @@
                         </TabPane>
                     </VBox>
                     <Pane fx:id="Invoice_Screen" prefHeight="200.0" prefWidth="200.0" visible="false">
-                        <Pane layoutX="1.0" layoutY="283.0" prefHeight="476.0" prefWidth="875.0">
+                        <Pane layoutX="1.0" layoutY="283.0" prefHeight="476.0" prefWidth="1060.0">
+                            <JFXButton fx:id="btnPayment" layoutX="775.0" layoutY="353.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="170.0" style="-fx-background-color: #FF9800; -fx-background-radius: 15;" text="Payment" textFill="WHITE" visible="false">
+                                <font>
+                                    <Font name="Segoe UI Bold" size="24.0" />
+                                </font>
+                                <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="container" />
+                                </styleClass>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                            </JFXButton>
                             <Label layoutX="21.0" layoutY="14.0" prefHeight="43.0" prefWidth="397.0" text="Details">
                                 <font>
                                     <Font size="24.0" />
@@ -655,15 +670,6 @@
                                 </font>
                             </Label>
                             <JFXTextField fx:id="total" layoutX="439.0" layoutY="225.0" />
-                            <JFXButton fx:id="btnPayment" layoutX="322.0" layoutY="329.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="170.0" style="-fx-background-color: #FF9800; -fx-background-radius: 15;" text="Payment" textFill="WHITE" visible="false">
-                                <font>
-                                    <Font name="Segoe UI Bold" size="24.0" />
-                                </font>
-                                <styleClass>
-                                    <String fx:value="btn" />
-                                    <String fx:value="container" />
-                                </styleClass>
-                            </JFXButton>
                         </Pane>
                         <TableView fx:id="tableBill" prefHeight="290.0" prefWidth="1060.0">
                             <columns>

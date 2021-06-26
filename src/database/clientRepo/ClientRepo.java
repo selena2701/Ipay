@@ -3,9 +3,12 @@ package database.clientRepo;
 import MODELS.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.exolab.castor.types.DateTime;
 import utils.DBConnection;
+import utils.helper.Encryption;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class ClientRepo {
 
@@ -15,6 +18,7 @@ public class ClientRepo {
 
     private ObservableList<CreditCard> creditCards = FXCollections.observableArrayList();
     private ObservableList<Invoice> invoices = FXCollections.observableArrayList();
+    private ObservableList<Notification> notifications = FXCollections.observableArrayList();
 
 
     public ClientRepo(String username) throws SQLException, ClassNotFoundException {
@@ -58,12 +62,26 @@ public class ClientRepo {
         connection.close();
     }
 
+    private void loadAllNotificationFromDB() throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_NOTIFICATION");
+
+        ResultSet resultSet = statement.executeQuery();
+        notifications.clear();
+        while (resultSet.next()) {
+            notifications.add(Notification.fromResultSetBadge(resultSet));
+        }
+        connection.close();
+    }
+
     //Change status to Paid
     public void updateInvoice(String id) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        PreparedStatement pstmt = connection.prepareStatement("UPDATE E_ELECTRICITY_BILL SET STATUSBILL=? WHERE ELEC_BILL_ID=?");
+        java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
+        PreparedStatement pstmt = connection.prepareStatement("UPDATE E_ELECTRICITY_BILL SET STATUSBILL=?, DATEPAID = ? WHERE ELEC_BILL_ID=?");
         pstmt.setString(1, "PAID");
-        pstmt.setString(2, id);
+        pstmt.setTimestamp(2, date);
+        pstmt.setString(3, id);
         pstmt.executeUpdate();
         connection.close();
         loadAllInvoicesFromDB();
@@ -95,6 +113,76 @@ public class ClientRepo {
 
         statement.execute();
         connection.close();
+    }
+
+    public Boolean verify(String userName, String password) throws SQLException, ClassNotFoundException {
+
+        String hashPassword = Encryption.encrypt(password);
+        Connection connection = DBConnection.connect();
+
+        String sql = "SELECT * FROM USER_ACCOUNT WHERE Username=? AND Password_Login=?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setString(1, userName);
+        statement.setString(2, hashPassword);
+        ResultSet resultSet = statement.executeQuery();
+
+        if (resultSet.next())
+            return true;
+        connection.close();
+        return false;
+    }
+
+
+    public void changePassword(String username, String newpassword) throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+
+        PreparedStatement statement = connection.prepareStatement("UPDATE USER_ACCOUNT SET Password_Login = ? WHERE Username = ?");
+        statement.setString(1, Encryption.encrypt(newpassword));
+        statement.setString(2, username);
+        statement.executeUpdate();
+
+        connection.close();
+    }
+    public Boolean checkNotificationSeen(String cus_id, String no_id) throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM BADGE_NOTIFICATION WHERE CUS_ID = ? AND NO_ID = ?");
+        statement.setString(1, cus_id);
+        statement.setString(2, no_id);
+
+        ResultSet resultSet = statement.executeQuery();
+        return resultSet.next();
+
+    }
+
+    public void saveNotificationSeen(String cus_id, String no_id) throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO BADGE_NOTIFICATION  VALUES(?,?)");
+        statement.setString(1, cus_id);
+        statement.setString(2, no_id);
+
+        if(!checkNotificationSeen(cus_id, no_id)){
+            statement.execute();
+        }
+
+        connection.close();
+    }
+
+    public Integer displayNewNotification(String cus_id) throws SQLException, ClassNotFoundException {
+        connection = DBConnection.connect();
+        int count = 0;
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM BADGE_NOTIFICATION WHERE CUS_ID = ?");
+        statement.setString(1, cus_id);
+
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()){
+            count++;
+        }
+        loadAllNotificationFromDB();
+        return notifications.size() - count;
+    }
+    public ObservableList<Notification> getNotification() {
+        return notifications;
     }
 
     private void loadAllCreditCardsFromDB() throws SQLException, ClassNotFoundException {
