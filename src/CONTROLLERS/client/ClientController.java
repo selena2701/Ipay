@@ -441,11 +441,11 @@ public class ClientController implements Initializable {
                     toDate.setText(String.valueOf(invoice.getToDate()));
                     electricityType.setText(String.valueOf(invoice.getElectricityType()));
                     if(invoice.isPaid()){
-                        btnPayment.setText("View PDF");
+                        btnPayment.setText("Print Invoice");
                         btnPayment.setVisible(true);
                     }
                     else{
-                        btnPayment.setText("Payment");
+                        btnPayment.setText("Pay");
                         btnPayment.setVisible(true);
                     }
                 }
@@ -677,7 +677,7 @@ public class ClientController implements Initializable {
                         setStyle("-fx-background-color: #FFCC80");
                     }else
                     if (!repo.checkNotificationSeen(user.getId(),item.getId())){
-                        setStyle("-fx-background-color: yellow");
+                        setStyle("-fx-background-color: #FFCC80");
                     }
                     else {
                         setStyle("-fx-background-color: #FFCC80");
