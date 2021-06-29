@@ -39,7 +39,7 @@ public class Invoice {
     }
 
     public static Invoice fromResultSet(ResultSet result) throws SQLException {
-        return new Invoice(result.getString("ELEC_BILL_ID"), result.getInt("PreviousValue"), result.getInt("CurrentValue"), result.getInt("ConsumeValue"), result.getDouble("VAT"), result.getDouble("Total"), result.getString("Electricity_Type"), result.getDate("FromDate"), result.getDate("ToDate"), result.getDate("DatePaid"), result.getString("StatusBill").equals("PAID"), result.getString("CUS_ID"));
+        return new Invoice(result.getString("ElecBillId"), result.getInt("PreviousValue"), result.getInt("CurrentValue"), result.getInt("ConsumeValue"), result.getDouble("VAT"), result.getDouble("Total"), result.getString("ElectricityType"), result.getDate("FromDate"), result.getDate("ToDate"), result.getDate("DatePaid"), result.getString("StatusBill").equals("PAID"), result.getString("CusId"));
     }
 
     public String getId() {

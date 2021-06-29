@@ -24,7 +24,7 @@ public class NotificationsRepo {
 
     private void loadNotificationsFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        String query = "SELECT NO_ID,DateCreated,DateSent, Detail,NameAD FROM E_NOTIFICATION JOIN E_ADMIN ON E_NOTIFICATION.EditedBy=E_ADMIN.AD_ID";
+        String query = "SELECT NoId,DateCreated,DateSent, Detail,NameAd FROM E_NOTIFICATION JOIN E_ADMIN ON E_NOTIFICATION.EditedBy=E_ADMIN.AdminId";
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(query);
 
@@ -55,7 +55,7 @@ public class NotificationsRepo {
     //TODO recheck here to make sure things work precisely
     public void updateNotification(Notification notification) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("UPDATE E_NOTIFICATION SET DateSent=?,EditedBy=?,Detail=? WHERE NO_ID=?");
+        PreparedStatement statement = connection.prepareStatement("UPDATE E_NOTIFICATION SET DateSent=?,EditedBy=?,Detail=? WHERE NoId=?");
         statement.setObject(1, notification.getDatePublished());
         statement.setString(2, notification.getEditedBy());
         statement.setString(3, notification.getDescription());
@@ -68,7 +68,7 @@ public class NotificationsRepo {
     //TODO recheck here to make sure things work precisely
     public void deleteNotification(String notificationId) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("DELETE FROM E_NOTIFICATION WHERE NO_ID=?");
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM E_NOTIFICATION WHERE NoId=?");
         statement.setString(1, notificationId);
         statement.execute();
         connection.close();

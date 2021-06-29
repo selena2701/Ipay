@@ -87,6 +87,6 @@ public class CreditCard {
     }
 
     public static CreditCard fromResultSet(ResultSet resultSet) throws SQLException {
-        return new CreditCard(resultSet.getString("CC_ID"), resultSet.getString("CardHolderName"), resultSet.getString("CardNumber"), resultSet.getString("AccountNumber"), Bank.stringToBank(resultSet.getString("BankName")), resultSet.getString("Status"), resultSet.getString("CUS_ID"));
+        return new CreditCard(resultSet.getString("CreditCardId"), resultSet.getString("CardHolderName"), resultSet.getString("CardNumber"), resultSet.getString("AccountNumber"), Bank.stringToBank(resultSet.getString("BankName")), resultSet.getString("Status"), resultSet.getString("CusId"));
     }
 }

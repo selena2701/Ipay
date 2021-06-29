@@ -51,7 +51,7 @@ public class ClientRepo {
     //Load tableBill
     private void loadAllInvoicesFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_ELECTRICITY_BILL WHERE CUS_ID=?");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_ELECTRICITY_BILL WHERE CusId=?");
         statement.setString(1, customer.getId());
 
         ResultSet resultSet = statement.executeQuery();
@@ -78,7 +78,7 @@ public class ClientRepo {
     public void updateInvoice(String id) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
-        PreparedStatement pstmt = connection.prepareStatement("UPDATE E_ELECTRICITY_BILL SET STATUSBILL=?, DATEPAID = ? WHERE ELEC_BILL_ID=?");
+        PreparedStatement pstmt = connection.prepareStatement("UPDATE E_ELECTRICITY_BILL SET StatusBill=?, DatePaid = ? WHERE ElecBillId=?");
         pstmt.setString(1, "PAID");
         pstmt.setTimestamp(2, date);
         pstmt.setString(3, id);
@@ -93,13 +93,13 @@ public class ClientRepo {
         String gender = "Nam";
 
         PreparedStatement statement = connection.prepareStatement("UPDATE E_CUSTOMER SET " +
-                "FullnameCUS = ?," +
-                "PhoneCUS = ?," +
-                "AddressCUS =?," +
-                "NationalID = ?," +
+                "FullnameCus = ?," +
+                "PhoneCus = ?," +
+                "AddressCus =?," +
+                "NationalId = ?," +
                 "Gender = ?," +
                 "Birthday = ?," +
-                "Region = ? WHERE CUS_ID = ?");
+                "Region = ? WHERE CusId = ?");
         statement.setString(1, customer.getName());
         statement.setString(2, customer.getPhoneNumber());
         statement.setString(3, customer.getAddress());
@@ -120,7 +120,7 @@ public class ClientRepo {
         String hashPassword = Encryption.encrypt(password);
         Connection connection = DBConnection.connect();
 
-        String sql = "SELECT * FROM USER_ACCOUNT WHERE Username=? AND Password_Login=?";
+        String sql = "SELECT * FROM USER_ACCOUNT WHERE Username=? AND PasswordLogin=?";
         PreparedStatement statement = connection.prepareStatement(sql);
 
         statement.setString(1, userName);
@@ -137,7 +137,7 @@ public class ClientRepo {
     public void changePassword(String username, String newpassword) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
 
-        PreparedStatement statement = connection.prepareStatement("UPDATE USER_ACCOUNT SET Password_Login = ? WHERE Username = ?");
+        PreparedStatement statement = connection.prepareStatement("UPDATE USER_ACCOUNT SET PasswordLogin = ? WHERE Username = ?");
         statement.setString(1, Encryption.encrypt(newpassword));
         statement.setString(2, username);
         statement.executeUpdate();
@@ -146,7 +146,7 @@ public class ClientRepo {
     }
     public Boolean checkNotificationSeen(String cus_id, String no_id) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM BADGE_NOTIFICATION WHERE CUS_ID = ? AND NO_ID = ?");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM BADGE_NOTIFICATION WHERE CusId = ? AND NoId = ?");
         statement.setString(1, cus_id);
         statement.setString(2, no_id);
 
@@ -171,7 +171,7 @@ public class ClientRepo {
     public Integer displayNewNotification(String cus_id) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
         int count = 0;
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM BADGE_NOTIFICATION WHERE CUS_ID = ?");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM BADGE_NOTIFICATION WHERE CusId = ?");
         statement.setString(1, cus_id);
 
         ResultSet resultSet = statement.executeQuery();
@@ -188,7 +188,7 @@ public class ClientRepo {
     private void loadAllCreditCardsFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
 
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_CREDITCARD WHERE CUS_ID=?");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_CREDIT_CARD WHERE CusId=?");
         statement.setString(1, customer.getId());
 
         ResultSet resultSet = statement.executeQuery();
@@ -201,7 +201,7 @@ public class ClientRepo {
 
     public void addCreditCard(CreditCard creditCard) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("INSERT INTO E_CREDITCARD  VALUES(?,?,?,?,?,?,?)");
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO E_CREDIT_CARD  VALUES(?,?,?,?,?,?,?)");
         statement.setString(1, creditCard.getId());
         statement.setString(2, creditCard.getCardholdername());
         statement.setString(3, creditCard.getCardnumber());
@@ -217,7 +217,7 @@ public class ClientRepo {
     }
     public void deleteCreditCard(String creaditCardID) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("DELETE FROM E_CREDITCARD WHERE CC_ID=?");
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM E_CREDIT_CARD WHERE CreditCardId=?");
         statement.setString(1, creaditCardID);
         statement.execute();
         connection.close();
@@ -225,12 +225,12 @@ public class ClientRepo {
     }
     public void setDefaultCreditCard(String creditCardID) throws SQLException, ClassNotFoundException{
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("UPDATE E_CREDITCARD SET STATUS =? WHERE STATUS=?");
+        PreparedStatement statement = connection.prepareStatement("UPDATE E_CREDIT_CARD SET Status =? WHERE Status=?");
         statement.setString(1, "");
         statement.setString(2, "Default");
         statement.execute();
 
-        statement = connection.prepareStatement("UPDATE E_CREDITCARD SET STATUS =? WHERE CC_ID=?");
+        statement = connection.prepareStatement("UPDATE E_CREDIT_CARD SET Status =? WHERE CreditCardId=?");
         statement.setString(1, "Default");
         statement.setString(2, creditCardID);
         statement.execute();

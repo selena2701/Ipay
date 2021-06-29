@@ -35,7 +35,7 @@ public class InvoicesRepo {
 
     public void deleteInvoice(String id) throws SQLException, ClassNotFoundException {
         connection= DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("DELETE FROM E_ELECTRICITY_BILL WHERE ELEC_BILL_ID=?");
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM E_ELECTRICITY_BILL WHERE ElecBillId=?");
         statement.setString(1,id);
         statement.execute();
         connection.close();

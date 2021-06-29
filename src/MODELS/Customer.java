@@ -50,11 +50,11 @@ public class Customer {
 
     public static Customer fromResultSet(ResultSet result) throws SQLException {
         Customer customer = new Customer();
-        customer.setId(result.getString("CUS_ID"));
-        customer.setName(result.getString("FullnameCUS"));
+        customer.setId(result.getString("CusId"));
+        customer.setName(result.getString("FullnameCus"));
         customer.setUsername(result.getString("Username"));
-        customer.setPhoneNumber(result.getString("PhoneCUS"));
-        customer.setAddress(result.getString("AddressCUS"));
+        customer.setPhoneNumber(result.getString("PhoneCus"));
+        customer.setAddress(result.getString("AddressCus"));
         customer.setNationalId(result.getString("NationalID"));
         customer.setGender(result.getString("Gender").equals("Nam"));
         customer.setBirthday(result.getDate("Birthday").toLocalDate());

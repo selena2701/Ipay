@@ -18,7 +18,7 @@
         <HBox fx:id="layout0" mouseTransparent="true" prefHeight="44.0" prefWidth="1080.0" style="-fx-background-color: #FFB300;" styleClass="shadow">
             <Pane prefHeight="44.0" prefWidth="221.0" style="-fx-background-color: #FFB300;">
                 <ImageView fitHeight="70.0" fitWidth="75.0" layoutX="-4.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@../images/Picsart.jpg" />
+                    <Image url="@../images/icon.png" />
                 </ImageView>
             <Label layoutX="55.0" layoutY="-1.0" prefHeight="51.0" prefWidth="170.0" text="EPay ">
                <font>

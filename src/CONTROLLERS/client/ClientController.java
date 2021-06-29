@@ -326,7 +326,7 @@ public class ClientController implements Initializable {
                 gender = false;
             Date dateRegister = null;
             try {
-                dateRegister = new SimpleDateFormat("yyyy-MM-dd").parse(txtDateRegister.getText());
+                dateRegister = new SimpleDateFormat("dd-MM-yyyy").parse(txtDateRegister.getText());
                 repo.saveCustomer(new Customer(
                         repo.getCustomer().getId(),
                         txtFullName.getText(),
@@ -483,8 +483,8 @@ public class ClientController implements Initializable {
             } else {
                 try {
                     String str = ReadNumber.numberToString(Double.parseDouble(total.getText()));
-                    JasperDesign jasdi = JRXmlLoader.load("C:\\Users\\thaitam\\IdeaProjects\\SystemManageandPayElectricity\\reports\\bill.jrxml");
-                    String sql = "SELECT PreviousValue, CurrentValue, Consumevalue, FromDate, ToDate, DatePaid  FROM E_ELECTRICITY_BILL WHERE ELEC_BILL_ID =" + idText.getText();
+                    JasperDesign jasdi = JRXmlLoader.load("F:\\2Y_LIST_PROJECT\\Nhom5_19521295_19521416_19520917_19520285\\SourceCodeDemoAndScriptDatabase\\reports\\bill.jrxml");
+                    String sql = "SELECT PreviousValue, CurrentValue, Consumevalue, FromDate, ToDate, DatePaid  FROM E_ELECTRICITY_BILL WHERE ElecBillId =" + idText.getText();
                     JRDesignQuery newquery = new JRDesignQuery();
                     newquery.setText(sql);
 
@@ -500,7 +500,7 @@ public class ClientController implements Initializable {
 
                     JasperReport js = JasperCompileManager.compileReport(jasdi);
                     JasperPrint jp = JasperFillManager.fillReport(js, para, DBConnection.connect());
-                    JasperExportManager.exportReportToPdfFile(jp, "C:\\Users\\thaitam\\IdeaProjects\\SystemManageandPayElectricity\\reports\\" + idText.getText() + ".pdf");
+                    JasperExportManager.exportReportToPdfFile(jp, "F:\\2Y_LIST_PROJECT\\Nhom5_19521295_19521416_19520917_19520285\\SourceCodeDemoAndScriptDatabase\\reports" + idText.getText() + ".pdf");
                     JasperViewer.viewReport(jp, false);
                 } catch (JRException e) {
                     e.printStackTrace();

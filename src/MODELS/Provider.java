@@ -27,7 +27,7 @@ public class Provider {
     }
 
     public static Provider fromResultSet(ResultSet result) throws SQLException {
-        return new Provider(result.getString("PRO_ID"), result.getString("NamePRO"), result.getString("PhonePRO"), result.getString("AddressPRO"), result.getDate("DateJoined"), result.getString("PromotedBy"));
+        return new Provider(result.getString("ProId"), result.getString("NamePro"), result.getString("PhonePro"), result.getString("AddressPro"), result.getDate("DateJoined"), result.getString("PromotedBy"));
     }
 
     public String getId() {

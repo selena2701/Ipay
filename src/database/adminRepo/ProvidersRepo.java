@@ -60,7 +60,7 @@ public class ProvidersRepo {
     //Delete Provider
     public void deleteProvider(String providerId) throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("DELETE FROM E_PROVIDER WHERE PRO_ID=?");
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM E_PROVIDER WHERE ProId=?");
         statement.setString(1, providerId);
         statement.execute();
         connection.close();
@@ -73,7 +73,7 @@ public class ProvidersRepo {
     public void updateProvider(Provider provider) throws SQLException, ClassNotFoundException {
 
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("UPDATE E_PROVIDER SET NamePRO=?,PhonePRO=?,AddressPRO=?,PromotedBy=? WHERE PRO_ID=?");
+        PreparedStatement statement = connection.prepareStatement("UPDATE E_PROVIDER SET NamePro=?,PhonePro=?,AddressPro=?,PromotedBy=? WHERE ProId=?");
         statement.setString(1, provider.getName());
         statement.setString(2, provider.getPhone());
         statement.setString(3, provider.getAddress());

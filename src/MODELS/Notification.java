@@ -27,16 +27,16 @@ public class Notification {
 
     public static Notification fromResultSet(ResultSet resultSet) throws SQLException {
         Notification notification = new Notification();
-        notification.id = resultSet.getString("NO_ID");
+        notification.id = resultSet.getString("NoId");
         notification.dateCreated = resultSet.getDate("DateCreated");
         notification.datePublished = resultSet.getDate("DateSent");
         notification.description = resultSet.getString("Detail");
-        notification.editedBy = resultSet.getString("NameAD");
+        notification.editedBy = resultSet.getString("NameAd");
         return notification;
     }
     public static Notification fromResultSetBadge(ResultSet resultSet) throws SQLException {
         Notification notification = new Notification();
-        notification.id = resultSet.getString("NO_ID");
+        notification.id = resultSet.getString("NoId");
         notification.dateCreated = resultSet.getDate("DateCreated");
         notification.datePublished = resultSet.getDate("DateSent");
         notification.description = resultSet.getString("Detail");

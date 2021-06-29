@@ -26,8 +26,8 @@ public class Admin {
 
     public static Admin fromResultSet(ResultSet resultSet) throws SQLException {
         Admin admin=new Admin();
-        admin.id=resultSet.getString("AD_ID");
-        admin.name=resultSet.getString("NameAD");
+        admin.id=resultSet.getString("AdminId");
+        admin.name=resultSet.getString("NameAd");
         admin.username=resultSet.getString("Username");
         admin.promotedBy=resultSet.getString("PromotedBy");
         admin.datePromoted=resultSet.getDate("DatePromote");

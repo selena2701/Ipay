@@ -165,7 +165,7 @@
 			</textField>
 			<image>
 				<reportElement x="0" y="0" width="81" height="80" uuid="699bfc9f-5454-47bc-ae34-0e95ba92364f"/>
-				<imageExpression><![CDATA["C:/Users/thaitam/IdeaProjects/SystemManageandPayElectricity/src/VIEWS/images/Picsart.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["C:/Users/Hong Cuc/Documents/GitHub/SystemManageandPayElectricity/src/VIEWS/images/Picsart.jpg"]]></imageExpression>
 			</image>
 			<textField>
 				<reportElement x="465" y="10" width="85" height="20" uuid="75ff64bf-4998-4a41-8947-d87a6e4abcaa"/>

@@ -16,8 +16,8 @@ public class AuthRepo {
     public static Boolean login(String userName, String password) throws SQLException, ClassNotFoundException {
         Boolean isUser= null;
         String hashPassword = Encryption.encrypt(password);
-        Connection connection = JDBConnection.connect();
-        String sql = "SELECT * FROM USER_ACCOUNT WHERE Username=? AND Password_Login=?";
+        Connection connection = DBConnection.connect();
+        String sql = "SELECT * FROM USER_ACCOUNT WHERE Username=? AND PasswordLogin=?";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, userName);
         statement.setString(2, hashPassword);
@@ -67,7 +67,7 @@ public class AuthRepo {
         PreparedStatement statement = connection.prepareStatement("" +
                 "SET DATEFORMAT DMY; " +
                 "INSERT INTO E_CUSTOMER " +
-                "(CUS_ID,FullnameCUS,Username,PhoneCUS,AddressCUS,NationalID,Gender,Birthday,Region)" +
+                "(CusId,FullnameCus,Username,PhoneCus,AddressCus,NationalId,Gender,Birthday,Region)" +
                 "VALUES(?,?,?,?,?,?,?,CONVERT (VARCHAR ,?,103),?)");
 
         statement.setString(1, customer.getId());
