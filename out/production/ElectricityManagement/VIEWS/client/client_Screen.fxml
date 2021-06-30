@@ -421,11 +421,10 @@
                </HBox>
                     <StackPane fx:id="Notification_Screen" prefHeight="150.0" prefWidth="200.0" visible="false">
                         <Pane prefHeight="200.0" prefWidth="200.0">
-                            <TableView fx:id="tableNotification" layoutX="64.0" layoutY="80.0" prefHeight="660.0" prefWidth="933.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA726;" styleClass="tblview">
+                            <TableView fx:id="tableNotification" layoutX="63.0" layoutY="33.0" prefHeight="660.0" prefWidth="933.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA726; -fx-alignment: CENTER;" styleClass="tblview">
                                 <columns>
-                                    <TableColumn fx:id="no_id" prefWidth="97.99999618530273" style=" -fx-border-color: #FFA726;" text="No_id" />
-                                    <TableColumn fx:id="date" prefWidth="142.00001525878906" style=" -fx-border-color: #FFA726;" text="Date" />
-                                    <TableColumn fx:id="detail" prefWidth="702.3999938964844" style="-fx-border-color: #FFA726;" text="Detail" />
+                                    <TableColumn fx:id="date" prefWidth="142.00001525878906" style="-fx-border-color: #FFA726; -fx-alignment: CENTER;" text="Date" />
+                                    <TableColumn fx:id="detail" prefWidth="788.1999969482422" sortable="false" style="-fx-border-color: #FFA726;" text="Detail" />
                                 </columns>
                         <cursor>
                            <Cursor fx:constant="HAND" />
@@ -437,17 +436,6 @@
                                       <font>
                                           <Font size="1.0" />
                                       </font>
-                              <graphic>
-                                 <MaterialIconView fill="#ff9800" glyphName="LOCAL_LIBRARY" size="40" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="31.0">
-                                    <effect>
-                                       <DropShadow>
-                                          <color>
-                                             <Color red="1.0" green="0.5960784554481506" />
-                                          </color>
-                                       </DropShadow>
-                                    </effect>
-                                 </MaterialIconView>
-                              </graphic>
                                   </JFXButton>
                         </children>
                      </HBox>
@@ -509,7 +497,7 @@
                      </effect>
                   </Pane>
                     </AnchorPane>
-                    <VBox fx:id="Profile_Screen" prefHeight="200.0" prefWidth="100.0">
+                    <VBox fx:id="Profile_Screen" prefHeight="200.0" prefWidth="100.0" visible="false">
                         <TabPane prefHeight="756.0" prefWidth="1060.0" tabClosingPolicy="UNAVAILABLE">
                             <Tab style="-fx-background-color: #FFCC80;" text="Personal Information">
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -558,14 +546,14 @@
                                     <JFXPasswordField fx:id="pwfRetypePassword" layoutX="161.0" layoutY="359.0" prefHeight="47.0" prefWidth="708.0" promptText="Re-type New Password" />
                                 </AnchorPane>
                             </Tab>
-                            <Tab style="-fx-background-color: #FFCC80;" text="Credit Cards">
+                            <Tab style="-fx-background-color: #FFCC80; -fx-alignment: CENTER;" text="Credit Cards">
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <TableView fx:id="tblCreditCard" layoutX="45.0" layoutY="96.0" prefHeight="599.0" prefWidth="969.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA726;">
                                         <columns>
-                                            <TableColumn fx:id="tblColumnCardHolderName" prefWidth="247.9999237060547" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="CardHolderName" />
-                                            <TableColumn fx:id="tblColumnAccountNumber" prefWidth="226.5999755859375" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="AccountNumber" />
-                                            <TableColumn fx:id="tblColumnBank" prefWidth="204.5999755859375" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Bank" />
-                                 <TableColumn fx:id="tblColumnStatus" prefWidth="288.4000244140625" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726;" text="Status" />
+                                            <TableColumn fx:id="tblColumnCardHolderName" prefWidth="247.9999237060547" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726; -fx-alignment: CENTER;" text="CardHolderName" />
+                                            <TableColumn fx:id="tblColumnAccountNumber" prefWidth="226.5999755859375" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726; -fx-alignment: CENTER;" text="AccountNumber" />
+                                            <TableColumn fx:id="tblColumnBank" prefWidth="204.5999755859375" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726; -fx-alignment: CENTER;" text="Bank" />
+                                 <TableColumn fx:id="tblColumnStatus" prefWidth="288.4000244140625" style="-fx-background-color: #FFCC80; -fx-border-color: #FFA726; -fx-alignment: CENTER;" text="Status" />
                                         </columns>
                                     </TableView>
                            <HBox layoutX="45.0" layoutY="26.0" prefHeight="52.0" prefWidth="287.0">
@@ -597,9 +585,9 @@
                             </Tab>
                         </TabPane>
                     </VBox>
-                    <Pane fx:id="Invoice_Screen" prefHeight="200.0" prefWidth="200.0" visible="false">
+                    <Pane fx:id="Invoice_Screen" prefHeight="200.0" prefWidth="200.0">
                         <Pane layoutX="1.0" layoutY="283.0" prefHeight="476.0" prefWidth="1060.0">
-                            <JFXButton fx:id="btnPayment" layoutX="222.0" layoutY="311.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="170.0" style="-fx-background-color: #FF9800; -fx-background-radius: 15;" text="Payment" textFill="WHITE" visible="false">
+                            <JFXButton fx:id="btnPayment" layoutX="208.0" layoutY="312.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="231.0" style="-fx-background-color: #FF9800; -fx-background-radius: 15; -fx-border-radius: 15;" text="Payment" textFill="WHITE" visible="false">
                                 <font>
                                     <Font name="Segoe UI Bold" size="24.0" />
                                 </font>
@@ -671,26 +659,35 @@
                             </Label>
                             <JFXTextField fx:id="total" editable="false" layoutX="439.0" layoutY="225.0" />
                         </Pane>
-                        <TableView fx:id="tableBill" prefHeight="290.0" prefWidth="1060.0">
+                        <TableView fx:id="tableBill" prefHeight="290.0" prefWidth="1060.0" style="-fx-alignment: CENTER;">
                             <columns>
-                                <TableColumn fx:id="idColumn" prefWidth="105.0" text="ELEC_BILL_ID" />
-                                <TableColumn fx:id="timeColumn" prefWidth="155.0" text="Period" />
-                                <TableColumn fx:id="valueColumn" prefWidth="489.0" text="Total" />
+                                <TableColumn fx:id="idColumn" prefWidth="105.0" style="-fx-alignment: CENTER;" text="Bill ID" />
+                                <TableColumn fx:id="timeColumn" prefWidth="155.0" style="-fx-alignment: CENTER;" text="Period" />
+                                <TableColumn fx:id="valueColumn" prefWidth="489.0" style="-fx-alignment: CENTER;" text="Total" />
                                 <TableColumn fx:id="status" prefWidth="309.0" text="Status" />
                             </columns>
                         </TableView>
-                        <Pane fx:id="paymentForm" layoutX="710.0" layoutY="290.0" prefHeight="448.0" prefWidth="350.0" style="-fx-background-color: #343434;">
-                            <Label layoutX="27.0" layoutY="22.0" text="PAYMENT" textFill="WHITE">
+                        <Pane fx:id="paymentForm" layoutX="649.0" layoutY="290.0" prefHeight="462.0" prefWidth="411.0" style="-fx-background-color: #A7FFEB;">
+                            <Label layoutX="131.0" layoutY="49.0" text="PAYMENT" textFill="#0f0f0f">
                                 <font>
-                                    <Font name="Segoe UI Bold" size="32.0" />
+                                    <Font name="Segoe UI Bold" size="36.0" />
                                 </font>
                             </Label>
-                            <JFXTextField fx:id="txtInvoiceCardHolderName" layoutX="19.0" layoutY="176.0" prefHeight="45.0" prefWidth="270.0" promptText="Cardholder Name" style="-fx-background-color: #343434;" styleClass="txtfield" />
-                            <JFXTextField fx:id="txtInvoiceCardNumber" layoutX="19.0" layoutY="221.0" prefHeight="43.0" prefWidth="270.0" promptText="CardNumber" style="-fx-background-color: #343434;" styleClass="txtfield" />
-                            <JFXTextField fx:id="txtInvoiceAccountNumber" layoutX="19.0" layoutY="264.0" prefHeight="43.0" prefWidth="270.0" promptText="Account Number" style="-fx-background-color: #343434;" styleClass="txtfield" />
-                            <JFXButton fx:id="btnCheckout" layoutX="109.0" layoutY="331.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #343434;" text="Checkout" textFill="WHITE">
+                            <JFXTextField fx:id="txtInvoiceCardHolderName" focusColor="BLACK" layoutX="16.0" layoutY="176.0" prefHeight="45.0" prefWidth="370.0" promptText="Cardholder Name" styleClass="txtfield" unFocusColor="#0f0f0f">
+                        <font>
+                           <Font size="14.0" />
+                        </font></JFXTextField>
+                            <JFXTextField fx:id="txtInvoiceCardNumber" focusColor="BLACK" layoutX="16.0" layoutY="221.0" prefHeight="43.0" prefWidth="370.0" promptText="CardNumber" styleClass="txtfield" unFocusColor="#0f0f0f">
+                        <font>
+                           <Font size="14.0" />
+                        </font></JFXTextField>
+                            <JFXTextField fx:id="txtInvoiceAccountNumber" focusColor="BLACK" layoutX="16.0" layoutY="264.0" prefHeight="43.0" prefWidth="370.0" promptText="Account Number" styleClass="txtfield" unFocusColor="#0f0f0f">
+                        <font>
+                           <Font size="14.0" />
+                        </font></JFXTextField>
+                            <JFXButton fx:id="btnCheckout" layoutX="137.0" layoutY="331.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="160.0" text="Checkout" textFill="#ffffff">
                                 <font>
-                                    <Font size="24.0" />
+                                    <Font name="Segoe UI Bold" size="24.0" />
                                 </font>
                                 <styleClass>
                                     <String fx:value="btn" />
@@ -700,11 +697,14 @@
                                     <Cursor fx:constant="HAND" />
                                 </cursor>
                             </JFXButton>
-                     <JFXComboBox fx:id="cbbPaymentBank" focusColor="WHITE" layoutX="14.0" layoutY="109.0" prefHeight="39.0" prefWidth="279.0" stylesheets="@../css/client.css">
+                     <JFXComboBox fx:id="cbbPaymentBank" focusColor="#141414" layoutX="14.0" layoutY="137.0" prefHeight="39.0" prefWidth="370.0" stylesheets="@../css/client.css">
                         <styleClass>
                            <String fx:value="cell" />
                            <String fx:value="combo-box" />
                         </styleClass></JFXComboBox>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                         </Pane>
                     </Pane>
                 </StackPane>

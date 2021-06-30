@@ -473,7 +473,7 @@ public class ClientController implements Initializable {
 
         //Click payment and Display Payment Form
         btnPayment.setOnMouseClicked(event -> {
-            if (btnPayment.getText().equals("Payment")) {
+            if (btnPayment.getText().equals("Pay")) {
                 TranslateTransition slide = new TranslateTransition();
                 slide.setDuration(Duration.seconds(0.4));
                 slide.setNode(paymentForm);
@@ -483,7 +483,7 @@ public class ClientController implements Initializable {
             } else {
                 try {
                     String str = ReadNumber.numberToString(Double.parseDouble(total.getText()));
-                    JasperDesign jasdi = JRXmlLoader.load("F:\\2Y_LIST_PROJECT\\Nhom5_19521295_19521416_19520917_19520285\\SourceCodeDemoAndScriptDatabase\\reports\\bill.jrxml");
+                    JasperDesign jasdi = JRXmlLoader.load("C:\\Users\\Hong Cuc\\Documents\\GitHub\\SystemManageandPayElectricity\\reports\\bill.jrxml");
                     String sql = "SELECT PreviousValue, CurrentValue, Consumevalue, FromDate, ToDate, DatePaid  FROM E_ELECTRICITY_BILL WHERE ElecBillId =" + idText.getText();
                     JRDesignQuery newquery = new JRDesignQuery();
                     newquery.setText(sql);
@@ -500,7 +500,7 @@ public class ClientController implements Initializable {
 
                     JasperReport js = JasperCompileManager.compileReport(jasdi);
                     JasperPrint jp = JasperFillManager.fillReport(js, para, DBConnection.connect());
-                    JasperExportManager.exportReportToPdfFile(jp, "F:\\2Y_LIST_PROJECT\\Nhom5_19521295_19521416_19520917_19520285\\SourceCodeDemoAndScriptDatabase\\reports" + idText.getText() + ".pdf");
+                    JasperExportManager.exportReportToPdfFile(jp, "C:\\Users\\Hong Cuc\\Documents\\GitHub\\SystemManageandPayElectricity\\reports\\List Bill\\Bill " + idText.getText() + ".pdf");
                     JasperViewer.viewReport(jp, false);
                 } catch (JRException e) {
                     e.printStackTrace();
@@ -609,7 +609,7 @@ public class ClientController implements Initializable {
                     setText(value ? "PAID" : "UNPAID");
                     setStyle("-fx-background-color: #FFE0B2");
                     setStyle("-fx-border-color: #FFA726");
-                    setStyle("-fx-alignment: LEFT");
+                    setStyle("-fx-alignment: CENTER");
                 }
             }
         });
@@ -663,7 +663,6 @@ public class ClientController implements Initializable {
     }
 
     private void initNotificationsTable() throws SQLException, ClassNotFoundException {
-        no_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         date.setCellValueFactory(new PropertyValueFactory<>("datePublished"));
         detail.setCellValueFactory(new PropertyValueFactory<>("description"));
 
