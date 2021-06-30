@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ReadNumber {
 
-    public static String formatNumberForRead(double number) {
+    public static String formatNumberForRead(int number) {
         NumberFormat nf = NumberFormat.getInstance();
         String temp = nf.format(number);
         String strReturn = "";
@@ -23,7 +23,7 @@ public class ReadNumber {
         return strReturn;
 
     }
-    public static String numberToString(double number) {
+    public static String numberToString(int number) {
         String sNumber = formatNumberForRead(number);
         // Tao mot bien tra ve
         String sReturn = "";

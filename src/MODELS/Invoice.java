@@ -1,5 +1,7 @@
 package MODELS;
 
+import utils.helper.CaculateElectricityBill;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Instant;
@@ -12,7 +14,7 @@ public class Invoice {
     private int currentValue = 0;
     private int consumedValue = 0;
     private double VAT = 0.5;
-    private double total = 0;
+    private int total = 0;
     private String electricityType = "";
     private Date fromDate = Date.from(Instant.EPOCH);
     private Date toDate = Date.from(Instant.EPOCH);
@@ -23,7 +25,7 @@ public class Invoice {
     public Invoice() {
     }
 
-    public Invoice(String id, int previousValue, int currentValue, int consumedValue, double VAT, double total, String electricityType, Date fromDate, Date toDate, Date paidDate, boolean isPaid, String customerID) {
+    public Invoice(String id, int previousValue, int currentValue, int consumedValue, double VAT, int total, String electricityType, Date fromDate, Date toDate, Date paidDate, boolean isPaid, String customerID) {
         this.id = id;
         this.previousValue = previousValue;
         this.currentValue = currentValue;
@@ -39,7 +41,7 @@ public class Invoice {
     }
 
     public static Invoice fromResultSet(ResultSet result) throws SQLException {
-        return new Invoice(result.getString("ElecBillId"), result.getInt("PreviousValue"), result.getInt("CurrentValue"), result.getInt("ConsumeValue"), result.getDouble("VAT"), result.getDouble("Total"), result.getString("ElectricityType"), result.getDate("FromDate"), result.getDate("ToDate"), result.getDate("DatePaid"), result.getString("StatusBill").equals("PAID"), result.getString("CusId"));
+        return new Invoice(result.getString("ElecBillId"), result.getInt("PreviousValue"), result.getInt("CurrentValue"), result.getInt("ConsumeValue"), result.getDouble("VAT"), CaculateElectricityBill.Caculate(result.getInt("ConsumeValue"),result.getDouble("VAT")), result.getString("ElectricityType"), result.getDate("FromDate"), result.getDate("ToDate"), result.getDate("DatePaid"), result.getString("StatusBill").equals("PAID"), result.getString("CusId"));
     }
 
     public String getId() {
@@ -82,11 +84,11 @@ public class Invoice {
         this.toDate = toDate;
     }
 
-    public double getTotal() {
+    public int getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
+    public void setTotal(int total) {
         this.total = total;
     }
 

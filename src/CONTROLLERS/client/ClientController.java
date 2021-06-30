@@ -1,7 +1,6 @@
 package CONTROLLERS.client;
 
 import com.jfoenix.controls.*;
-import database.adminRepo.NotificationsRepo;
 import database.clientRepo.ClientRepo;
 import javafx.animation.TranslateTransition;
 import javafx.collections.ObservableList;
@@ -26,7 +25,6 @@ import MODELS.Region;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 import utils.DBConnection;
@@ -482,7 +480,7 @@ public class ClientController implements Initializable {
                 paymentForm.setTranslateX(400);
             } else {
                 try {
-                    String str = ReadNumber.numberToString(Double.parseDouble(total.getText()));
+                    String str = ReadNumber.numberToString(Integer.parseInt(total.getText()));
                     JasperDesign jasdi = JRXmlLoader.load("C:\\Users\\Hong Cuc\\Documents\\GitHub\\SystemManageandPayElectricity\\reports\\bill.jrxml");
                     String sql = "SELECT PreviousValue, CurrentValue, Consumevalue, FromDate, ToDate, DatePaid  FROM E_ELECTRICITY_BILL WHERE ElecBillId =" + idText.getText();
                     JRDesignQuery newquery = new JRDesignQuery();
