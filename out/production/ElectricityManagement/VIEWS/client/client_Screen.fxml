@@ -136,7 +136,7 @@
             </VBox>
             <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0" style="-fx-background-color: #FFECB3;">
                 <StackPane fx:id="main" prefHeight="756.0" prefWidth="1060.0">
-               <HBox fx:id="Home_Screen" style="-fx-background-color: #FFECB3;" visible="false">
+               <HBox fx:id="Home_Screen" style="-fx-background-color: #FFECB3;">
                   <children>
                             <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #FFECB3;">
                                  <Pane fx:id="pNoticeInvoice" layoutX="22.0" layoutY="415.0" prefHeight="200.0" prefWidth="503.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
@@ -419,7 +419,7 @@
                      </StackPane>
                   </children>
                </HBox>
-                    <StackPane fx:id="Notification_Screen" prefHeight="150.0" prefWidth="200.0">
+                    <StackPane fx:id="Notification_Screen" prefHeight="150.0" prefWidth="200.0" visible="false">
                         <Pane prefHeight="200.0" prefWidth="200.0">
                             <TableView fx:id="tableNotification" layoutX="-1.0" prefHeight="754.0" prefWidth="1060.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA72; -fx-alignment: CENTER;" styleClass="tblview">
                                 <columns>
