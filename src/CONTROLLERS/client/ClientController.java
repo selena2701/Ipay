@@ -62,7 +62,7 @@ public class ClientController implements Initializable {
     @FXML
     private JFXButton btncalculate, btncalculateback;
     @FXML
-    private JFXButton btnLogout, btnPayment, btnCheckout, btnRemoveCredit, btnSetDefaultCredit, btnSaveProfile, btnChangePass;
+    private JFXButton btnLogout, btnPayPrint, btnCheckout, btnRemoveCredit, btnSetDefaultCredit, btnSaveProfile, btnChangePass;
     @FXML
     private Pane btnNotification;
     @FXML
@@ -439,16 +439,16 @@ public class ClientController implements Initializable {
                     toDate.setText(String.valueOf(invoice.getToDate()));
                     electricityType.setText(String.valueOf(invoice.getElectricityType()));
                     if(invoice.isPaid()){
-                        btnPayment.setText("Print Invoice");
-                        btnPayment.setVisible(true);
+                        btnPayPrint.setText("Print Invoice");
+                        btnPayPrint.setVisible(true);
                     }
                     else{
-                        btnPayment.setText("Pay");
-                        btnPayment.setVisible(true);
+                        btnPayPrint.setText("Pay");
+                        btnPayPrint.setVisible(true);
                     }
                 }
                 else{
-                    btnPayment.setVisible(false);
+                    btnPayPrint.setVisible(false);
                 }
             }
         });
@@ -470,8 +470,8 @@ public class ClientController implements Initializable {
         paymentForm.setTranslateX(400);
 
         //Click payment and Display Payment Form
-        btnPayment.setOnMouseClicked(event -> {
-            if (btnPayment.getText().equals("Pay")) {
+        btnPayPrint.setOnMouseClicked(event -> {
+            if (btnPayPrint.getText().equals("Pay")) {
                 TranslateTransition slide = new TranslateTransition();
                 slide.setDuration(Duration.seconds(0.4));
                 slide.setNode(paymentForm);

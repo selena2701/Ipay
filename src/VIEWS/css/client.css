@@ -47,7 +47,7 @@
     -fx-tick-label-fill: #263238;
 }
 .combo-box .cell {
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 
 }
 .combo-box{
