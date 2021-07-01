@@ -136,7 +136,7 @@
             </VBox>
             <VBox fx:id="layout2" prefHeight="756.0" prefWidth="1101.0" style="-fx-background-color: #FFECB3;">
                 <StackPane fx:id="main" prefHeight="756.0" prefWidth="1060.0">
-               <HBox fx:id="Home_Screen" style="-fx-background-color: #FFECB3;">
+               <HBox fx:id="Home_Screen" style="-fx-background-color: #FFECB3;" visible="false">
                   <children>
                             <Pane fx:id="paneHome" prefHeight="755.0" prefWidth="548.0" style="-fx-background-color: #FFECB3;">
                                  <Pane fx:id="pNoticeInvoice" layoutX="22.0" layoutY="415.0" prefHeight="200.0" prefWidth="503.0" style="-fx-background-color: #FFB74D;" stylesheets="@../css/client.css">
@@ -186,7 +186,7 @@
                                              <Font name="Agency FB" size="50.0" />
                                          </font>
                                      </Label>
-                           <Label fx:id="lbltotal1" alignment="CENTER_RIGHT" layoutX="380.0" layoutY="109.0" prefHeight="60.0" prefWidth="61.0" text="vnd" textFill="#0d0d0d">
+                           <Label alignment="CENTER_RIGHT" layoutX="380.0" layoutY="109.0" prefHeight="60.0" prefWidth="61.0" text="vnd" textFill="#0d0d0d">
                               <font>
                                  <Font name="Agency FB" size="50.0" />
                               </font>
@@ -419,12 +419,12 @@
                      </StackPane>
                   </children>
                </HBox>
-                    <StackPane fx:id="Notification_Screen" prefHeight="150.0" prefWidth="200.0" visible="false">
+                    <StackPane fx:id="Notification_Screen" prefHeight="150.0" prefWidth="200.0">
                         <Pane prefHeight="200.0" prefWidth="200.0">
-                            <TableView fx:id="tableNotification" layoutX="63.0" layoutY="33.0" prefHeight="660.0" prefWidth="933.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA726; -fx-alignment: CENTER;" styleClass="tblview">
+                            <TableView fx:id="tableNotification" layoutX="-1.0" prefHeight="754.0" prefWidth="1060.0" style="-fx-background-color: #FFECB3; -fx-border-color: #FFA72; -fx-alignment: CENTER;" styleClass="tblview">
                                 <columns>
-                                    <TableColumn fx:id="date" prefWidth="142.00001525878906" style="-fx-border-color: #FFA726; -fx-alignment: CENTER;" text="Date" />
-                                    <TableColumn fx:id="detail" prefWidth="788.1999969482422" sortable="false" style="-fx-border-color: #FFA726;" text="Detail" />
+                                    <TableColumn fx:id="date" prefWidth="179.40000611543655" style="-fx-border-color: #FFA726; -fx-alignment: CENTER;" text="Date" />
+                                    <TableColumn fx:id="detail" prefWidth="880.6000518798828" sortable="false" style="-fx-border-color: #FFA726;" text="Detail" />
                                 </columns>
                         <cursor>
                            <Cursor fx:constant="HAND" />
@@ -442,7 +442,7 @@
                         </Pane>
                     </StackPane>
                     <AnchorPane fx:id="Statistic_Screen" prefHeight="754.0" prefWidth="851.0" visible="false">
-                  <Pane layoutX="14.0" layoutY="201.0" prefHeight="476.0" prefWidth="480.0" style="-fx-background-color: #FFE082; -fx-background-radius: 30;">
+                  <Pane layoutX="14.0" layoutY="180.0" prefHeight="476.0" prefWidth="480.0" style="-fx-background-color: #FFE082; -fx-background-radius: 30;">
                      <children>
                               <LineChart fx:id="lineChart" layoutX="14.0" layoutY="60.0" legendVisible="false" prefHeight="402.0" prefWidth="450.0" styleClass="shadow">
                                   <xAxis>
@@ -469,7 +469,7 @@
                         </DropShadow>
                      </effect>
                   </Pane>
-                  <Pane layoutX="530.0" layoutY="201.0" prefHeight="476.0" prefWidth="480.0" style="-fx-background-radius: 30; -fx-background-color: #FFE082;">
+                  <Pane layoutX="530.0" layoutY="180.0" prefHeight="476.0" prefWidth="480.0" style="-fx-background-radius: 30; -fx-background-color: #FFE082;">
                      <children>
                               <BarChart fx:id="barChart" layoutX="10.0" layoutY="60.0" legendVisible="false" prefHeight="402.0" prefWidth="471.0" styleClass="shadow">
                                   <xAxis>
@@ -495,6 +495,79 @@
                            </color>
                         </DropShadow>
                      </effect>
+                  </Pane>
+                  <Pane fx:id="pTotalInvoice" layoutX="24.0" layoutY="76.0" prefHeight="56.0" prefWidth="222.0" style="-fx-background-color: #FFE082; -fx-background-radius: 15;">
+                     <effect>
+                        <DropShadow radius="16.07" spread="0.36" width="45.28">
+                           <color>
+                              <Color red="1.0" green="0.800000011920929" blue="0.501960813999176" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <children>
+                        <Label layoutX="14.0" layoutY="12.0" prefHeight="33.0" prefWidth="135.0" text="Total Invoice">
+                           <font>
+                              <Font name="Agency FB Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbltotalinvoices1" alignment="CENTER_RIGHT" layoutX="149.0" layoutY="12.0" prefHeight="33.0" prefWidth="61.0" text="Label">
+                           <font>
+                              <Font name="Agency FB Bold" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pTotal" layoutX="262.0" layoutY="76.0" prefHeight="56.0" prefWidth="326.0" style="-fx-background-color: #FFE082; -fx-background-radius: 15;">
+                     <effect>
+                        <DropShadow radius="16.07" spread="0.36" width="45.28">
+                           <color>
+                              <Color red="1.0" green="0.800000011920929" blue="0.501960813999176" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <children>
+                        <Label layoutX="14.0" layoutY="12.0" prefHeight="33.0" prefWidth="61.0" text="Total ">
+                           <font>
+                              <Font name="Agency FB Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbltotal12" alignment="CENTER_RIGHT" layoutX="75.0" layoutY="12.0" prefHeight="33.0" prefWidth="189.0" text="Label">
+                           <font>
+                              <Font name="Agency FB Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="274.0" layoutY="12.0" text="VND">
+                           <font>
+                              <Font name="Agency FB Bold" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pTotalUsage" layoutX="603.0" layoutY="76.0" prefHeight="56.0" prefWidth="403.0" style="-fx-background-color: #FFE082; -fx-background-radius: 15;">
+                     <effect>
+                        <DropShadow radius="16.07" spread="0.36" width="45.28">
+                           <color>
+                              <Color red="1.0" green="0.800000011920929" blue="0.501960813999176" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <children>
+                        <Label layoutX="14.0" layoutY="12.0" prefHeight="33.0" prefWidth="221.0" text="Total Electricity Usage">
+                           <font>
+                              <Font name="Agency FB Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblusage" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="230.0" layoutY="12.0" prefHeight="33.0" prefWidth="106.0" text="Label" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Agency FB Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="353.0" layoutY="12.0" text="kwh">
+                           <font>
+                              <Font name="Agency FB Bold" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
                   </Pane>
                     </AnchorPane>
                     <VBox fx:id="Profile_Screen" prefHeight="200.0" prefWidth="100.0" visible="false">

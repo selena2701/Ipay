@@ -109,7 +109,7 @@ public class ClientController implements Initializable {
     @FXML
     private TableColumn<CreditCard, String> tblColumnCardHolderName, tblColumnAccountNumber, tblColumnBank, tblColumnStatus;
     @FXML
-    private Label lbltotalinvoices, lbltotal, lblperiodnewinvoice, lbltotalnewinvoice, lblbadge;
+    private Label lbltotalinvoices, lbltotal, lblperiodnewinvoice, lbltotalnewinvoice, lblbadge, lblusage, lbltotalinvoices1, lbltotal12;
 
 
     private ClientRepo repo;
@@ -547,12 +547,21 @@ public class ClientController implements Initializable {
 
     private void initLabelOverviewHome(){
         ObservableList<Invoice> invoices = tableBill.getItems();
-        lbltotalinvoices.setText(Integer.toString(invoices.size()));
+        int am=0;
         float total = 0;
+        int usage=0;
         for(Invoice invoice : invoices){
-            total += invoice.getTotal();
+            if(invoice.isPaid()==true) {
+                total += invoice.getTotal();
+                am++;
+            }
+            usage +=invoice.getConsumedValue();
         }
+        lbltotalinvoices.setText(Integer.toString(am));
+        lbltotalinvoices1.setText(Integer.toString(am));
         lbltotal.setText(NumberFormat.getInstance().format(total));
+        lbltotal12.setText(NumberFormat.getInstance().format(total));
+        lblusage.setText(NumberFormat.getNumberInstance().format(usage));
         lblperiodnewinvoice.setText(LocalDate.parse(invoices.get(invoices.size() - 1).getFromDate().toString(), formatter).toString());
         lbltotalnewinvoice.setText(NumberFormat.getNumberInstance().format(invoices.get(invoices.size() - 1).getTotal()));
     }
@@ -632,7 +641,8 @@ public class ClientController implements Initializable {
         int i = invoices.size();
         XYChart.Series series = new XYChart.Series();
             for (int d = i; d >= 1; d--) {
-                series.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getTotal()));
+                if (invoices.get(i-d).isPaid())
+                    series.getData().add(new XYChart.Data(invoices.get(i - d).getFromDate().toString().subSequence(0, 7), invoices.get(i - d).getTotal()));
             }
 
         lineChart.getData().addAll(series);
