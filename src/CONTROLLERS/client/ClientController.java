@@ -684,7 +684,7 @@ public class ClientController implements Initializable {
                         setStyle("-fx-background-color: #FFCC80");
                     }else
                     if (!repo.checkNotificationSeen(user.getId(),item.getId())){
-                        setStyle("-fx-background-color: #FFCC80");
+                        setStyle("-fx-background-color: #FFE0B2");
                     }
                     else {
                         setStyle("-fx-background-color: #FFCC80");
