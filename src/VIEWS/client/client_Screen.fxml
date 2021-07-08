@@ -746,15 +746,15 @@
                                     <Font name="Segoe UI Bold" size="36.0" />
                                 </font>
                             </Label>
-                            <JFXTextField fx:id="txtInvoiceCardHolderName" focusColor="BLACK" layoutX="16.0" layoutY="176.0" prefHeight="45.0" prefWidth="370.0" promptText="Cardholder Name" styleClass="txtfield" unFocusColor="#0f0f0f">
+                            <JFXTextField fx:id="txtInvoiceCardHolderName" editable="false" focusColor="BLACK" layoutX="16.0" layoutY="176.0" prefHeight="45.0" prefWidth="370.0" promptText="Cardholder Name" styleClass="txtfield" unFocusColor="#0f0f0f">
                         <font>
                            <Font size="14.0" />
                         </font></JFXTextField>
-                            <JFXTextField fx:id="txtInvoiceCardNumber" focusColor="BLACK" layoutX="16.0" layoutY="221.0" prefHeight="43.0" prefWidth="370.0" promptText="CardNumber" styleClass="txtfield" unFocusColor="#0f0f0f">
+                            <JFXTextField fx:id="txtInvoiceCardNumber" editable="false" focusColor="BLACK" layoutX="16.0" layoutY="221.0" prefHeight="43.0" prefWidth="370.0" promptText="CardNumber" styleClass="txtfield" unFocusColor="#0f0f0f">
                         <font>
                            <Font size="14.0" />
                         </font></JFXTextField>
-                            <JFXTextField fx:id="txtInvoiceAccountNumber" focusColor="BLACK" layoutX="16.0" layoutY="264.0" prefHeight="43.0" prefWidth="370.0" promptText="Account Number" styleClass="txtfield" unFocusColor="#0f0f0f">
+                            <JFXTextField fx:id="txtInvoiceAccountNumber" editable="false" focusColor="BLACK" layoutX="16.0" layoutY="264.0" prefHeight="43.0" prefWidth="370.0" promptText="Account Number" styleClass="txtfield" unFocusColor="#0f0f0f">
                         <font>
                            <Font size="14.0" />
                         </font></JFXTextField>
