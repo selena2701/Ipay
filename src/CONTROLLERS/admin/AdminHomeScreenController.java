@@ -26,6 +26,7 @@ public class AdminHomeScreenController implements Initializable {
     private static final String USERS_MANAGER = "./../../VIEWS/admin/users-management_Screen.fxml";
     private static final String PROVIDERS_MANAGER = "./../../VIEWS/admin/providers-management_Screen.fxml";
     private static final String NOTIFICATIONS_MANAGER = "./../../VIEWS/admin/notifications-management_Screen.fxml";
+    private static final String REPORT_MANAGER = "./../../VIEWS/admin/report-management_Screen.fxml";
     @FXML
     private ImageView iconImageView;
 
@@ -45,11 +46,15 @@ public class AdminHomeScreenController implements Initializable {
     @FXML JFXButton btnLogOut;
 
     @FXML
+    private JFXButton reportButton;
+
+    @FXML
     private BorderPane content;
 
     private final Node usersNode;
     private final Node providersNode;
     private final Node notificationsNode;
+    private final Node reportNode;
 
     private String adminUsername;
 
@@ -58,11 +63,12 @@ public class AdminHomeScreenController implements Initializable {
         FXMLLoader usersLoader = new FXMLLoader(getClass().getResource(USERS_MANAGER));
         FXMLLoader providersLoader = new FXMLLoader(getClass().getResource(PROVIDERS_MANAGER));
         FXMLLoader notificationsLoader = new FXMLLoader(getClass().getResource(NOTIFICATIONS_MANAGER));
+        FXMLLoader reportLoader = new FXMLLoader(getClass().getResource(REPORT_MANAGER));
 
         usersNode = usersLoader.load();
         providersNode = providersLoader.load();
         notificationsNode = notificationsLoader.load();
-
+        reportNode = reportLoader.load();
         this.adminUsername = DataHolder.getINSTANCE().getUserName();
     }
 
@@ -89,7 +95,9 @@ public class AdminHomeScreenController implements Initializable {
         notificationsButton.setOnMouseClicked(mouseEvent -> {
             setContent(notificationsNode);
         });
-
+        reportButton.setOnMouseClicked(mouseEvent -> {
+            setContent(reportNode);
+        });
 
     }
 
