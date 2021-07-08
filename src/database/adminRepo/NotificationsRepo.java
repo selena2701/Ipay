@@ -24,7 +24,7 @@ public class NotificationsRepo {
 
     private void loadNotificationsFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        String query = "SELECT NoId,DateCreated,DateSent, Detail,NameAd FROM E_NOTIFICATION JOIN E_ADMIN ON E_NOTIFICATION.EditedBy=E_ADMIN.AdminId";
+        String query = "SELECT NoId,DateCreated,DateSent, Detail,NameAd FROM E_NOTIFICATION JOIN E_ADMIN ON E_NOTIFICATION.EditedBy=E_ADMIN.AdminId ";
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(query);
 

@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.exolab.castor.types.DateTime;
 import utils.DBConnection;
+import utils.helper.CaculateElectricityBill;
 import utils.helper.Encryption;
 
 import java.sql.*;
@@ -64,7 +65,7 @@ public class ClientRepo {
 
     private void loadAllNotificationFromDB() throws SQLException, ClassNotFoundException {
         connection = DBConnection.connect();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_NOTIFICATION");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM E_NOTIFICATION WHERE DateSent <GETDATE() OR DateSent = GETDATE()");
 
         ResultSet resultSet = statement.executeQuery();
         notifications.clear();
@@ -86,6 +87,7 @@ public class ClientRepo {
         connection.close();
         loadAllInvoicesFromDB();
     }
+
 
 
     public void saveCustomer(Customer customer) throws SQLException, ClassNotFoundException{

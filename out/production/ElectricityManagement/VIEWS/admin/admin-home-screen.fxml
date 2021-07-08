@@ -74,7 +74,7 @@
             <Image url="@../images/PicsArt_05-09-12.29.09.jpg" />
          </image>
       </ImageView>
-      <JFXButton fx:id="reportButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="79.0" text="Report" GridPane.rowIndex="4">
+      <JFXButton fx:id="reportButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Report" GridPane.rowIndex="4">
          <graphic>
             <MaterialIconView glyphName="REPORT" size="25" strokeType="OUTSIDE" strokeWidth="0.0" />
          </graphic>

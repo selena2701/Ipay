@@ -51,6 +51,6 @@ public class Report {
     }
 
     public static Report fromResultSet(ResultSet resultSet) throws SQLException {
-        return new Report(resultSet.getString("PERIOD"), resultSet.getInt("SLGIAODICH"), resultSet.getDouble("TONGSOTIENGD"));
+        return new Report(resultSet.getString("PERIOD"), resultSet.getInt("numberTransactions"), resultSet.getDouble("totalTransactionValue"));
     }
 }
